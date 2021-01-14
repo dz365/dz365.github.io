@@ -1,0 +1,199 @@
+body {
+	display: block;
+	font-family: Roboto, sans-serif;
+	background-color:  #b4e6da;
+	margin: 0;
+	overflow-x: hidden;
+}
+
+div {
+	display: block;
+	box-sizing: inherit;
+}
+
+p {
+	color: #666666;
+}
+
+.profile {
+	background-image: linear-gradient(#79d2be, #8cd9c7, #f2f2f2);
+	position: relative;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+img {
+	width: 100%;
+	vertical-align: bottom;
+}
+
+.name {
+	position: absolute;
+	bottom:0px;
+    left: 50%;
+    transform: translate(-50%, 0); 
+	color: white;
+}
+
+.third, .twothirds {
+	padding: 15px;
+	box-sizing: border-box;
+}
+
+.leftcol, .rightcol {
+	padding: 20px;
+	background-color: white;
+}
+
+.rightcol {
+	width: 100%;
+	float: left;
+	margin-bottom: 20px;
+}
+
+.leftcol, .rightcol {
+	box-shadow: 0px 0px 18px #b6e9d4;
+}
+
+.end {
+	margin-bottom: 10px;
+}
+
+.bar {
+	width: 100%;
+	height: 20px;
+	background-color: #d9d9d9;
+	border-radius: 10px;
+}
+
+.half {
+	width: 50%;
+	float: left;
+	padding: 10px;
+	box-sizing: inherit;
+}
+
+.communication, .teamwork, .leadership, .timemanagement, .reliability, .java, .python, .c, .html, .css, .javascript {
+	height: inherit;
+	background-color: #318f9b;
+	border-radius: 10px;
+}
+
+.communication {
+	width: 96%;
+}
+
+.teamwork {
+	width: 90%;
+}
+
+.leadership {
+	width: 85%;
+}
+
+.timemanagement {
+	width: 80%;
+}
+
+.reliability {
+	width: 85%;
+}
+
+.java {
+	width: 80%;
+}
+
+.python {
+	width: 60%;
+}
+.c {
+	width: 59%;
+}
+
+.html {
+	width: 80%;
+}
+
+.css {
+	width: 78%;
+}
+
+.javascript {
+	width: 75%;
+}
+
+
+i.icon {
+	color: #318f9b;
+	float: left;
+	font-size: 1em;
+	margin-right: 1em;
+	text-align: center;
+}
+
+i.med-icon {
+	color: #318f9b;
+	float: left;
+	font-size: 1.25em;
+	margin-right: 0.75em;
+
+}
+
+.line {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1em;
+	margin-top: 1em;
+	border-bottom: 1px solid #cccccc;
+	border-radius: 1em;
+}
+
+.bolded {
+	font-size: 1.1em;
+	font-weight: bold;
+	color: gray;
+}
+
+.job {
+	display: inline;
+}
+
+.colored {
+	color: #318f9b;
+}
+
+.normal {
+	color: black;
+	font-weight: 570;
+	font-size: 1.1em;
+	
+}
+
+footer {
+	float: left;
+	width: 100%;
+	text-align: center;
+	background-color:  #79d2be;
+}
+
+.social {
+	color: white;
+	text-decoration: none;
+}
+
+.thanks {
+	color: white;
+}
+
+@media (min-width: 650px) {
+	.third {
+		width: 33.333333%;
+		float: left;
+	}
+	
+	.twothirds {
+		width: 66.666666%;
+		float: left;
+	}
+}

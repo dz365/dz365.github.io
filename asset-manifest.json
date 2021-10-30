@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/dz365.github.io/static/css/main.a617e044.chunk.css",
+    "main.js": "/dz365.github.io/static/js/main.4a013f52.chunk.js",
+    "main.js.map": "/dz365.github.io/static/js/main.4a013f52.chunk.js.map",
+    "runtime-main.js": "/dz365.github.io/static/js/runtime-main.42149e41.js",
+    "runtime-main.js.map": "/dz365.github.io/static/js/runtime-main.42149e41.js.map",
+    "static/js/2.6fed763a.chunk.js": "/dz365.github.io/static/js/2.6fed763a.chunk.js",
+    "static/js/2.6fed763a.chunk.js.map": "/dz365.github.io/static/js/2.6fed763a.chunk.js.map",
+    "static/js/3.b23aa85c.chunk.js": "/dz365.github.io/static/js/3.b23aa85c.chunk.js",
+    "static/js/3.b23aa85c.chunk.js.map": "/dz365.github.io/static/js/3.b23aa85c.chunk.js.map",
+    "index.html": "/dz365.github.io/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/dz365.github.io/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.6fed763a.chunk.js.LICENSE.txt": "/dz365.github.io/static/js/2.6fed763a.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/dz365.github.io/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.42149e41.js",
+    "static/js/2.6fed763a.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.4a013f52.chunk.js"
+  ]
+}

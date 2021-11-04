@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.731c8bd2.chunk.css",
-    "main.js": "/static/js/main.ba673885.chunk.js",
-    "main.js.map": "/static/js/main.ba673885.chunk.js.map",
+    "main.css": "/static/css/main.8f00b237.chunk.css",
+    "main.js": "/static/js/main.fe28665f.chunk.js",
+    "main.js.map": "/static/js/main.fe28665f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.02edc1ca.js",
     "runtime-main.js.map": "/static/js/runtime-main.02edc1ca.js.map",
     "static/css/2.69b12a24.chunk.css": "/static/css/2.69b12a24.chunk.css",
@@ -12,11 +12,12 @@
     "static/js/3.cabe64e7.chunk.js.map": "/static/js/3.cabe64e7.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.69b12a24.chunk.css.map": "/static/css/2.69b12a24.chunk.css.map",
-    "static/css/main.731c8bd2.chunk.css.map": "/static/css/main.731c8bd2.chunk.css.map",
+    "static/css/main.8f00b237.chunk.css.map": "/static/css/main.8f00b237.chunk.css.map",
     "static/js/2.4ac196f3.chunk.js.LICENSE.txt": "/static/js/2.4ac196f3.chunk.js.LICENSE.txt",
     "static/media/DigitRecognizer.89064574.png": "/static/media/DigitRecognizer.89064574.png",
     "static/media/EasyApply.27416443.png": "/static/media/EasyApply.27416443.png",
     "static/media/Javmos.6a0d3200.png": "/static/media/Javmos.6a0d3200.png",
+    "static/media/Resume.99fa36dc.pdf": "/static/media/Resume.99fa36dc.pdf",
     "static/media/SixDegrees.2fc03ef0.png": "/static/media/SixDegrees.2fc03ef0.png",
     "static/media/angular.825efb76.svg": "/static/media/angular.825efb76.svg",
     "static/media/c.ea8f07e8.svg": "/static/media/c.ea8f07e8.svg",
@@ -30,6 +31,7 @@
     "static/media/linkedin.3136af4a.svg": "/static/media/linkedin.3136af4a.svg",
     "static/media/node.dd47e26e.svg": "/static/media/node.dd47e26e.svg",
     "static/media/python.5a7d606e.svg": "/static/media/python.5a7d606e.svg",
+    "static/media/quotation.90414874.png": "/static/media/quotation.90414874.png",
     "static/media/react.6c1d44b8.svg": "/static/media/react.6c1d44b8.svg",
     "static/media/300.css": "/static/media/roboto-vietnamese-300-normal.af9afdc1.woff2",
     "static/media/temp_background.51c90b91.jpg": "/static/media/temp_background.51c90b91.jpg"
@@ -38,7 +40,7 @@
     "static/js/runtime-main.02edc1ca.js",
     "static/css/2.69b12a24.chunk.css",
     "static/js/2.4ac196f3.chunk.js",
-    "static/css/main.731c8bd2.chunk.css",
-    "static/js/main.ba673885.chunk.js"
+    "static/css/main.8f00b237.chunk.css",
+    "static/js/main.fe28665f.chunk.js"
   ]
 }

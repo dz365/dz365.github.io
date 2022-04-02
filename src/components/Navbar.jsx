@@ -19,28 +19,30 @@ const ExpandMore = styled((props) => {
 /* To add: navbar props to allow better a input */
 const Navbar = () => {
   const [mobileNavShown, setMobileNavShown] = useState(true);
-  const [isMobileScreen, setIsMobileScreen] = useState(
-    window.innerWidth >= 1024 ? false : true
-  );
+  const [isMobileScreen, setIsMobileScreen] = useState(false);
 
   const navBarToggle = () => {
     setMobileNavShown(!mobileNavShown);
   };
 
   useEffect(() => {
-    window.addEventListener("resize", () =>
-      setIsMobileScreen(window.innerWidth >= 1024 ? false : true)
-    );
+    window.addEventListener('resize', () => setIsMobileScreen(window.innerWidth >= 1024 ? false : true))
   }, [window.innerWidth]);
 
-  const labels = ["about", "work experience", "projects", "contact"]
   const links = (
-    <div className="flex flex-col lg:flex-row gap-2 lg:gap-10 items-center">
-      {labels.map((label) => (
-        <a key={label} href={"#" + label }className="hover:text-neutral-400">
-        {label}
-        </a>
-      ))}
+    <div className="flex flex-col lg:flex-row gap-2 lg:gap-10 items-center text-lg">
+      <a href="#about" className="hover:text-neutral-400">
+        about
+      </a>
+      <a href="#work" className="hover:text-neutral-400">
+        work experience
+      </a>
+      <a href="#projects" className="hover:text-neutral-400">
+        projects
+      </a>
+      <a href="#contact" className="hover:text-neutral-400">
+        contact
+      </a>
       <a
         href={resume}
         target="_blank"
@@ -52,9 +54,9 @@ const Navbar = () => {
     </div>
   );
   return (
-    <nav className="w-full lg:h-20 fixed top-0 left-0 z-50 p-4 lg:p-6 bg-white text-lg">
+    <nav className="w-full lg:h-20 fixed top-0 left-0 z-50 p-4 lg:p-6 bg-white">
       <div className="w-full flex items-center">
-        <a href="#home" className="text-sky-900">
+        <a href="#home" className="text-sky-600 text-lg font-black">
           daniel
         </a>
         <div className="grow"></div>
@@ -63,7 +65,9 @@ const Navbar = () => {
             <MenuIcon color="primary" />
           </ExpandMore>
         </div>
-        {!isMobileScreen && <div className={`justify-self-end $`}>{links}</div>}
+        {!isMobileScreen && (
+          <div className={`justify-self-end $`}>{links}</div>
+        )}
       </div>
 
       <Collapse in={!mobileNavShown} timeout={500}>

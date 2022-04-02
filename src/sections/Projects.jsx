@@ -21,23 +21,6 @@ export default function Projects() {
     </p>
   );
 
-  const zoomerBody = (
-    <p>
-      In a SoftEng course I took in 3rd year, one thing we learned about was the concept
-      of a microservice. To solidify our understanding, we were assigned a
-      project called Zoomer, which was a ride share API composed of various
-      microservices. Requests would enter through an api gateway from from there
-      it would be redirected to the appropriate microservice. For example, we
-      would have one microservice for managing user profile related aspects. So
-      things like email, name, password, birth date, etc.
-      <br />
-      <br />
-      By the end of the project, I could definitely say I was comfortable with
-      developing microservices. This understanding was very helpful in my
-      internship with Caseware, where I primarily worked on developing
-      microservices.
-    </p>
-  );
   const asteroidBody = (
     <p>
       In the final months of my Grade 12 year, my ComSci teacher gave one final
@@ -75,12 +58,6 @@ export default function Projects() {
       image: easyapply,
     },
     {
-      title: "Zoomer 🚃",
-      languages: "Docker / Java / MongoDB / Neo4j / PostgreSQL",
-      summary: "Ride-Share API",
-      body: zoomerBody,
-    },
-    {
       title: "Asteroids 🚀",
       languages: "Java / Java Swing",
       summary: "Asteroids Remake",
@@ -93,7 +70,7 @@ export default function Projects() {
       languages: "React",
       summary: "You're looking at it right now!",
       body: websiteBody,
-      link: "https://github.com/dz365/dz365.github.io/tree/master",
+      link: "https://github.com/dz365/dz365.github.io",
     },
   ];
 

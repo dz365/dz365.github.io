@@ -30,8 +30,10 @@ module.exports = {
       animation: {
         "fade-in": "fadein 1.5s ease-out",
         "color-change": "colorChange 3s infinite alternate",
-        "wave": "moveWave 10s linear infinite",
-        "wave-mobile": "moveWave 3s linear infinite"
+        "wave-fast": "moveWave 10s linear infinite alternate",
+        "wave-slow": "moveWave 15s linear infinite alternate",
+        "wave-fast-mobile": "moveWave 3s linear infinite alternate",
+        "wave-slow-mobile": "moveWave 5s linear infinite alternate"
       },
       width: {
         "double": "200%"

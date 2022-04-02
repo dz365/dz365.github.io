@@ -31,6 +31,18 @@ export default function Work() {
     </p>
   );
 
+  const cloudBody = (
+    <p>
+      In my internship with Caseware, my peers talked about the days when data
+      was stored in local servers and whenever something happened, it was a
+      dumpster fire resolving the issues. Once the transition to cloud began,
+      these headaches slowly disappeared. As time passes, I believe cloud will
+      be the primary way of storing data (and perform heavy computations without
+      the need for a dedicated computer), which is why I want to learn a thing
+      (or two) about this field.
+    </p>
+  );
+
   const mobileBody = (
     <p>
       This one is fairly obvious :) Ain't too many people these days without a
@@ -72,7 +84,7 @@ export default function Work() {
           <div>
             <WorkCard
               company="Skatescribe"
-              position="full stack developer"
+              position="software developer"
               time="May 2021 - August 2021"
               location="Remote"
               bordercolor="border-sky-700"
@@ -84,10 +96,10 @@ export default function Work() {
           <div className="flex flex-col gap-4 items-center w-full">
             <div className="lg:w-4/5">
               <p className="text-3xl text-sky-700 font-black mb-4">
-                interests
+                future interests
               </p>
               <p className="text-xl">
-                My experiences so far have been general software development,
+                My experiences so far have been general software developement,
                 but in the future there are a couple of fields that I want to go
                 more in depth :) The goal is to always learn something new
                 wherever I go.
@@ -99,6 +111,11 @@ export default function Work() {
                 <StorageOutlinedIcon fontSize="large" />,
                 "Backend",
                 backendBody
+              )}
+              {InterestCard(
+                <CloudOutlinedIcon fontSize="large" />,
+                "Cloud",
+                cloudBody
               )}
               {InterestCard(
                 <PhoneIphoneOutlinedIcon fontSize="large" />,

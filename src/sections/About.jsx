@@ -61,11 +61,10 @@ const About = () => {
                     know that I still have lots to learn.
                     <br />
                     <br />
-                    Hobbies include: Watching anime and other animated shows,
-                    enjoying nature and working out. If I were to give a
-                    recommendation, I'd say Avatar: The Last Airbender and
-                    Steins;Gate. Steins;Gate may be confusing but the series
-                    definitely picks pick in a few episodes. <br />
+                    Hobbies include: League of Legends (I know, I know, I'm a
+                    loser :P), rewatching Avatar the Last Airbender (10/10 Would
+                    recommend), and working out.
+                    <br />
                     <br />
                     Scroll down for more me...
                   </p>

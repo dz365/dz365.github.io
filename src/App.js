@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import About from "./sections/About";
+import Contact from "./sections/Contact";
+import Navbar from "./components/Navbar";
+import Projects from "./sections/Projects";
+import Work from "./sections/Work";
+import Home from "./sections/Home";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <div
+        id="home"
+        className="scroll-mt-20 relative h-screen overflow-x-hidden"
+      >
+        <div className="w-double absolute bg-cover bg-top-70 bg-no-repeat bg-wave animate-wave-mobile lg:animate-wave h-full"></div>
+        <Home />
+      </div>
+      <div id="about" className="scroll-mt-20 p-4 relative bg-sky-900">
+        <About />
+      </div>
+      <div id="work" className="scroll-mt-20 p-4 relative">
+        <Work />
+      </div>
+      <div id="projects" className="scroll-mt-20 p-4 relative bg-sky-900 flex">
+        <Projects />
+      </div>
+      <div
+        id="contact"
+        className="scroll-mt-20 relative bg-contact bg-cover bg-center"
+      >
+        <Contact />
+      </div>
     </div>
   );
 }

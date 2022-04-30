@@ -70,7 +70,7 @@ export default function Projects() {
       languages: "React",
       summary: "You're looking at it right now!",
       body: websiteBody,
-      link: "https://github.com/dz365/website",
+      link: "https://github.com/dz365/dz365.github.io/tree/master",
     },
   ];
 

@@ -13,7 +13,7 @@ function App() {
         id="home"
         className="scroll-mt-20 relative h-screen overflow-x-hidden"
       >
-        <div className="w-double absolute bg-cover bg-top-70 bg-no-repeat bg-wave animate-wave-mobile lg:animate-wave h-full"></div>
+        <div className="w-double absolute bg-cover bg-top-70 bg-no-repeat bg-wave h-full"></div>
         <Home />
       </div>
       <div id="about" className="scroll-mt-20 p-4 relative bg-sky-900">

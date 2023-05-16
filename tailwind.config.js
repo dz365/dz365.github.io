@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'icon-hover': 'rgb(232,234,237)',
+        'google-gray': 'rgb(232,234,237)',
       }
     },
   },

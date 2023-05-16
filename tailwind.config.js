@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       colors: {
         'google-gray': 'rgb(232,234,237)',
+        "blue-gray": "#f3f6fc",
       }
     },
   },

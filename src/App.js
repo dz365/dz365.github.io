@@ -56,7 +56,7 @@ function App() {
   }, []);
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-screen">
       <div className="px-5 py-2 w-full flex justify-end items-center gap-2">
         <button
           ref={gridRef}
@@ -75,10 +75,10 @@ function App() {
           <div className="w-8 h-8 rounded-full bg-contain bg-center bg-[url('./assets/images/cat.webp')]"></div>
         </button>
       </div>
-      <div className="w-full flex flex-col items-center">
+      <div className="translate-y-[calc(50%-40px)] px-4 w-full h-1/2 flex flex-col justify-start items-center gap-6">
         <img alt="Google" src={GOOGLEDAYMODE} />
-        <div className="border rounded-3xl w-full max-w-xl min-h-12 px-4 py-2 flex gap-3">
-          <div className="mt-0.5 w-5 h-5 opacity-50">
+        <div className="border rounded-3xl w-full max-w-xl min-h-12 px-4 py-3 flex gap-3">
+          <div className="mt-1 w-5 h-5 opacity-50">
             <SearchIcon />
           </div>
           <TextareaAutosize

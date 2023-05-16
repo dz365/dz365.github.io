@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { ReactComponent as GridIcon } from "./assets/icons/grid.svg";
 import { ReactComponent as SearchIcon } from "./assets/icons/search.svg";
@@ -13,13 +13,32 @@ function App() {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [showOptions, setShowOptions] = useState(true);
+  const divRef = useRef(null);
+  const gridRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        divRef.current &&
+        !divRef.current.contains(event.target) &&
+        !gridRef.current.contains(event.target)
+      ) {
+        setShowOptions(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="w-full h-full">
-      <div
-        className="px-5 py-2 w-full flex justify-end items-center gap-2"
-      >
+      <div className="px-5 py-2 w-full flex justify-end items-center gap-2">
         <button
+          ref={gridRef}
           className="z-10 p-2 rounded-full hover:bg-google-gray"
           onClick={() => setShowOptions(!showOptions)}
         >
@@ -55,7 +74,10 @@ function App() {
         </div>
       </div>
       {showOptions && (
-        <div className="z-10 fixed top-16 right-4 w-80 bg-white rounded-lg border shadow-md p-4 grid grid-cols-2 gap-2">
+        <div
+          ref={divRef}
+          className="z-10 fixed top-16 right-4 w-80 bg-white rounded-lg border shadow-md p-4 grid grid-cols-2 gap-2"
+        >
           <button className="p-2 hover:bg-google-gray rounded-xl flex flex-col items-center justify-center gap-2">
             <div className="w-14 h-14 bg-contain bg-center  bg-[url('./assets/images/cat.webp')]"></div>
             <span>About Me</span>

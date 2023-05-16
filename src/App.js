@@ -12,16 +12,23 @@ function App() {
     "https://www.google.ca/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png";
 
   const [searchQuery, setSearchQuery] = useState("");
+  const [showOptions, setShowOptions] = useState(true);
+
   return (
-    <>
-      <div className="px-5 py-2 w-full flex justify-end items-center gap-2">
-        <button className="p-2 rounded-full hover:bg-icon-hover">
+    <div className="w-full h-full">
+      <div
+        className="px-5 py-2 w-full flex justify-end items-center gap-2"
+      >
+        <button
+          className="z-10 p-2 rounded-full hover:bg-google-gray"
+          onClick={() => setShowOptions(!showOptions)}
+        >
           <div className="w-6">
             <GridIcon />
           </div>
         </button>
-        <button className="p-1 rounded-full hover:bg-icon-hover">
-          <div className="w-8 h-8 rounded-full bg-contain bg-center bg-[url('./assets/cat.png')]"></div>
+        <button className="p-1 rounded-full hover:bg-google-gray">
+          <div className="w-8 h-8 rounded-full bg-contain bg-center bg-[url('./assets/images/cat.webp')]"></div>
         </button>
       </div>
       <div className="w-full flex flex-col items-center">
@@ -47,7 +54,28 @@ function App() {
           )}
         </div>
       </div>
-    </>
+      {showOptions && (
+        <div className="z-10 fixed top-16 right-4 w-80 bg-white rounded-lg border shadow-md p-4 grid grid-cols-2 gap-2">
+          <button className="p-2 hover:bg-google-gray rounded-xl flex flex-col items-center justify-center gap-2">
+            <div className="w-14 h-14 bg-contain bg-center  bg-[url('./assets/images/cat.webp')]"></div>
+            <span>About Me</span>
+          </button>
+          <button className="p-2 flex flex-col items-center hover:bg-google-gray rounded-xl flex flex-col items-center justify-center gap-2">
+            <div className="w-14 h-14 bg-contain bg-center bg-no-repeat bg-[url('./assets/images/briefcase.webp')]"></div>
+            <span>Work Experience</span>
+          </button>
+
+          <button className="p-2 hover:bg-google-gray rounded-xl flex flex-col items-center justify-center gap-2">
+            <div className="w-14 h-14 bg-contain bg-center bg-[url('./assets/images/programing.webp')]"></div>
+            <span>Projects</span>
+          </button>
+          <button className="p-2 hover:bg-google-gray rounded-xl flex flex-col items-center justify-center gap-2">
+            <div className="w-14 h-14 bg-contain bg-center bg-[url('./assets/images/docs.webp')]"></div>
+            <span>Resume</span>
+          </button>
+        </div>
+      )}
+    </div>
   );
 }
 

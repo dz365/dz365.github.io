@@ -5,17 +5,19 @@ import { ReactComponent as XMarkIcon } from "./assets/icons/xmark.svg";
 import { ReactComponent as MicrophoneIcon } from "./assets/icons/microphone.svg";
 import { ReactComponent as CameraIcon } from "./assets/icons/camera.svg";
 import catImage from "./assets/images/cat.webp";
-import briefcaseImage from "./assets/images/briefcase.webp";
-import programmingImage from "./assets/images/programing.webp";
-
+import casewareImage from "./assets/images/caseware.webp";
+import skatescribeImage from "./assets/images/skatescribe.webp";
+import ecosquadImage from "./assets/images/ecosquad.webp";
+import webGalleryImage from "./assets/images/webgallery.webp";
+import asteroidsImage from "./assets/images/asteroids.webp";
+import resume from "./assets/Daniel_Zhang_Resume.pdf";
 import googleLight from "./assets/images/google-light.png";
 function App() {
   const [showOptions, setShowOptions] = useState(false);
-  const [showContact, setShowContact] = useState(false);
+
   const divRef = useRef(null);
   const gridRef = useRef(null);
-  const contactDivRef = useRef(null);
-  const avatarRef = useRef(null);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -34,27 +36,9 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        contactDivRef.current &&
-        !contactDivRef.current.contains(event.target) &&
-        !avatarRef.current.contains(event.target)
-      ) {
-        setShowContact(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   return (
     <div className="w-full h-screen">
-      <div className="sticky top-0 left-0 bg-white border-b px-5 py-2 w-full flex justify-between items-center gap-8">
+      <div className="sticky top-0 left-0 bg-white border-b px-5 py-3 w-full flex justify-between items-center">
         <div className="flex items-center gap-8">
           <img alt="Google" src={googleLight} className="w-24" />
           <div className="w-[692px] border shadow-md rounded-3xl px-4 py-2.5 flex justify-between gap-3">
@@ -86,129 +70,267 @@ function App() {
               <GridIcon />
             </div>
           </button>
-          <button
-            ref={avatarRef}
-            className="p-1 rounded-full hover:bg-google-gray"
-            onClick={() => setShowContact(!showContact)}
-          >
-            <div className="w-8 h-8 rounded-full bg-contain bg-center bg-[url('./assets/images/cat.webp')]"></div>
-          </button>
         </div>
       </div>
-      <p>About 2,270,000 results (0.31 seconds) </p>
-      <div className="w-5/12 p-4 flex flex-col gap-8">
-        <div className="flex flex-col gap-3">
-          <div className="flex items-center gap-2">
-            <img src={catImage} className="w-8 h-8" alt="about" />
-            <span className="text-lg text-blue-800">About Me</span>
+      <div className="px-52 py-4 w-10/12 flex items-start gap-16">
+        <div className="w-5/12 p-4 flex flex-col gap-4 basis-4/6">
+          <span className="text-gray-700">5 results (0.01 seconds) </span>
+          <span className="text-2xl text-blue-900 mt-4">Work Experience</span>
+          <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <img
+                    src={casewareImage}
+                    className="w-8 h-8 bg-google-gray rounded-full p-1"
+                    alt="work"
+                  />
+                  <div className="flex flex-col">
+                    <span>Caseware</span>
+                    <span className="text-sm text-gray-700">
+                      https://www.caseware.com
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-xl text-violet-700">
+                  Software Developer
+                </span>
+                <span className="text-gray-700">
+                  January 2022 - August 2022
+                </span>
+              </div>
+
+              <p className="text-gray-800">
+                My second internship was for 8 months at a medium sized auditing
+                company called Caseware. At the time I was working, Caseware was
+                in a transitional stage to fully move all their products to
+                cloud providers. As such, most of what I worked on were related
+                to this. Some of the major things I did include development of a
+                routing microservice to handle incoming requests, and system
+                improvements to better support client needs.
+              </p>
+              <div className="flex gap-2">
+                {["Java", "Spring Boot", "AWS DynamoDB", "Redis", "C++"].map(
+                  (language) => (
+                    <span className="bg-google-gray px-3 py-1 rounded-3xl text-sm">
+                      {language}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <img
+                    src={skatescribeImage}
+                    className="w-8 h-8 bg-google-gray rounded-full p-1"
+                    alt="work"
+                  />
+                  <div className="flex flex-col">
+                    <span>Skatescribe</span>
+                    <span className="text-sm text-gray-700">
+                      https://skatescribe.com
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-xl text-violet-700">
+                  Full Stack Developer
+                </span>
+                <span className="text-gray-700">May 2021 - August 2021</span>
+              </div>
+
+              <p className="text-gray-900">
+                My first internship was for 4 months at a startup called
+                Skatescribe. Backed by multiple NHL investors, Skatescribe is
+                revolutionizing the skate sharpening industry by using machines,
+                leading to high quality cuts that cannot be replicated anywhere
+                else. What I worked on during my time here was developing
+                measures to improve operational safety and automation to reduce
+                the amount of interaction an operator has with the software.
+              </p>
+              <div className="flex gap-2">
+                {[
+                  "Angular",
+                  "Python",
+                  "Python Flask",
+                  "SocketIO",
+                  "PostgreSQL",
+                ].map((language) => (
+                  <span className="bg-google-gray px-3 py-1 rounded-3xl text-sm">
+                    {language}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
-          <p className="text-gray-900">
-            Hello! I'm Daniel Zhang, a 4th year Computer Science student at the
-            University of Toronto. My favourite part of programming is
-            everything frontend related. It would be a dream of mine to code
-            something so appealing that every user who enters goes "Holy !@#$
-            this looks so good!" or something along those lines. That hasn't
-            happened yet, but slowly and surely I'm getting there through all
-            the experiences I've gained from various courses I've taken
-            throughout my degree and my amazing internship experiences.
+          <span className="text-2xl text-blue-900 mt-4">Projects</span>
+          <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <img
+                    src={ecosquadImage}
+                    className="w-8 h-8 bg-google-gray rounded-full p-1"
+                    alt="work"
+                  />
+                  <div className="flex flex-col">
+                    <span>Ecosquad</span>
+                    <span className="text-sm text-gray-700">
+                      https://github.com/dz365/project-ecosquad
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span className="text-xl text-violet-700">Ecosquad</span>
+              <p className="text-gray-900">
+                Ecosquad is a web app developed by me and a friend of mine. The
+                inspiration behind it was that we wanted a place where we could
+                upload wildlife discoveries that we would make from time to
+                time. Hence we made a citizen scientist app where users could
+                share, search, and view discoveries on an interactive map.
+              </p>
+              <div className="flex gap-2">
+                {[
+                  "React",
+                  "MapLibre GL",
+                  "ExpressJS",
+                  "PostgreSQL",
+                  "Meilisearch",
+                ].map((language) => (
+                  <span className="bg-google-gray px-3 py-1 rounded-3xl text-sm">
+                    {language}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <img
+                    src={webGalleryImage}
+                    className="w-8 h-8 bg-google-gray rounded-full p-1"
+                    alt="work"
+                  />
+                  <div className="flex flex-col">
+                    <span>Web Gallery</span>
+                    <span className="text-sm text-gray-700">
+                      https://github.com/dz365/Web-Gallery
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span className="text-xl text-violet-700">Web Gallery</span>
+              <p className="text-gray-900">
+                Web Gallery is a web app that allows people to upload and view
+                photos and attach comments. Ultimately, this app was just to
+                test my understanding of the basics of web programming. Features
+                like authentication and authorization, pagination were also
+                implemented.
+              </p>
+              <div className="flex gap-2">
+                {["HTML", "CSS", "Javascript", "ExpressJS", "SQLite"].map(
+                  (language) => (
+                    <span className="bg-google-gray px-3 py-1 rounded-3xl text-sm">
+                      {language}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <img
+                    src={asteroidsImage}
+                    className="w-8 h-8 bg-google-gray rounded-full p-1"
+                    alt="work"
+                  />
+                  <div className="flex flex-col">
+                    <span>Asteroid Remake</span>
+                    <span className="text-sm text-gray-700">
+                      https://github.com/dz365/Asteroid-Remake
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span className="text-xl text-violet-700">Asteroid Remake</span>
+              <p className="text-gray-900">
+                This was a project that I did along with a friend quite a while
+                back, but I had so much fun creating that I decided to include
+                it here. It's also nice to be reminded of how far I've come in
+                such a short period of time. As per the name, this was a remake
+                of Asteroids by Altari, alongisde additional features like
+                powerups.
+              </p>
+              <div className="flex gap-2">
+                {["Java", "Java Swing"].map((language) => (
+                  <span className="bg-google-gray px-3 py-1 rounded-3xl text-sm">
+                    {language}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="border rounded-lg p-4 flex flex-col gap-4 basis-2/6">
+          <div className="flex items-center justify-between items-center">
+            <div className="basis-7/12 flex flex-col">
+              <span className="text-3xl">Daniel Zhang</span>
+              <span className="text-sm text-gray-700">dwqz365@gmail.com</span>
+            </div>
+            <img src={catImage} className="w-16 h-16" alt="about" />
+          </div>
+          <p className="text-gray-800 text-sm">
+            Hey there! Thanks for visiting. I'm Daniel Zhang, a 4th year
+            Computer Science student at the University of Toronto. My dream is
+            to work on something that everyone can appreciate. Hasn't happened
+            yet, but I'm slowly getting there through all the experiences I've
+            gained from various courses I've taken throughout my degree and my
+            amazing internship experiences.
           </p>
-          <p className="text-gray-900">
+          <p className="text-gray-800 text-sm">
             When I'm not thinking about how I'm going to land my first full time
-            job, you can catch me watching various shows (ahem anime),
-            sketching, and learning Mandarin so one day I can revisit without
-            aid the place where I spent most of my childhood.
+            job, you can catch me watching anime, sketching, and learning
+            Mandarin so one day I can revisit the place where I spent most of my
+            childhood.
           </p>
-        </div>
-        <div className="flex flex-col gap-3">
-          <div className="flex items-center gap-2">
-            <img src={briefcaseImage} className="w-8 h-8" alt="work" />
-            <span className="text-lg text-blue-800">Work Experience</span>
+          <div className="flex flex-col gap-2">
+            <span className="text-lg">Profile</span>
+            <div className="w-full flex gap-4">
+              <a
+                href="https://www.linkedin.com/in/dz365/"
+                rel="noreferrer"
+                target="_blank"
+                className="flex flex-col items-center gap-2 hover:underline"
+              >
+                <div className="w-6 h-6 bg-[url('./assets/icons/linkedin.svg')] bg-contain"></div>
+                <span className="text-sm text-blue-800">LinkedIn</span>
+              </a>
+              <a
+                href="https://github.com/dz365"
+                rel="noreferrer"
+                target="_blank"
+                className="flex flex-col items-center gap-2 hover:underline"
+              >
+                <div className="w-6 h-6 bg-[url('./assets/icons/github.svg')] bg-contain"></div>
+                <span className="text-sm text-blue-800">Github</span>
+              </a>
+              <a
+                href={resume}
+                rel="noreferrer"
+                target="_blank"
+                className="flex flex-col items-center gap-2 hover:underline"
+              >
+                <div className="w-6 h-6 bg-[url('./assets/images/docs.webp')] bg-contain"></div>
+                <span className="text-sm text-blue-800">Resume</span>
+              </a>
+            </div>
           </div>
-          <div className="flex justify-between">
-            <span>Software Developer @ Caseware</span>
-            <span>January 2022 - August 2022</span>
-          </div>
-          <p className="text-gray-900">
-            My second internship was for 8 months at a medium sized auditing
-            company called Caseware. At the time I was working, Caseware was in
-            a transitional stage to fully move all their products to cloud
-            providers. As such, most of what I worked on were related to this.
-            Some of the major things I did include development of a routing
-            microservice to handle incoming requests, and system improvements to
-            better support client needs.
-          </p>
-          <span>
-            Tech stack used: Java + Spring Boot, AWS DynamoDB, Redis, C++
-          </span>
-        </div>
-        <div className="flex flex-col gap-3">
-          <div className="flex items-center gap-2">
-            <img src={briefcaseImage} className="w-8 h-8" alt="work" />
-            <span className="text-lg text-blue-800">Work Experience</span>
-          </div>
-          <div className="flex justify-between">
-            <span>Full Stack Developer @ Skatescribe</span>
-            <span>May 2021 - August 2021</span>
-          </div>
-          <p className="text-gray-900">
-            My first internship was for 4 months at a startup called
-            Skatescribe. Backed by multiple NHL investors, Skatescribe is
-            revolutionizing the skate sharpening industry by using machines,
-            leading to high quality cuts that cannot be replicated anywhere
-            else. What I worked on during my time here was developing measures
-            to improve operational safety and automation to reduce the amount of
-            interaction an operator has with the software.
-          </p>
-          <span>
-            Tech stack used: Angular, Python + Flask, PostgreSQL, SocketIO
-          </span>
-        </div>
-        <div className="flex flex-col gap-3">
-          <div className="flex items-center gap-2">
-            <img src={programmingImage} className="w-8 h-8" alt="project" />
-            <span className="text-lg text-blue-800">Project</span>
-          </div>
-          <span>Ecosquad</span>
-          <p className="text-gray-900">
-            Ecosquad is a web app developed by me and a friend of mine. The
-            inspiration behind it was that we wanted a place where we could
-            upload wildlife discoveries that we would make from time to time.
-            Hence we made a citizen scientist app where users could share,
-            search, and view discoveries on an interactive map.
-          </p>
-          <span>
-            Tech stack used: React, MapLibre GL, ExpressJS, PostgreSQL,
-            Meilisearch
-          </span>
-        </div>
-        <div className="flex flex-col gap-3">
-          <div className="flex items-center gap-2">
-            <img src={programmingImage} className="w-8 h-8" alt="project" />
-            <span className="text-lg text-blue-800">Project</span>
-          </div>
-          <span>Web Gallery</span>
-          <p className="text-gray-900">
-            Web Gallery is a web app that allows people to upload and view
-            photos and attach comments. Ultimately, this app was just to test my
-            understanding of the basics of web programming. Features like
-            authentication and authorization, pagination were also included.
-          </p>
-          <span>Tech stack used: HTML, CSS, JS, ExpressJS, SQLite</span>
-        </div>
-        <div className="flex flex-col gap-3">
-          <div className="flex items-center gap-2">
-            <img src={programmingImage} className="w-8 h-8" alt="project" />
-            <span className="text-lg text-blue-800">Project</span>
-          </div>
-          <span>Asteroids Remake</span>
-          <p className="text-gray-900">
-            This was a project that I did along with a friend quite a while
-            back, but I had so much fun creating that I decided to include it
-            here. It's also nice to be reminded of how far I've come in such a
-            short period of time. As per the name, this was a remake of
-            Asteroids by Altari, alongisde additional features like powerups.
-          </p>
-          <span>Tech stack used: Java, Java Swing</span>
         </div>
       </div>
       {showOptions && (
@@ -232,59 +354,6 @@ function App() {
           <button className="p-2 hover:bg-blue-gray rounded-xl flex flex-col items-center justify-center gap-2">
             <div className="w-14 h-14 bg-contain bg-center bg-[url('./assets/images/docs.webp')]"></div>
             <span>Resume</span>
-          </button>
-        </div>
-      )}
-      {showContact && (
-        <div
-          ref={contactDivRef}
-          className="flex flex-col gap-3 bg-blue-gray p-2 rounded-lg w-72 shadow z-10 fixed top-16 right-4"
-        >
-          <div className="bg-white rounded-lg p-2 flex flex-col gap-4">
-            <div className="flex items-center gap-4">
-              <img
-                src={catImage}
-                alt="avatar"
-                className="w-14 h-14 rounded-full border"
-              />
-              <div>
-                <div className="text-green-600">Daniel Zhang</div>
-                <div className="text-gray-500 text-sm font-light">
-                  dwqz365@gmail.com
-                </div>
-              </div>
-            </div>
-            <div className="w-full flex flex-col">
-              <div className="self-center w-11/12 h-1 border-t mb-1"></div>
-              <div className="flex flex-col gap-2">
-                <div className="mx-6 flex items-center gap-8">
-                  <div className="w-6 h-6 bg-[url('./assets/icons/linkedin.svg')] bg-contain"></div>
-                  <a
-                    href="https://www.linkedin.com/in/dz365/"
-                    rel="noreferrer"
-                    target="_blank"
-                    className="text-sm text-gray-900 opacity-90"
-                  >
-                    /dz365
-                  </a>
-                </div>
-                <div className="mx-6 flex items-center gap-8">
-                  <div className="w-6 h-6 bg-[url('./assets/icons/github.svg')] bg-contain"></div>
-                  <a
-                    href="https://github.com/dz365"
-                    rel="noreferrer"
-                    target="_blank"
-                    className="text-sm text-gray-900 opacity-90"
-                  >
-                    /dz365
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button className="mx-8 flex items-center gap-8 opacity-75">
-            <div className="w-4 h-4 bg-logout bg-contain bg-center bg-no-repeat"></div>
-            <span className="text-sm">Sign out</span>
           </button>
         </div>
       )}

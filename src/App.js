@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { ReactComponent as GridIcon } from "./assets/icons/grid.svg";
 import { ReactComponent as SearchIcon } from "./assets/icons/search.svg";
 import { ReactComponent as XMarkIcon } from "./assets/icons/xmark.svg";
-import { ReactComponent as MicrophoneIcon } from "./assets/icons/microphone.svg";
-import { ReactComponent as CameraIcon } from "./assets/icons/camera.svg";
 import catImage from "./assets/images/cat.webp";
 import casewareImage from "./assets/images/caseware.webp";
 import skatescribeImage from "./assets/images/skatescribe.webp";
@@ -38,10 +36,10 @@ function App() {
 
   return (
     <div className="w-full h-screen">
-      <div className="sticky top-0 left-0 bg-white border-b px-5 py-3 w-full flex justify-between items-center">
-        <div className="flex items-center gap-8">
+      <div className="sticky top-0 left-0 bg-white border-b px-5 py-3 w-full flex items-center">
+        <div className="w-full flex md:flex-row flex-col items-center gap-2 md:gap-8">
           <img alt="Google" src={googleLight} className="w-24" />
-          <div className="w-[692px] border shadow-md rounded-3xl px-4 py-2.5 flex justify-between gap-3">
+          <div className="w-full max-w-lg border shadow-md rounded-3xl px-4 py-2.5 flex justify-between gap-3">
             <span className="text-gray-700 pr-2">daniel zhang website</span>
             <div className="flex items-center gap-3">
               <div className="w-6 h-6 opacity-50">
@@ -49,33 +47,27 @@ function App() {
               </div>
               <div className="w-1 h-6 border-l"></div>
               <div className="w-6 h-6">
-                <MicrophoneIcon />
-              </div>
-              <div className="w-6 h-6">
-                <CameraIcon />
-              </div>
-              <div className="w-6 h-6">
                 <SearchIcon />
               </div>
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-2">
-          <button
-            ref={gridRef}
-            className="z-10 p-2 rounded-full hover:bg-google-gray"
-            onClick={() => setShowOptions(!showOptions)}
-          >
-            <div className="w-6">
-              <GridIcon />
-            </div>
-          </button>
-        </div>
+        <button
+          ref={gridRef}
+          className="fixed top-3.5 right-4 z-10 p-2 rounded-full hover:bg-google-gray"
+          onClick={() => setShowOptions(!showOptions)}
+        >
+          <div className="w-6">
+            <GridIcon />
+          </div>
+        </button>
       </div>
-      <div className="px-52 py-4 w-10/12 flex items-start gap-16">
-        <div className="w-5/12 p-4 flex flex-col gap-4 basis-4/6">
-          <span className="text-gray-700">5 results (0.01 seconds) </span>
-          <span className="text-2xl text-blue-900 mt-4">Work Experience</span>
+      <div className="md:px-52 px-2 py-4 w-full md:w-10/12 flex flex-col-reverse md:flex-row md:items-start gap-16">
+        <div className="md:w-5/12 flex flex-col  md:basis-4/6">
+          <span className="text-sm text-gray-700">
+            5 results (0.01 seconds)
+          </span>
+          <span className="text-2xl text-blue-900 my-4">Work Experience</span>
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-3">
               <div className="flex items-center justify-between">
@@ -93,7 +85,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col md:flex-row md:items-center justify-between">
                 <span className="text-xl text-violet-700">
                   Software Developer
                 </span>
@@ -111,7 +103,7 @@ function App() {
                 routing microservice to handle incoming requests, and system
                 improvements to better support client needs.
               </p>
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap	">
                 {["Java", "Spring Boot", "AWS DynamoDB", "Redis", "C++"].map(
                   (language) => (
                     <span className="bg-google-gray px-3 py-1 rounded-3xl text-sm">
@@ -137,7 +129,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col md:flex-row md:items-center justify-between">
                 <span className="text-xl text-violet-700">
                   Full Stack Developer
                 </span>
@@ -153,7 +145,7 @@ function App() {
                 measures to improve operational safety and automation to reduce
                 the amount of interaction an operator has with the software.
               </p>
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap	">
                 {[
                   "Angular",
                   "Python",
@@ -168,7 +160,7 @@ function App() {
               </div>
             </div>
           </div>
-          <span className="text-2xl text-blue-900 mt-4">Projects</span>
+          <span className="text-2xl text-blue-900 my-4">Projects</span>
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-3">
               <div className="flex items-center justify-between">
@@ -194,7 +186,7 @@ function App() {
                 time. Hence we made a citizen scientist app where users could
                 share, search, and view discoveries on an interactive map.
               </p>
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap	">
                 {[
                   "React",
                   "MapLibre GL",
@@ -232,7 +224,7 @@ function App() {
                 like authentication and authorization, pagination were also
                 implemented.
               </p>
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap	">
                 {["HTML", "CSS", "Javascript", "ExpressJS", "SQLite"].map(
                   (language) => (
                     <span className="bg-google-gray px-3 py-1 rounded-3xl text-sm">
@@ -267,7 +259,7 @@ function App() {
                 of Asteroids by Altari, alongisde additional features like
                 powerups.
               </p>
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap	">
                 {["Java", "Java Swing"].map((language) => (
                   <span className="bg-google-gray px-3 py-1 rounded-3xl text-sm">
                     {language}
@@ -277,7 +269,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="border rounded-lg p-4 flex flex-col gap-4 basis-2/6">
+        <div className="border rounded-lg p-4 flex flex-col gap-4 md:basis-2/6">
           <div className="flex items-center justify-between items-center">
             <div className="basis-7/12 flex flex-col">
               <span className="text-3xl">Daniel Zhang</span>

@@ -48,34 +48,30 @@ function App() {
             </div>
           </div>
         </div>
-        <button
-          ref={gridRef}
-          className="fixed top-3.5 right-4 z-10 p-2 rounded-full hover:bg-google-gray"
-          onClick={() => setShowOptions(!showOptions)}
-        >
-          <div className="w-6">
-            <GridIcon />
-          </div>
-        </button>
       </div>
-      <div className="2xl:ml-52 2xl:w-8/12 xl:ml-40 xl:w-10/12 px-2 py-4 w-10/12 m-auto lg:ml-32 lg:w-10/12 flex flex-col-reverse lg:flex-row lg:items-start gap-16">
-        <div className="lg:w-5/12 flex flex-col lg:basis-4/6">
-          <span className="text-sm text-gray-700">
-            5 results (0.01 seconds)
-          </span>
-          <span className="text-2xl text-blue-900 my-4">Work Experience</span>
-          <div className="flex flex-col gap-10">
+      <div className="2xl:ml-52 xl:ml-40 lg:ml-32 2xl:w-8/12 px-2 py-4 w-10/12 m-auto">
+        <span className="text-sm text-gray-700">5 results (0.01 seconds)</span>
+        <div className="mt-4 lg:mt-0 flex flex-col-reverse lg:flex-row lg:items-start lg:gap-16">
+          <div className="flex flex-col lg:basis-4/6">
+            <span className="text-2xl text-blue-900 my-4">Work Experience</span>
             <WorkExperienceHits />
-          </div>
-          <span className="text-2xl text-blue-900 my-4">Projects</span>
-          <div className="flex flex-col gap-10">
+            <span className="text-2xl text-blue-900 my-4">Projects</span>
             <ProjectHits />
           </div>
-        </div>
-        <div className="border rounded-lg p-4 lg:basis-2/6">
-          <AboutMeCard />
+          <div className="lg:basis-2/6">
+            <AboutMeCard />
+          </div>
         </div>
       </div>
+      <button
+        ref={gridRef}
+        className="fixed top-2 right-2 lg:top-3.5 lg:right-4 z-10 p-2 rounded-full hover:bg-google-gray"
+        onClick={() => setShowOptions(!showOptions)}
+      >
+        <div className="w-6">
+          <GridIcon />
+        </div>
+      </button>
       {showOptions && (
         <div
           ref={divRef}

@@ -7,7 +7,7 @@ import resume from "../assets/Daniel_Zhang_Resume.pdf";
 
 const AboutMeCard = () => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="border rounded-lg p-4 flex flex-col gap-4">
       <div className="flex items-center justify-between items-center">
         <div className="basis-7/12 flex flex-col">
           <span className="text-3xl">Daniel Zhang</span>

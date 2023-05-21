@@ -4,7 +4,7 @@ import SearchHit from "./SearchHit";
 
 const WorkExperienceHits = () => {
   return (
-    <>
+    <div className="flex flex-col gap-10">
       <SearchHit
         image={CASEWARE.logo}
         pageTitle={CASEWARE.company}
@@ -23,7 +23,7 @@ const WorkExperienceHits = () => {
         description={SKATESCRIBE.description}
         additionalInfo={<BubbleList list={SKATESCRIBE.technologies} />}
       />
-    </>
+    </div>
   );
 };
 

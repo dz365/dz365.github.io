@@ -5,10 +5,12 @@ import { ReactComponent as XMarkIcon } from "./assets/icons/xmark.svg";
 import catImage from "./assets/images/cat.webp";
 import resume from "./assets/Daniel_Zhang_Resume.pdf";
 import googleLight from "./assets/images/google-light.png";
-import BubbleList from "./components/BubbleList";
-import SearchHit from "./components/SearchHit";
-import { CASEWARE, SKATESCRIBE } from "./constants/WorkExperiences";
-import { ASTEROIDS, ECOSQUAD, WEBGALLERY } from "./constants/Projects";
+import linkedInIcon from "./assets/icons/linkedin.svg";
+import githubIcon from "./assets/icons/github.svg";
+import resumeIcon from "./assets/images/docs.webp";
+import ProfileLink from "./components/ProfileLink";
+import WorkExperienceHits from "./components/WorkExperienceHits";
+import ProjectHits from "./components/ProjectHits";
 function App() {
   const [showOptions, setShowOptions] = useState(false);
 
@@ -34,8 +36,8 @@ function App() {
   }, []);
 
   return (
-    <div className="w-full h-screen">
-      <div className="sticky top-0 left-0 bg-white border-b px-5 py-3 w-full flex items-center">
+    <div className="w-full h-fit">
+      <div className="sticky top-0 z-10 left-0 bg-white border-b px-5 py-3 w-full flex items-center">
         <div className="w-full flex lg:flex-row flex-col items-center gap-2 lg:gap-8">
           <img alt="Google" src={googleLight} className="w-24" />
           <div className="w-full max-w-lg border shadow-md rounded-3xl px-4 py-2.5 flex justify-between gap-3">
@@ -68,54 +70,11 @@ function App() {
           </span>
           <span className="text-2xl text-blue-900 my-4">Work Experience</span>
           <div className="flex flex-col gap-10">
-            <SearchHit
-              image={CASEWARE.logo}
-              pageTitle={CASEWARE.company}
-              pageLink={CASEWARE.url}
-              hitTitle={CASEWARE.jobTitle}
-              date={CASEWARE.duration}
-              description={CASEWARE.description}
-              additionalInfo={<BubbleList list={CASEWARE.technologies} />}
-            />
-            <SearchHit
-              image={SKATESCRIBE.logo}
-              pageTitle={SKATESCRIBE.company}
-              pageLink={SKATESCRIBE.url}
-              hitTitle={SKATESCRIBE.jobTitle}
-              date={SKATESCRIBE.duration}
-              description={SKATESCRIBE.description}
-              additionalInfo={<BubbleList list={SKATESCRIBE.technologies} />}
-            />
+            <WorkExperienceHits />
           </div>
           <span className="text-2xl text-blue-900 my-4">Projects</span>
           <div className="flex flex-col gap-10">
-            <SearchHit
-              image={ECOSQUAD.logo}
-              pageTitle={ECOSQUAD.name}
-              pageLink={ECOSQUAD.url}
-              hitTitle={ECOSQUAD.name}
-              date={ECOSQUAD.duration}
-              description={ECOSQUAD.description}
-              additionalInfo={<BubbleList list={ECOSQUAD.technologies} />}
-            />
-            <SearchHit
-              image={WEBGALLERY.logo}
-              pageTitle={WEBGALLERY.name}
-              pageLink={WEBGALLERY.url}
-              hitTitle={WEBGALLERY.name}
-              date={WEBGALLERY.duration}
-              description={WEBGALLERY.description}
-              additionalInfo={<BubbleList list={WEBGALLERY.technologies} />}
-            />
-            <SearchHit
-              image={ASTEROIDS.logo}
-              pageTitle={ASTEROIDS.name}
-              pageLink={ASTEROIDS.url}
-              hitTitle={ASTEROIDS.name}
-              date={ASTEROIDS.duration}
-              description={ASTEROIDS.description}
-              additionalInfo={<BubbleList list={ASTEROIDS.technologies} />}
-            />
+            <ProjectHits />
           </div>
         </div>
         <div className="border rounded-lg p-4 flex flex-col gap-4 lg:basis-2/6">
@@ -143,33 +102,17 @@ function App() {
           <div className="flex flex-col gap-2">
             <span className="text-lg">Profile</span>
             <div className="w-full flex gap-4">
-              <a
-                href="https://www.linkedin.com/in/dz365/"
-                rel="noreferrer"
-                target="_blank"
-                className="flex flex-col items-center gap-2 hover:underline"
-              >
-                <div className="w-6 h-6 bg-[url('./assets/icons/linkedin.svg')] bg-contain"></div>
-                <span className="text-sm text-blue-800">LinkedIn</span>
-              </a>
-              <a
-                href="https://github.com/dz365"
-                rel="noreferrer"
-                target="_blank"
-                className="flex flex-col items-center gap-2 hover:underline"
-              >
-                <div className="w-6 h-6 bg-[url('./assets/icons/github.svg')] bg-contain"></div>
-                <span className="text-sm text-blue-800">Github</span>
-              </a>
-              <a
-                href={resume}
-                rel="noreferrer"
-                target="_blank"
-                className="flex flex-col items-center gap-2 hover:underline"
-              >
-                <div className="w-6 h-6 bg-[url('./assets/images/docs.webp')] bg-contain"></div>
-                <span className="text-sm text-blue-800">Resume</span>
-              </a>
+              <ProfileLink
+                icon={linkedInIcon}
+                name="LinkedIn"
+                link="https://www.linkedin.com/in/dz365/"
+              />
+              <ProfileLink
+                icon={githubIcon}
+                name="Github"
+                link="https://github.com/dz365"
+              />
+              <ProfileLink icon={resumeIcon} name="Resume" link={resume} />
             </div>
           </div>
         </div>

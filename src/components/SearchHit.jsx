@@ -9,7 +9,7 @@ const SearchHit = ({
 }) => {
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between cursor-pointer group">
         <div className="flex items-center gap-4">
           <img
             src={image}
@@ -18,7 +18,9 @@ const SearchHit = ({
           />
           <div className="flex flex-col">
             <span>{pageTitle}</span>
-            <span className="text-sm text-gray-700">{pageLink}</span>
+            <span className="text-sm text-gray-700 group-hover:underline">
+              {pageLink}
+            </span>
           </div>
         </div>
       </div>

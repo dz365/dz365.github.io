@@ -58,8 +58,8 @@ function App() {
           </div>
         </button>
       </div>
-      <div className="lg:px-52 px-2 py-4 w-full lg:w-10/12 flex flex-col-reverse lg:flex-row lg:items-start gap-16">
-        <div className="lg:w-5/12 flex flex-col  lg:basis-4/6">
+      <div className="2xl:ml-52 2xl:w-8/12 xl:ml-40 xl:w-10/12 px-2 py-4 w-10/12 m-auto lg:ml-32 lg:w-10/12 flex flex-col-reverse lg:flex-row lg:items-start gap-16">
+        <div className="lg:w-5/12 flex flex-col lg:basis-4/6">
           <span className="text-sm text-gray-700">
             5 results (0.01 seconds)
           </span>

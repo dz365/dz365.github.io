@@ -35,11 +35,21 @@ function App() {
         </span>
         <div className="mt-4 lg:mt-0 flex flex-col-reverse lg:flex-row lg:items-start lg:gap-16">
           <div className="flex flex-col lg:basis-4/6">
-            <span ref={workRef} className="text-2xl text-blue-900 my-4">
+            <span
+              ref={workRef}
+              className={`text-2xl my-4  ${
+                theme === "dark" ? "text-blue-400" : "text-blue-900"
+              }`}
+            >
               Work Experience
             </span>
             <WorkExperienceHits />
-            <span ref={projectRef} className="text-2xl text-blue-900 my-4">
+            <span
+              ref={projectRef}
+              className={`text-2xl my-4  ${
+                theme === "dark" ? "text-blue-400" : "text-blue-900"
+              }`}
+            >
               Projects
             </span>
             <ProjectHits />

@@ -62,7 +62,7 @@ const Navigation = ({ aboutRef, workRef, projectRef }) => {
       {showOptions && (
         <div
           ref={divRef}
-          className={`z-10 fixed top-16 right-4 w-80 bg-white rounded-lg border shadow-md p-4 grid grid-cols-2 gap-2 ${
+          className={`z-10 fixed top-16 right-4 w-80 rounded-lg border shadow-md p-4 grid grid-cols-2 gap-2 ${
             theme === "dark"
               ? "bg-neutral-800 text-gray-300 border-gray-500"
               : "bg-white"

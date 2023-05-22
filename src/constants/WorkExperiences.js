@@ -27,7 +27,7 @@ const SKATESCRIBE = {
     else. What I worked on during my time here was developing
     measures to improve operational safety and automation to reduce
     the amount of interaction an operator has with the software.`,
-  technologies: ["Angular", "Python", "Python Flask", "SocketIO", "PostgreSQL"],
+  technologies: ["Angular", "Python", "Python Flask", "SocketIO", "PostgreSQL", "Electron"],
 };
 
 export { CASEWARE, SKATESCRIBE };

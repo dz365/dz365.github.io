@@ -1,20 +1,32 @@
 {
   "files": {
-    "main.css": "/static/css/main.dd2a3d90.css",
-    "main.js": "/static/js/main.dbd2714a.js",
-    "static/js/787.71e672d5.chunk.js": "/static/js/787.71e672d5.chunk.js",
-    "static/media/EasyApply.png": "/static/media/EasyApply.2741644312050a3677dc.png",
-    "static/media/me.jpg": "/static/media/me.898758708a4ce3ee4cb1.jpg",
-    "static/media/Resume.pdf": "/static/media/Resume.7c9e6a01fe402be2a7b1.pdf",
-    "static/media/wave.svg": "/static/media/wave.cf8c41953c046fd4b138.svg",
-    "static/media/contact.svg": "/static/media/contact.fde87468e2d16c4b1af0.svg",
+    "main.css": "/static/css/main.0c57c78c.css",
+    "main.js": "/static/js/main.db4a0d12.js",
+    "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
+    "static/media/cat.webp": "/static/media/cat.09c7534431734c5a2f53.webp",
+    "static/media/programing.webp": "/static/media/programing.1b622e00d49d304b2605.webp",
+    "static/media/briefcase.webp": "/static/media/briefcase.4ef94f38ea273c9fd851.webp",
+    "static/media/google-color.webp": "/static/media/google-color.fbb7eb57ff5dbcc38b24.webp",
+    "static/media/google-light.webp": "/static/media/google-light.f5f0243e03318f66be9b.webp",
+    "static/media/linkedin.svg": "/static/media/linkedin.a236a02cbeb24525fd3bcf55fc6e41c6.svg",
+    "static/media/github.svg": "/static/media/github.6fa18895f6e6c7772cab7049f7e05f59.svg",
+    "static/media/github-light.svg": "/static/media/github-light.97ed8e7eef60d61ca469881dd6f34511.svg",
+    "static/media/skatescribe.webp": "/static/media/skatescribe.095c0f9531404d54aded.webp",
+    "static/media/docs.webp": "/static/media/docs.f163415f05589381ee89.webp",
     "index.html": "/index.html",
-    "main.dd2a3d90.css.map": "/static/css/main.dd2a3d90.css.map",
-    "main.dbd2714a.js.map": "/static/js/main.dbd2714a.js.map",
-    "787.71e672d5.chunk.js.map": "/static/js/787.71e672d5.chunk.js.map"
+    "static/media/ecosquad.webp": "/static/media/ecosquad.51e57fef292dd9a800f0.webp",
+    "static/media/caseware.webp": "/static/media/caseware.261086cf1e4d017b7de9.webp",
+    "static/media/asteroids.webp": "/static/media/asteroids.1203d6de8aa2f62994bf.webp",
+    "static/media/webgallery.webp": "/static/media/webgallery.df2dd56041db741072ae.webp",
+    "static/media/default-mode.webp": "/static/media/default-mode.068b9433d0535a9798e9.webp",
+    "static/media/light-mode.webp": "/static/media/light-mode.cf368e7f6097346887e7.webp",
+    "static/media/dark-mode.webp": "/static/media/dark-mode.7cb667c62c1e8ec4a151.webp",
+    "main.0c57c78c.css.map": "/static/css/main.0c57c78c.css.map",
+    "main.db4a0d12.js.map": "/static/js/main.db4a0d12.js.map",
+    "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dd2a3d90.css",
-    "static/js/main.dbd2714a.js"
+    "static/css/main.0c57c78c.css",
+    "static/js/main.db4a0d12.js"
   ]
 }

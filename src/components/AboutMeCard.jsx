@@ -4,11 +4,11 @@ import githubLightIcon from "../assets/icons/github-light.svg";
 import resumeIcon from "../assets/images/docs.webp";
 import ProfileLink from "../components/ProfileLink";
 import catImage from "../assets/images/cat.webp";
-import resume from "../assets/Daniel_Zhang_Resume.pdf";
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 
 const AboutMeCard = () => {
+  const resume = "Daniel_Zhang_Resume.pdf";
   const { theme } = useContext(ThemeContext);
   return (
     <div
@@ -73,7 +73,7 @@ const AboutMeCard = () => {
             iconLight={resumeIcon}
             iconDark={resumeIcon}
             name="Resume"
-            link={resume}
+            link={process.env.PUBLIC_URL + '/' + resume}
           />
         </div>
       </div>

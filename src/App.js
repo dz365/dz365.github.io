@@ -59,6 +59,7 @@ function App() {
           </div>
         </div>
       </div>
+      <footer className={`w-full text-center text-sm py-4 ${theme === "dark" ? "bg-gray-950 text-gray-500" : "bg-gray-100 text-gray-700"}`}>Created using React with Tailwind CSS</footer>
     </div>
   );
 }

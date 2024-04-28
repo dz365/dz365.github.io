@@ -52,10 +52,12 @@ window.onload = function () {
     password.value = placeholder.slice(0, count);
     count++;
 
-    if (count <= placeholder.length) {
-      setTimeout(typeText, 150); // Typing speed
-    }
+    if (count <= placeholder.length) setTimeout(typeText, 150); // Typing speed
     if (count > 1) passwordIcon.style.visibility = "visible";
+    if (count > placeholder.length) {
+      document.getElementById("login-page").style.display = "none";
+      document.getElementById("main-page").style.display = "block";
+    }
   }
 
   setTimeout(typeText, 750); // Start typing after delay

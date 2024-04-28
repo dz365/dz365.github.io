@@ -16,11 +16,14 @@ body {
   overflow: hidden;
 }
 
+#login-page {
+  height: 100%;
+}
+
 .flex-col-center {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
 }
 
 #login-date-time {
@@ -108,4 +111,50 @@ body {
 
 #main-page {
   display: none;
+}
+
+.draggable {
+  cursor: pointer;
+  position: absolute;
+  width: 64px;
+}
+
+.desktop-file {
+  width: 64px;
+}
+
+.desktop-icon {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+}
+
+.desktop-link {
+  user-select: none; /* Disable text selection */
+  margin-top: 10px;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+#linkedin {
+  top: 24px;
+  right: 24px;
+}
+
+#github {
+  top: 160px;
+  right: 24px;
+}
+
+#linkedin-icon {
+  background-image: url("icons/linkedin.svg");
+}
+
+#github-icon {
+  background-image: url("icons/github.svg");
+  background-color: white;
 }

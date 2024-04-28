@@ -40,7 +40,7 @@ function getTime() {
   });
 }
 
-window.onload = function () {
+window.addEventListener("DOMContentLoaded", function () {
   document.getElementById("login-date").textContent = getDate();
   document.getElementById("login-time").textContent = getTime();
   const password = document.getElementById("password");
@@ -61,4 +61,4 @@ window.onload = function () {
   }
 
   setTimeout(typeText, 750); // Start typing after delay
-};
+});

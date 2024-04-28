@@ -1,9 +1,18 @@
+html,
 body {
-  min-height: 100vh;
+  height: 100%;
+}
+
+main {
+  height: 90%;
+}
+
+body {
   background-image: url("images/wallpaper.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  font-family: -apple-system, BlinkMacSystemFont;
   overflow: hidden;
 }
 
@@ -11,12 +20,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 #login-date-time {
-  font-family: -apple-system, BlinkMacSystemFont;
+  padding: 48px;
   color: #c8a0ff;
-  margin-top: 48px;
 }
 
 #login-date {
@@ -41,7 +50,8 @@ body {
 }
 
 #username {
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 1);
+  font-weight: 600;
 }
 
 #password {
@@ -50,13 +60,23 @@ body {
   border: 0;
   outline: none;
   background-color: #716496;
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
   letter-spacing: 2px;
   font-size: 20px;
 }
 
 #password::placeholder {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
   letter-spacing: normal;
   font-size: 14px;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+#login-field {
+  justify-content: end;
+  padding: 24px;
+  gap: 10px;
 }

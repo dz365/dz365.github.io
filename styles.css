@@ -54,18 +54,30 @@ body {
   font-weight: 600;
 }
 
-#password {
-  padding: 5px 10px;
+#password-container {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #716496;
+  padding: 5px 1px 5px 16px;
   border-radius: 20px;
+}
+
+#password {
+  max-width: 140px;
+  height: 16px;
+  background-color: transparent;
   border: 0;
   outline: none;
-  background-color: #716496;
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: 2px;
-  font-size: 20px;
+  font-size: 28px;
+  transform: translateY(1px);
 }
 
 #password::placeholder {
+  transform: translateY(-5px);
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: normal;
   font-size: 14px;
@@ -78,5 +90,18 @@ body {
 #login-field {
   justify-content: end;
   padding: 24px;
-  gap: 10px;
+  gap: 16px;
+}
+
+#enter-password-icon {
+  width: 28px;
+  height: 28px;
+  background-image: url("icons/circle-arrow-right.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hidden {
+  visibility: hidden;
 }

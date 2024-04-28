@@ -105,3 +105,7 @@ body {
 .hidden {
   visibility: hidden;
 }
+
+#main-page {
+  display: none;
+}

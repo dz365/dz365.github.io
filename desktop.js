@@ -29,6 +29,20 @@ window.addEventListener("DOMContentLoaded", function () {
   const draggableElements = document.querySelectorAll(".draggable");
   draggableElements.forEach((element) => makeElementDraggable(element));
 
+  // Make the entire finder draggable when the titlebar is dragged
+  const finder = document.getElementById("finder");
+
+  // Initially center finder to middle of screen
+  const finderWidth = 768;
+  const finderHeight = 384;
+  const leftPosition = (window.innerWidth - finderWidth) / 2;
+  const topPosition = (window.innerHeight - finderHeight) / 4;
+  finder.style.left = leftPosition + "px";
+  finder.style.top = topPosition + "px";
+
+  const finderTitlebar = document.querySelectorAll(".finder-titlebar");
+  finderTitlebar.forEach(() => makeElementDraggable(finder));
+
   const desktopIcons = [
     {
       id: "linkedin",

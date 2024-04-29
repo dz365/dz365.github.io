@@ -158,3 +158,39 @@ body {
   background-image: url("icons/github.svg");
   background-color: white;
 }
+
+#finder {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  height: 384px;
+  width: 768px;
+  border-radius: 10px;
+  display: flex;
+  border: 0.5px solid rgba(255, 255, 255, 0.25);
+}
+
+#finder-sidebar {
+  width: 128px;
+  border-radius: 10px 0 0 10px;
+  background-color: rgba(40, 38, 45, 0.8);
+  backdrop-filter: blur(24px);
+}
+
+#finder-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#finder-actions {
+  height: 48px;
+  background-color: #38363e;
+  border-top-right-radius: 10px;
+}
+
+#finder-content {
+  flex: 1;
+  background-color: #231d2a;
+  border-bottom-right-radius: 10px;
+}

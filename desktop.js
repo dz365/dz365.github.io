@@ -1,10 +1,10 @@
 window.addEventListener("DOMContentLoaded", function () {
-  function makeElementDraggable(element) {
+  function makeElementDraggable(window, titlebar) {
     let offsetX, offsetY;
 
     function onMouseDown(event) {
-      offsetX = event.clientX - element.getBoundingClientRect().left;
-      offsetY = event.clientY - element.getBoundingClientRect().top;
+      offsetX = event.clientX - window.getBoundingClientRect().left;
+      offsetY = event.clientY - window.getBoundingClientRect().top;
 
       document.addEventListener("mousemove", onMouseMove);
       document.addEventListener("mouseup", onMouseUp);
@@ -14,8 +14,8 @@ window.addEventListener("DOMContentLoaded", function () {
       const newX = event.clientX - offsetX;
       const newY = event.clientY - offsetY;
 
-      element.style.left = newX + "px";
-      element.style.top = newY + "px";
+      window.style.left = newX + "px";
+      window.style.top = newY + "px";
     }
 
     function onMouseUp() {
@@ -23,11 +23,13 @@ window.addEventListener("DOMContentLoaded", function () {
       document.removeEventListener("mouseup", onMouseUp);
     }
 
-    element.addEventListener("mousedown", onMouseDown);
+    titlebar.addEventListener("mousedown", onMouseDown);
   }
 
   const draggableElements = document.querySelectorAll(".draggable");
-  draggableElements.forEach((element) => makeElementDraggable(element));
+  draggableElements.forEach((element) =>
+    makeElementDraggable(element, element)
+  );
 
   // Make the entire finder draggable when the titlebar is dragged
   const finder = document.getElementById("finder");
@@ -41,7 +43,29 @@ window.addEventListener("DOMContentLoaded", function () {
   finder.style.top = topPosition + "px";
 
   const finderTitlebar = document.querySelectorAll(".finder-titlebar");
-  finderTitlebar.forEach(() => makeElementDraggable(finder));
+  finderTitlebar.forEach((titlebar) => makeElementDraggable(finder, titlebar));
+
+  const windows = document.querySelectorAll(".window");
+  windows.forEach((window) => {
+    const titlebar = window.querySelector(".window-titlebar");
+    makeElementDraggable(window, titlebar);
+  });
+
+  const windowActions = document.querySelector(".window-actions");
+
+  // Trigger the hover effect on mouse enter
+  windowActions.addEventListener("mouseenter",  () => {
+    windowActions.querySelectorAll("button").forEach((button) => {
+      button.classList.add("hovered");
+    });
+  });
+
+  // Remove the hover effect on mouse leave
+  windowActions.addEventListener("mouseleave", () => {
+    windowActions.querySelectorAll("button").forEach((button) => {
+      button.classList.remove("hovered");
+    });
+  });
 
   const desktopIcons = [
     {

@@ -5,7 +5,7 @@ window.addEventListener("DOMContentLoaded", function () {
     function onMouseDown(event) {
       offsetX = event.clientX - window.getBoundingClientRect().left;
       offsetY = event.clientY - window.getBoundingClientRect().top;
-
+      window.querySelector("iframe").style.pointerEvents = 'none';
       document.addEventListener("mousemove", onMouseMove);
       document.addEventListener("mouseup", onMouseUp);
     }
@@ -21,6 +21,7 @@ window.addEventListener("DOMContentLoaded", function () {
     function onMouseUp() {
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseup", onMouseUp);
+      window.querySelector("iframe").style.pointerEvents = 'auto';
     }
 
     titlebar.addEventListener("mousedown", onMouseDown);

@@ -200,7 +200,8 @@ body {
   height: 100%;
   background-color: #231d2a;
   border-radius: 10px;
-  max-height: calc(100% - 56px);
+  max-height: calc(100% - 52px);
+  border: 0.5px solid rgba(255, 255, 255, 0.25);
 }
 
 .window-titlebar {

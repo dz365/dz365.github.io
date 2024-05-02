@@ -198,10 +198,10 @@ body {
   left: 50px;
   width: 1024px;
   height: 100%;
-  background-color: #231d2a;
   border-radius: 10px;
   max-height: calc(100% - 52px);
   border: 0.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 32px 40px rgba(0, 0, 0, 0.7);
 }
 
 .window-titlebar {
@@ -278,6 +278,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 8px;
+  border: 0.5px solid rgba(255, 255, 255, 0.25);
 }
 
 .dock-icon {
@@ -298,4 +299,74 @@ body {
   background-image: url("icons/resume.svg");
   background-size: 28px 28px;
   background-color: rgba(255, 255, 255, 0.9);
+}
+
+#reminders-app {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.sidebar {
+  height: 100%;
+  width: 256px;
+  background-color: rgba(40, 38, 45, 0.9);
+  backdrop-filter: blur(24px);
+  border-bottom-left-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reminders-content {
+  flex: 1;
+  background-color: #231d2a;
+  border-bottom-right-radius: 10px;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.section-icon {
+  width: 24px;
+  height: 24px;
+  background-size: 16px 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+}
+
+.section-title {
+  color: white;
+  font-size: 14px;
+}
+
+.all-experiences {
+  background-image: url("icons/multiple-rectangle.svg");
+  background-color: #5acdfa;
+}
+
+.work-experiences {
+  background-image: url("icons/briefcase.svg");
+  background-color: #ffa914;
+}
+
+.projects {
+  background-image: url("icons/desktop.svg");
+  background-color: #148eff;
+}
+
+.count {
+  color: #69666b;
 }

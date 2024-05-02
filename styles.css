@@ -272,4 +272,28 @@ body {
   left: 50%;
   transform: translateX(-50%);
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.dock-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.finder {
+  background-image: url("icons/finder.svg");
+}
+
+.resume {
+  background-image: url("icons/resume.svg");
+  background-size: 28px 28px;
+  background-color: rgba(255, 255, 255, 0.9);
 }

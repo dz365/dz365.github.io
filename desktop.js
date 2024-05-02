@@ -56,21 +56,21 @@ window.addEventListener("DOMContentLoaded", function () {
   windows.forEach((window) => {
     const titlebar = window.querySelector(".window-titlebar");
     makeElementDraggable(window, titlebar);
-  });
 
-  const windowActions = document.querySelector(".window-actions");
+    const windowActions = window.querySelector(".window-actions");
 
-  // Trigger the hover effect on mouse enter
-  windowActions.addEventListener("mouseenter", () => {
-    windowActions.querySelectorAll("button").forEach((button) => {
-      button.classList.add("hovered");
+    // Trigger the hover effect on mouse enter
+    windowActions.addEventListener("mouseenter", () => {
+      windowActions.querySelectorAll("button").forEach((button) => {
+        button.classList.add("hovered");
+      });
     });
-  });
 
-  // Remove the hover effect on mouse leave
-  windowActions.addEventListener("mouseleave", () => {
-    windowActions.querySelectorAll("button").forEach((button) => {
-      button.classList.remove("hovered");
+    // Remove the hover effect on mouse leave
+    windowActions.addEventListener("mouseleave", () => {
+      windowActions.querySelectorAll("button").forEach((button) => {
+        button.classList.remove("hovered");
+      });
     });
   });
 

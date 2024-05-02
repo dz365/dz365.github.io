@@ -267,6 +267,7 @@ body {
   width: 384px;
   height: 48px;
   background-color: rgba(40, 38, 45, 0.8);
+  backdrop-filter: blur(24px);
   position: absolute;
   bottom: 0;
   left: 50%;

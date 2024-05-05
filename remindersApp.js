@@ -74,6 +74,8 @@ function createSidebar(activeSection) {
   sideBarContents.forEach((section) => {
     const newSection = document.createElement("div");
     newSection.classList.add("section");
+    if (activeSection === section.sectionTitle)
+      newSection.classList.add("active-section");
     newSection.innerHTML = `
         <div class="section-info">
           <div class="section-icon ${section.sectionClass}"></div>

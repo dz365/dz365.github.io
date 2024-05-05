@@ -118,7 +118,16 @@ function createReminderContent(section) {
     const divider = document.createElement("div");
     divider.classList.add("divider");
     experienceTimelineElem.appendChild(divider);
+    divider.innerHTML = `&nbsp;`;
   });
+
+  // Remove the last divider
+  const dividers = experienceTimelineElem.getElementsByClassName("divider");
+  if (dividers.length > 0) {
+    const lastDivider = dividers[dividers.length - 1];
+    experienceTimelineElem.removeChild(lastDivider);
+  }
+
   reminderContent.appendChild(experienceTimelineElem);
   return reminderContent;
 }

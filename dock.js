@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", function () {
   function handleReminderAppClick() {
-    displayReminderWindow("All Experiences");
+    displayReminderAppWindow("All Experiences");
   }
 
   const reminderApp = document.getElementById("reminderApp");

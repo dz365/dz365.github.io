@@ -11,8 +11,8 @@ function createTitlebar() {
   return titlebar;
 }
 
-function addWindowActions(window) {
-  const windowActions = window.querySelector(".window-actions");
+function addWindowActions(windowElem) {
+  const windowActions = windowElem.querySelector(".window-actions");
 
   // Trigger the hover effect on mouse enter
   windowActions.addEventListener("mouseenter", () => {
@@ -30,7 +30,20 @@ function addWindowActions(window) {
 
   const closeButton = windowActions.querySelector(".close-button");
   closeButton.addEventListener("click", () => {
-    document.body.removeChild(window);
+    document.body.removeChild(windowElem);
+  });
+
+  const expandButton = windowActions.querySelector(".expand-button");
+  expandButton.addEventListener("click", () => {
+    windowElem.classList.add("expand-transition");
+    setTimeout(() => {
+      windowElem.style.width = window.innerWidth - 2 + "px";
+      windowElem.style.top = "0";
+      windowElem.style.left = "0";
+    }, 100);
+    windowElem.addEventListener("transitionend", () => {
+      windowElem.classList.remove("expand-transition");
+    });
   });
 }
 

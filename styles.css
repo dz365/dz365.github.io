@@ -261,6 +261,7 @@ body {
 }
 
 .window-content iframe {
+  border: 0;
   border-radius: 0 0 10px 10px;
 }
 
@@ -296,7 +297,7 @@ body {
   background-image: url("icons/finder.svg");
 }
 
-.resume {
+#resumeApp {
   background-image: url("icons/resume.svg");
   background-size: 28px 28px;
   background-color: rgba(255, 255, 255, 0.9);

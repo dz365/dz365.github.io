@@ -27,6 +27,11 @@ function addWindowActions(window) {
       button.classList.remove("hovered");
     });
   });
+
+  const closeButton = windowActions.querySelector(".close-button");
+  closeButton.addEventListener("click", () => {
+    document.body.removeChild(window);
+  });
 }
 
 function createWindow(content) {

@@ -123,7 +123,7 @@ function createReminderContent(section) {
   return reminderContent;
 }
 
-function displayReminderWindow(section) {
+function displayReminderAppWindow(section) {
   const reminderApp = document.createElement("div");
   reminderApp.id = "reminders-app";
 

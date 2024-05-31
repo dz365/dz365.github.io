@@ -1,0 +1,31 @@
+.timeline {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.event {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  background-color: skyblue;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+/* Position odd events to the left */
+.event:nth-child(odd) {
+  left: 0;
+}
+
+/* Position even events to the right */
+.event:nth-child(even) {
+  left: calc(100% - 32px);
+}
+
+.connector {
+  position: absolute;
+  height: 2px;
+  background-color: black;
+  transform-origin: top left;
+  z-index: -1;
+}

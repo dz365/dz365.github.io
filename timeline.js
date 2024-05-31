@@ -1,26 +1,16 @@
 window.addEventListener("DOMContentLoaded", function () {
   function connectElements() {
-    const events = document.querySelectorAll('.event');
-
-    for (let i = 0; i < events.length - 1; i++) {
-      let startPoint = getCenter(events[i]);
-      let endPoint = getCenter(events[i + 1]);
-      if (startPoint.x > endPoint.x && startPoint.y < endPoint.y) {
-        [startPoint, endPoint] = [endPoint, startPoint];
-      }
-
-      const distance = Math.hypot(endPoint.x - startPoint.x, endPoint.y - startPoint.y);
-      const angle = Math.atan2(endPoint.y - startPoint.y, endPoint.x - startPoint.x);
-
-      const line = document.createElement("div");
-      line.classList.add("connector")
-      line.style.left = startPoint.x + "px";
-      line.style.top = startPoint.y + "px";
-      line.style.width = distance + "px";
-      line.style.transform = `rotate(${angle}rad)`;
-
-      document.querySelector('.timeline').appendChild(line);
-    }
+    const events = document.querySelectorAll(".event");
+    const startPoint = getCenter(events[0]);
+    const endPoint = getCenter(events[events.length - 1]);
+    const distance = Math.hypot(
+      endPoint.x - startPoint.x,
+      endPoint.y - startPoint.y
+    );
+    const connector = document.querySelector(".connector")
+    connector.style.width = distance + "px";
+    connector.style.left = startPoint.x + "px";
+    connector.style.top = startPoint.y + "px";
   }
 
   function getCenter(element) {
@@ -30,9 +20,25 @@ window.addEventListener("DOMContentLoaded", function () {
 
     return {
       x: rect.left + scrollLeft + rect.width / 2,
-      y: rect.top + scrollTop + rect.height / 2
+      y: rect.top + scrollTop + rect.height / 2,
     };
   }
 
   connectElements();
-})
+  let currentScrollPosition = 0;
+
+  const timeline = document.querySelector(".timeline");
+  document.addEventListener("wheel", (e) => {
+    currentScrollPosition += e.deltaY;
+
+    if (currentScrollPosition < 0) currentScrollPosition = 0;
+
+    if (
+      currentScrollPosition >
+      timeline.scrollWidth - (3 * timeline.clientWidth) / 4
+    )
+      currentScrollPosition =
+        timeline.scrollWidth - (3 * timeline.clientWidth) / 4;
+    timeline.style.transform = `translateX(-${currentScrollPosition}px)`;
+  });
+});

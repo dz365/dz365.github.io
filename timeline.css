@@ -1,15 +1,14 @@
 .timeline {
-  width: 200px;
+  width: 400px;
   margin: 0 auto;
 }
 
 .event {
-  width: 32px;
-  height: 32px;
-  border-radius: 100%;
-  background-color: skyblue;
+  width: 96px;
+  height: 96px;
   position: relative;
-  margin-bottom: 50px;
+  background-color: white;
+  margin-bottom: 200px;
 }
 
 /* Position odd events to the left */
@@ -28,4 +27,42 @@
   background-color: black;
   transform-origin: top left;
   z-index: -1;
+}
+
+.icon {
+  border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 72px;
+  border: 12px solid;
+}
+
+.work {
+  border-color: #c57d43;
+}
+
+.project {
+  border-color: #438bc5;
+}
+
+.skatescribe {
+  background-image: url("./images/skatescribe.png");
+}
+
+.caseware {
+  background-image: url("./images/caseware.png");
+}
+
+.sddh {
+  background-image: url("./images/sddh.png");
+}
+
+.asteroids {
+  background-image: url("./images/asteroids.png");
+  background-size: 48px;
+}
+
+.ecosquad {
+  background-image: url("./images/ecosquad.png");
+  background-size: 64px;
 }

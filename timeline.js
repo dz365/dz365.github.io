@@ -18,17 +18,21 @@ window.addEventListener("DOMContentLoaded", function () {
       line.style.top = startPoint.y + "px";
       line.style.width = distance + "px";
       line.style.transform = `rotate(${angle}rad)`;
-      
+
       document.querySelector('.timeline').appendChild(line);
     }
   }
 
   function getCenter(element) {
     const rect = element.getBoundingClientRect();
+    const scrollTop = window.scrollY;
+    const scrollLeft = window.scrollX;
+
     return {
-      x: rect.left + rect.width / 2,
-      y: rect.top + rect.height / 2
+      x: rect.left + scrollLeft + rect.width / 2,
+      y: rect.top + scrollTop + rect.height / 2
     };
   }
+
   connectElements();
 })

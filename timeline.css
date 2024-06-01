@@ -92,10 +92,17 @@ body {
   background-color: white;
   line-height: 1.6;
   color: #333;
-  border-left: 6px solid #3498db;
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.info-body.work {
+  border-left: 6px solid #c57d43;
+}
+
+.info-body.project {
+  border-left: 6px solid #3498db;
 }
 
 .tech-list {
@@ -115,6 +122,10 @@ body {
   border-radius: 8px;
 }
 
+.work .tech-item {
+  background-color: #c68957;
+}
+
 .title {
   font-size: 24px;
   font-weight: bold;
@@ -124,7 +135,7 @@ body {
 .position {
   font-size: 20px;
   font-weight: 600;
-  color: #2980b9;
+  color: #c57d43;
 }
 
 .date {
@@ -140,6 +151,7 @@ body {
   margin-top: 16px;
   display: flex;
   text-decoration: none;
+  gap: 4px;
 }
 
 .link {

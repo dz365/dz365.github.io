@@ -29,21 +29,22 @@ const events = [
 const workDescriptions = {
   SDDH: {
     company: "Service Delivery Data Hub Project",
+    link: "https://scarboroughlip.com/current-projects/service-delivery-data-hub-project/",
     position: "Full Stack Developer (Work Learning Experience)",
     date: "November 2023",
     description:
       "My recent work was on the Service Delivery Data Hub project, a collaboration between \
-       Catholic Crosscultural Services (CCS), the University of Toronto Scarborough (UTSC), \
-       and the Toronto East Quadrant Local Immigration Partnership (TEQ LIP). The project \
+       various services and organizations in Toronto. The project \
        aims to improve the settlement experiences of newcomers in Scarborough by providing \
        evidence for better service delivery and planning. When I joined, essential functionalities \
-       were complete, and new features were being developed. My role involved integrating end-to-end \
+       were complete, and new features were being developed to improve the analysis. My role involved integrating end-to-end \
        tests into the build pipeline to ensure that new features did not disrupt existing functionality.",
     technologies: ["Cypress", "JavaScript"],
   },
   Caseware: {
     company: "Caseware International",
-    position: "Software Developer",
+    link: "https://www.caseware.com/",
+    position: "Software Developer Intern",
     date: "January 2022 - August 2022",
     description:
       "My second internship was for 8 months at a medium sized auditing company called Caseware. \
@@ -55,7 +56,8 @@ const workDescriptions = {
   },
   Skatescribe: {
     company: "Skatescribe",
-    position: "Full Stack Developer",
+    link: "https://www.skatescribe.com/",
+    position: "Full Stack Developer Intern",
     date: "May 2021 - August 2021",
     description:
       "My first internship was for 4 months at a startup called Skatescribe. Backed by NHL investors, \
@@ -104,24 +106,38 @@ const projectDescriptions = {
   },
 };
 
+function generateTechListHTML(techList) {
+  let listHTML = '<div class="tech-list">';
+  techList.forEach((tech) => {
+    listHTML += `<span class="tech-item">${tech}</span>`;
+  });
+  listHTML += "</div>";
+  return listHTML;
+}
+
 function updateInfoBodyWithWork(workName) {
   const workInfo = workDescriptions[workName];
   document.querySelector(".info-body").innerHTML = `
-    <p>${workInfo.company}</p>
-    <p>${workInfo.position}</p>
-    <p>${workInfo.date}</p>
-    <p>${workInfo.description}</p>
-    <p>${workInfo.technologies}</p>
+    <a href=${workInfo.link} target="_blank" class="title-link">
+      <span class="title">${workInfo.company}</span>
+      <div class="icon link"></div>
+    </a>
+    <span class="position">${workInfo.position}</span>
+    <span class="date">${workInfo.date}</span>
+    <span class="description">${workInfo.description}</span>
+    ${generateTechListHTML(workInfo.technologies)}
   `;
 }
 
 function updateInfoBodyWithProject(projectName) {
   const projectInfo = projectDescriptions[projectName];
   document.querySelector(".info-body").innerHTML = `
-    <p>${projectInfo.name}</p>
-    <p>${projectInfo.link}</p>
-    <p>${projectInfo.description}</p>
-    <p>${projectInfo.technologies}</p>
+    <a href=${projectInfo.link} target="_blank" class="title-link">
+      <span class="title">${projectInfo.name}</span>
+      <div class="icon link"></div>
+    </a>
+    <span class="description">${projectInfo.description}</span>
+    ${generateTechListHTML(projectInfo.technologies)}
   `;
 }
 
@@ -156,8 +172,6 @@ window.addEventListener("DOMContentLoaded", function () {
     const connector = document.createElement("div");
     connector.classList.add("connector");
     connector.style.width = distance + "px";
-    connector.style.left = startPoint.x + "px";
-    connector.style.top = startPoint.y + "px";
     timeline.appendChild(connector);
   }
 
@@ -175,9 +189,7 @@ window.addEventListener("DOMContentLoaded", function () {
   connectElements();
 
   function dispatchPositionChangeEvent() {
-    const event = new CustomEvent("positionChange", {
-      detail: { message: "Position has changed!" },
-    });
+    const event = new CustomEvent("positionChange");
     const events = document.querySelectorAll(".event");
     events.forEach((eventElem) => eventElem.dispatchEvent(event));
   }
@@ -186,7 +198,7 @@ window.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("wheel", (e) => {
     currentScrollPosition += Math.sign(e.deltaY) * 100;
     if (currentScrollPosition < 0) currentScrollPosition = 0;
-    if (currentScrollPosition + window.innerWidth / 2 > timeline.scrollWidth)
+    if (currentScrollPosition > timeline.scrollWidth)
       currentScrollPosition -= 100;
     timeline.style.transform = `translateX(-${currentScrollPosition}px)`;
     dispatchPositionChangeEvent();

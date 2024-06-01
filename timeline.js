@@ -117,7 +117,8 @@ function generateTechListHTML(techList) {
 
 function updateInfoBodyWithWork(workName) {
   const workInfo = workDescriptions[workName];
-  document.querySelector(".info-body").innerHTML = `
+  const infoBody = document.querySelector(".info-body");
+  infoBody.innerHTML = `
     <a href=${workInfo.link} target="_blank" class="title-link">
       <span class="title">${workInfo.company}</span>
       <div class="icon link"></div>
@@ -127,11 +128,14 @@ function updateInfoBodyWithWork(workName) {
     <span class="description">${workInfo.description}</span>
     ${generateTechListHTML(workInfo.technologies)}
   `;
+  infoBody.className = "info-body";
+  infoBody.classList.add("work");
 }
 
 function updateInfoBodyWithProject(projectName) {
   const projectInfo = projectDescriptions[projectName];
-  document.querySelector(".info-body").innerHTML = `
+  const infoBody = document.querySelector(".info-body");
+  infoBody.innerHTML = `
     <a href=${projectInfo.link} target="_blank" class="title-link">
       <span class="title">${projectInfo.name}</span>
       <div class="icon link"></div>
@@ -139,6 +143,8 @@ function updateInfoBodyWithProject(projectName) {
     <span class="description">${projectInfo.description}</span>
     ${generateTechListHTML(projectInfo.technologies)}
   `;
+  infoBody.className = "info-body";
+  infoBody.classList.add("project");
 }
 
 function updateInfoBody(eventTitle, eventType) {

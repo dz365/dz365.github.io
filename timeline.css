@@ -1,11 +1,19 @@
-body {
+html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  position: relative;
 }
 
 .timeline {
   display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 300px;
 }
 
 .event {
@@ -13,8 +21,12 @@ body {
   height: 96px;
   position: relative;
   background-color: white;
-  margin-right: 500px;
+  margin-left: 500px;
   flex-shrink: 0;
+}
+
+.event:first-of-type {
+  margin-left: 0;
 }
 
 .connector {

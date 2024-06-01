@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", function () {
       endPoint.x - startPoint.x,
       endPoint.y - startPoint.y
     );
-    const connector = document.querySelector(".connector")
+    const connector = document.querySelector(".connector");
     connector.style.width = distance + "px";
     connector.style.left = startPoint.x + "px";
     connector.style.top = startPoint.y + "px";
@@ -29,16 +29,10 @@ window.addEventListener("DOMContentLoaded", function () {
 
   const timeline = document.querySelector(".timeline");
   document.addEventListener("wheel", (e) => {
-    currentScrollPosition += e.deltaY;
-
+    currentScrollPosition += Math.sign(e.deltaY) * 100;
     if (currentScrollPosition < 0) currentScrollPosition = 0;
-
-    if (
-      currentScrollPosition >
-      timeline.scrollWidth - (3 * timeline.clientWidth) / 4
-    )
-      currentScrollPosition =
-        timeline.scrollWidth - (3 * timeline.clientWidth) / 4;
+    if (currentScrollPosition + window.innerWidth / 2 > timeline.scrollWidth)
+      currentScrollPosition -= 100;
     timeline.style.transform = `translateX(-${currentScrollPosition}px)`;
   });
 });

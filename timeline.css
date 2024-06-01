@@ -13,7 +13,7 @@ body {
   display: flex;
   position: absolute;
   bottom: 10px;
-  left: 300px;
+  left: 50%;
 }
 
 .event {

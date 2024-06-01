@@ -148,6 +148,7 @@ function updateInfoBodyWithProject(projectName) {
 }
 
 function updateInfoBody(eventTitle, eventType) {
+  document.querySelector(".info-body").scrollTop = 0;
   if (eventType === "work") updateInfoBodyWithWork(eventTitle);
   else if (eventType === "project") updateInfoBodyWithProject(eventTitle);
 }
@@ -202,6 +203,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
   let currentScrollPosition = 0;
   document.addEventListener("wheel", (e) => {
+    console.log(e.target.parentElement)
+    if (document.querySelector(".info-body").contains(e.target)) return;
     currentScrollPosition += Math.sign(e.deltaY) * 100;
     if (currentScrollPosition < 0) currentScrollPosition = 0;
     if (currentScrollPosition > timeline.scrollWidth)

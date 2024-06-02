@@ -20,13 +20,13 @@ body {
 }
 
 .event {
-  width: 96px;
-  height: 96px;
+  width: 56px;
+  height: 56px;
   position: relative;
   background-color: white;
   flex-shrink: 0;
-  background-size: 72px;
-  border: 12px solid;
+  background-size: 36px;
+  border: 8px solid;
 }
 
 .event:first-of-type {
@@ -73,12 +73,12 @@ body {
 
 .asteroids {
   background-image: url("./images/asteroids.png");
-  background-size: 48px;
+  background-size: 28px;
 }
 
 .ecosquad {
   background-image: url("./images/ecosquad.png");
-  background-size: 64px;
+  background-size: 28px;
 }
 
 .home {
@@ -186,10 +186,12 @@ body {
   text-decoration: none;
   font-size: small;
   color: black;
+  transition: transform 0.2s ease-in-out;
 }
 
 .contact-item:hover {
   text-decoration: underline;
+  transform: scale(115%);
 }
 
 .contact {

@@ -1,8 +1,18 @@
 const events = [
   {
+    type: "project",
+    title: "Asteroids",
+    class: ["asteroids"],
+  },
+  {
     type: "work",
-    title: "SDDH",
-    class: ["sddh"],
+    title: "Skatescribe",
+    class: ["skatescribe"],
+  },
+  {
+    type: "work",
+    title: "Caseware",
+    class: ["caseware"],
   },
   {
     type: "project",
@@ -11,18 +21,8 @@ const events = [
   },
   {
     type: "work",
-    title: "Caseware",
-    class: ["caseware"],
-  },
-  {
-    type: "work",
-    title: "Skatescribe",
-    class: ["skatescribe"],
-  },
-  {
-    type: "project",
-    title: "Asteroids",
-    class: ["asteroids"],
+    title: "SDDH",
+    class: ["sddh"],
   },
 ];
 
@@ -203,7 +203,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   let currentScrollPosition = 0;
   document.addEventListener("wheel", (e) => {
-    console.log(e.target.parentElement)
+    console.log(e.target.parentElement);
     if (document.querySelector(".info-body").contains(e.target)) return;
     currentScrollPosition += Math.sign(e.deltaY) * 100;
     if (currentScrollPosition < 0) currentScrollPosition = 0;

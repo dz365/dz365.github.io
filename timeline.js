@@ -24,6 +24,11 @@ const events = [
     title: "SDDH",
     class: ["sddh"],
   },
+  {
+    type: "about",
+    title: "About Me",
+    class: ["home"],
+  },
 ];
 
 const workDescriptions = {
@@ -106,10 +111,53 @@ const projectDescriptions = {
   },
 };
 
+const aboutMe = {
+  name: "Daniel Zhang",
+  email: "dwqz365@gmail.com",
+  summary:
+    "I'm Daniel Zhang, a 4th year Computer Science student at the \
+     University of Toronto. My dream is to work on something that everyone can appreciate. Hasn't \
+     happened yet, but I'm slowly getting there through all the experiences I've gained from various \
+     courses I've taken throughout my degree and my amazing internship experiences.",
+  contact: [
+    {
+      platform: "Email",
+      link: "mailto:dwqz365@gmail.com",
+    },
+    {
+      platform: "LinkedIn",
+      link: "https://www.linkedin.com/in/dz365/",
+    },
+    {
+      platform: "Github",
+      link: "https://github.com/dz365",
+    },
+    {
+      platform: "Resume",
+      link: "https://dz365.github.io/Daniel_Zhang_Resume.pdf",
+    },
+  ],
+};
+
 function generateTechListHTML(techList) {
-  let listHTML = '<div class="tech-list">';
+  let listHTML = '<div class="list">';
   techList.forEach((tech) => {
     listHTML += `<span class="tech-item">${tech}</span>`;
+  });
+  listHTML += "</div>";
+  return listHTML;
+}
+
+function generateContactListHTML(contactList) {
+  let listHTML = '<div class="list">';
+  contactList.forEach((contact) => {
+    listHTML += `
+      <a href=${
+        contact.link
+      } rel="noreferrer" target="_blank" class="contact-item">
+        <div class="icon contact ${contact.platform.toLowerCase()}"></div>
+        <span>${contact.platform}</span>
+      </a>`;
   });
   listHTML += "</div>";
   return listHTML;
@@ -147,10 +195,23 @@ function updateInfoBodyWithProject(projectName) {
   infoBody.classList.add("project");
 }
 
+function updateInfoBodyWithAbout() {
+  const infoBody = document.querySelector(".info-body");
+  infoBody.innerHTML = `
+    <span class="title">${aboutMe.name}</span>
+    <span class="greeting">Hey there! Thanks for visiting.</span>
+    <span>${aboutMe.summary}</span>
+    <span>${generateContactListHTML(aboutMe.contact)}</span>
+  `;
+  infoBody.className = "info-body";
+  infoBody.classList.add("about");
+}
+
 function updateInfoBody(eventTitle, eventType) {
   document.querySelector(".info-body").scrollTop = 0;
   if (eventType === "work") updateInfoBodyWithWork(eventTitle);
   else if (eventType === "project") updateInfoBodyWithProject(eventTitle);
+  else if (eventType === "about") updateInfoBodyWithAbout();
 }
 
 window.addEventListener("DOMContentLoaded", function () {
@@ -169,6 +230,8 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 
   document.querySelector(".connector").style.width = "100%";
+  timeline.style.transform = `translateX(-${timeline.scrollWidth}px)`;
+  updateInfoBodyWithAbout();
 
   function getCenter(element) {
     const rect = element.getBoundingClientRect();
@@ -180,8 +243,6 @@ window.addEventListener("DOMContentLoaded", function () {
       y: rect.top + scrollTop + rect.height / 2,
     };
   }
-
-  timeline.style.transform = `translateX(-${timeline.scrollWidth}px)`;
 
   function dispatchPositionChangeEvent() {
     const event = new CustomEvent("positionChange");

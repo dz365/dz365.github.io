@@ -55,6 +55,10 @@ body {
   border-color: #438bc5;
 }
 
+.about {
+  border-color: #2e8957;
+}
+
 .skatescribe {
   background-image: url("./images/skatescribe.png");
 }
@@ -75,6 +79,10 @@ body {
 .ecosquad {
   background-image: url("./images/ecosquad.png");
   background-size: 64px;
+}
+
+.home {
+  background-image: url("./icons/home.svg");
 }
 
 .info-body {
@@ -105,7 +113,11 @@ body {
   border-left: 6px solid #3498db;
 }
 
-.tech-list {
+.info-body.about {
+  border-left: 6px solid #2e8957;
+}
+
+.list {
   margin-top: 16px;
   display: flex;
   flex-wrap: wrap;
@@ -160,4 +172,45 @@ body {
   height: 32px;
   background-image: url("./icons/links.svg");
   background-size: 20px;
+}
+
+.greeting {
+  color: #697375;
+}
+
+.contact-item {
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  font-size: small;
+  color: black;
+}
+
+.contact-item:hover {
+  text-decoration: underline;
+}
+
+.contact {
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  background-size: 32px;
+}
+
+.email {
+  background-image: url("./icons/mail.svg");
+}
+
+.linkedin {
+  background-image: url("./icons/linkedin.svg");
+}
+
+.github {
+  background-image: url("./icons/github.svg");
+}
+
+.resume {
+  background-image: url("./icons/resume.svg");
 }

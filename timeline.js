@@ -168,19 +168,7 @@ window.addEventListener("DOMContentLoaded", function () {
     timeline.appendChild(eventElem);
   });
 
-  function connectElements() {
-    const events = document.querySelectorAll(".event");
-    const startPoint = getCenter(events[0]);
-    const endPoint = getCenter(events[events.length - 1]);
-    const distance = Math.hypot(
-      endPoint.x - startPoint.x,
-      endPoint.y - startPoint.y
-    );
-    const connector = document.createElement("div");
-    connector.classList.add("connector");
-    connector.style.width = distance + "px";
-    timeline.appendChild(connector);
-  }
+  document.querySelector(".connector").style.width = "100%";
 
   function getCenter(element) {
     const rect = element.getBoundingClientRect();
@@ -193,7 +181,7 @@ window.addEventListener("DOMContentLoaded", function () {
     };
   }
 
-  connectElements();
+  timeline.style.transform = `translateX(-${timeline.scrollWidth}px)`;
 
   function dispatchPositionChangeEvent() {
     const event = new CustomEvent("positionChange");
@@ -201,9 +189,8 @@ window.addEventListener("DOMContentLoaded", function () {
     events.forEach((eventElem) => eventElem.dispatchEvent(event));
   }
 
-  let currentScrollPosition = 0;
+  let currentScrollPosition = timeline.scrollWidth;
   document.addEventListener("wheel", (e) => {
-    console.log(e.target.parentElement);
     if (document.querySelector(".info-body").contains(e.target)) return;
     currentScrollPosition += Math.sign(e.deltaY) * 100;
     if (currentScrollPosition < 0) currentScrollPosition = 0;

@@ -16,6 +16,7 @@ body {
   position: absolute;
   bottom: 10px;
   left: 50%;
+  gap: 500px;
 }
 
 .event {
@@ -23,7 +24,6 @@ body {
   height: 96px;
   position: relative;
   background-color: white;
-  margin-left: 500px;
   flex-shrink: 0;
   background-size: 72px;
   border: 12px solid;
@@ -38,7 +38,6 @@ body {
   height: 6px;
   background-color: rgb(250 250 250);
   z-index: -1;
-  left: 48px;
   top: 50%;
 }
 

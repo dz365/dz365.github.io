@@ -8,7 +8,6 @@ body {
 
 body {
   position: relative;
-  background-color: skyblue;
 }
 
 .timeline {
@@ -36,7 +35,7 @@ body {
 .connector {
   position: absolute;
   height: 6px;
-  background-color: rgb(250 250 250);
+  background-color: rgb(55 65 81);
   z-index: -1;
   top: 50%;
 }

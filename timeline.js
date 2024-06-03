@@ -130,6 +130,21 @@ const aboutMe = {
   ],
 };
 
+function generateMaxMinButton(header) {
+  const buttonElem = document.createElement("button");
+  buttonElem.classList.add("icon", "expanded");
+  buttonElem.addEventListener("click", () => {
+    buttonElem.classList.toggle("min");
+    const infoBody = document.querySelector(".info-body");
+    infoBody.classList.toggle("collapsed");
+    infoBody.style = "";
+    if (infoBody.classList.contains("collapsed")) {
+      infoBody.style.maxHeight = infoBody.children[1].offsetTop + "px";
+    }
+  });
+  return buttonElem;
+}
+
 function generateTechListHTML(techList) {
   let listHTML = '<div class="list">';
   techList.forEach((tech) => {
@@ -196,10 +211,13 @@ function updateInfoBodyWithAbout() {
 }
 
 function updateInfoBody(eventTitle, eventType) {
-  document.querySelector(".info-body").scrollTop = 0;
+  const infoBody = document.querySelector(".info-body");
+  infoBody.className = "info-body";
+  infoBody.scrollTop = 0;
   if (eventType === "work") updateInfoBodyWithWork(eventTitle);
   else if (eventType === "project") updateInfoBodyWithProject(eventTitle);
   else if (eventType === "about") updateInfoBodyWithAbout();
+  infoBody.appendChild(generateMaxMinButton(eventTitle));
 }
 
 window.addEventListener("DOMContentLoaded", function () {
@@ -219,7 +237,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   document.querySelector(".connector").style.width = "100%";
   timeline.style.transform = `translateX(-${timeline.scrollWidth}px)`;
-  updateInfoBodyWithAbout();
+  updateInfoBody("About Me", "about");
 
   function getCenter(element) {
     const rect = element.getBoundingClientRect();

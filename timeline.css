@@ -210,3 +210,10 @@ body {
 .info-body.collapsed .title {
   margin-bottom: 16px;
 }
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}

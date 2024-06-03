@@ -203,6 +203,9 @@ function updateInfoBodyWithAbout() {
     <span class="subtitle">Hey there! Thanks for visiting.</span>
     <span>${aboutMe.summary}</span>
     <span>${generateContactListHTML(aboutMe.contact)}</span>
+    <p style="color:red;">
+      NOTE: This site still being updated! Check back weekly for the latest changes.
+    </p>
   `;
   infoBody.classList.add("about");
 }

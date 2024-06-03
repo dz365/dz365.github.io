@@ -1,0 +1,212 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  position: relative;
+}
+
+.timeline {
+  display: flex;
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  gap: 500px;
+}
+
+.event {
+  width: 56px;
+  height: 56px;
+  position: relative;
+  background-color: white;
+  flex-shrink: 0;
+  background-size: 36px;
+  border: 8px solid;
+}
+
+.event:first-of-type {
+  margin-left: 0;
+}
+
+.connector {
+  position: absolute;
+  height: 6px;
+  background-color: rgb(55 65 81);
+  z-index: -1;
+  top: 50%;
+}
+
+.icon {
+  border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.work {
+  border-color: #c57d43;
+}
+
+.project {
+  border-color: #438bc5;
+}
+
+.about {
+  border-color: #2e8957;
+}
+
+.icon.about {
+  background-image: url("./icons/home.svg");
+}
+
+.icon.work {
+  background-image: url("./icons/briefcase.svg");
+}
+
+.icon.project {
+  background-image: url("./icons/code.svg");
+}
+
+.info-body {
+  position: relative;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: auto;
+  margin-top: 16px;
+  box-sizing: border-box;
+  width: 600px;
+  max-width: 80%;
+  max-height: 50%;
+  overflow-y: auto;
+  box-shadow: 0 0 16px 10px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  border-radius: 8px;
+  background-color: white;
+  line-height: 1.6;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: max-height 0.3s ease;
+}
+
+.info-body.work {
+  border-left: 6px solid #c57d43;
+}
+
+.info-body.project {
+  border-left: 6px solid #3498db;
+}
+
+.info-body.about {
+  border-left: 6px solid #2e8957;
+}
+
+.list {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.tech-item {
+  background-color: #3498db;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.work .tech-item {
+  background-color: #c68957;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.position {
+  font-size: 20px;
+  font-weight: 600;
+  color: #c57d43;
+}
+
+.subtitle {
+  color: #697375;
+}
+
+.description {
+  font-size: 1em;
+  color: #34495e;
+}
+
+.contact-item {
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  font-size: small;
+  color: black;
+  transition: transform 0.2s ease-in-out;
+}
+
+.contact-item:hover {
+  text-decoration: underline;
+  transform: scale(115%);
+}
+
+.contact {
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  background-size: 32px;
+}
+
+.email {
+  background-image: url("./icons/mail.svg");
+}
+
+.linkedin {
+  background-image: url("./icons/linkedin.svg");
+}
+
+.github {
+  background-image: url("./icons/github.svg");
+}
+
+.resume {
+  background-image: url("./icons/resume.svg");
+}
+
+.info-body button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  background-size: 20px;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 32px;
+  height: 32px;
+  background-image: url("./icons/arrows-diagonal-minimize.svg");
+}
+
+.info-body button.min {
+  background-image: url("./icons/arrows-diagonal.svg");
+}
+
+.info-body.collapsed {
+  overflow: hidden;
+}
+
+.info-body.collapsed .title {
+  margin-bottom: 16px;
+}

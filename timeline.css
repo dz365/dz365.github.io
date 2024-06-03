@@ -71,6 +71,7 @@ body {
 }
 
 .info-body {
+  position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: auto;
   margin-top: 16px;
@@ -88,6 +89,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  transition: max-height 0.3s ease;
 }
 
 .info-body.work {
@@ -181,4 +183,30 @@ body {
 
 .resume {
   background-image: url("./icons/resume.svg");
+}
+
+.info-body button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  background-size: 20px;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 32px;
+  height: 32px;
+  background-image: url("./icons/arrows-diagonal-minimize.svg");
+}
+
+.info-body button.min {
+  background-image: url("./icons/arrows-diagonal.svg");
+}
+
+.info-body.collapsed {
+  overflow: hidden;
+}
+
+.info-body.collapsed .title {
+  margin-bottom: 16px;
 }

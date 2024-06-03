@@ -130,7 +130,7 @@ const aboutMe = {
   ],
 };
 
-function generateMaxMinButton(header) {
+function generateMaxMinButton() {
   const buttonElem = document.createElement("button");
   buttonElem.classList.add("icon", "expanded");
   buttonElem.addEventListener("click", () => {
@@ -179,7 +179,6 @@ function updateInfoBodyWithWork(workName) {
     <span class="description">${workInfo.description}</span>
     ${generateTechListHTML(workInfo.technologies)}
   `;
-  infoBody.className = "info-body";
   infoBody.classList.add("work");
 }
 
@@ -194,7 +193,6 @@ function updateInfoBodyWithProject(projectName) {
     <span class="description">${projectInfo.description}</span>
     ${generateTechListHTML(projectInfo.technologies)}
   `;
-  infoBody.className = "info-body";
   infoBody.classList.add("project");
 }
 
@@ -206,18 +204,28 @@ function updateInfoBodyWithAbout() {
     <span>${aboutMe.summary}</span>
     <span>${generateContactListHTML(aboutMe.contact)}</span>
   `;
-  infoBody.className = "info-body";
   infoBody.classList.add("about");
 }
 
+let currentEventTitle = null;
+
 function updateInfoBody(eventTitle, eventType) {
+  // No need to update same info
+  if (currentEventTitle === eventTitle) return;
+  currentEventTitle = eventTitle;
+
   const infoBody = document.querySelector(".info-body");
-  infoBody.className = "info-body";
+  infoBody.classList.remove("work", "project", "about");
   infoBody.scrollTop = 0;
   if (eventType === "work") updateInfoBodyWithWork(eventTitle);
   else if (eventType === "project") updateInfoBodyWithProject(eventTitle);
   else if (eventType === "about") updateInfoBodyWithAbout();
-  infoBody.appendChild(generateMaxMinButton(eventTitle));
+
+  // Need to recalculate collapsed height
+  if (infoBody.classList.contains("collapsed")) {
+    infoBody.style.maxHeight = infoBody.children[1].offsetTop + "px";
+  }
+  infoBody.appendChild(generateMaxMinButton());
 }
 
 window.addEventListener("DOMContentLoaded", function () {

@@ -103,7 +103,6 @@ const projectDescriptions = {
 };
 
 const aboutMe = {
-  name: "Daniel Zhang",
   email: "dwqz365@gmail.com",
   summary:
     "I'm Daniel Zhang, a 4th year Computer Science student at the \
@@ -199,7 +198,7 @@ function updateInfoBodyWithProject(projectName) {
 function updateInfoBodyWithAbout() {
   const infoBody = document.querySelector(".info-body");
   infoBody.innerHTML = `
-    <span class="title">${aboutMe.name}</span>
+    <span class="title">About Me</span>
     <span class="subtitle">Hey there! Thanks for visiting.</span>
     <span>${aboutMe.summary}</span>
     <span>${generateContactListHTML(aboutMe.contact)}</span>

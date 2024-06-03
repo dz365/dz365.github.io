@@ -293,6 +293,6 @@ window.addEventListener("DOMContentLoaded", function () {
     touchCurrentX = e.touches[0].clientX;
     const touchEndX = e.changedTouches[0].clientX;
     const deltaX = touchEndX - touchStartX;
-    updateTimelinePosition(-deltaX);
+    updateTimelinePosition(-deltaX / 3);
   });
 });

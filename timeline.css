@@ -13,7 +13,7 @@ body {
 .timeline {
   display: flex;
   position: absolute;
-  bottom: 10px;
+  bottom: 16px;
   left: 50%;
   gap: 500px;
 }
@@ -58,30 +58,16 @@ body {
   border-color: #2e8957;
 }
 
-.skatescribe {
-  background-image: url("./images/skatescribe.png");
-}
-
-.caseware {
-  background-image: url("./images/caseware.png");
-}
-
-.sddh {
-  background-image: url("./images/sddh.png");
-}
-
-.asteroids {
-  background-image: url("./images/asteroids.png");
-  background-size: 28px;
-}
-
-.ecosquad {
-  background-image: url("./images/ecosquad.png");
-  background-size: 28px;
-}
-
-.home {
+.icon.about {
   background-image: url("./icons/home.svg");
+}
+
+.icon.work {
+  background-image: url("./icons/briefcase.svg");
+}
+
+.icon.project {
+  background-image: url("./icons/code.svg");
 }
 
 .info-body {
@@ -159,7 +145,6 @@ body {
 }
 
 .title-link {
-  margin-top: 16px;
   display: flex;
   text-decoration: none;
   gap: 4px;

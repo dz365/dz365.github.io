@@ -2,32 +2,26 @@ const events = [
   {
     type: "project",
     title: "Asteroids",
-    class: ["asteroids"],
   },
   {
     type: "work",
     title: "Skatescribe",
-    class: ["skatescribe"],
   },
   {
     type: "work",
     title: "Caseware",
-    class: ["caseware"],
   },
   {
     type: "project",
     title: "Ecosquad",
-    class: ["ecosquad"],
   },
   {
     type: "work",
     title: "SDDH",
-    class: ["sddh"],
   },
   {
     type: "about",
     title: "About Me",
-    class: ["home"],
   },
 ];
 
@@ -73,7 +67,7 @@ const workDescriptions = {
     technologies: [
       "Angular",
       "Python",
-      "Python Flask",
+      "Flask",
       "SocketIO",
       "PostgreSQL",
       "Electron",
@@ -219,7 +213,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   events.forEach((event) => {
     const eventElem = document.createElement("div");
-    eventElem.classList.add(event.class, event.type, "icon", "event");
+    eventElem.classList.add(event.type, "icon", "event");
 
     eventElem.addEventListener("positionChange", () => {
       if (Math.abs(getCenter(eventElem).x - window.innerWidth / 2) < 100)

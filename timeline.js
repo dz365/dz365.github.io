@@ -28,7 +28,6 @@ const events = [
 const workDescriptions = {
   SDDH: {
     company: "Service Delivery Data Hub Project",
-    link: "https://scarboroughlip.com/current-projects/service-delivery-data-hub-project/",
     position: "Full Stack Developer (Work Learning Experience)",
     date: "November 2023",
     description:
@@ -42,7 +41,6 @@ const workDescriptions = {
   },
   Caseware: {
     company: "Caseware International",
-    link: "https://www.caseware.com/",
     position: "Software Developer Intern",
     date: "January 2022 - August 2022",
     description:
@@ -55,7 +53,6 @@ const workDescriptions = {
   },
   Skatescribe: {
     company: "Skatescribe",
-    link: "https://www.skatescribe.com/",
     position: "Full Stack Developer Intern",
     date: "May 2021 - August 2021",
     description:
@@ -161,12 +158,9 @@ function updateInfoBodyWithWork(workName) {
   const workInfo = workDescriptions[workName];
   const infoBody = document.querySelector(".info-body");
   infoBody.innerHTML = `
-    <a href=${workInfo.link} target="_blank" class="title-link">
-      <span class="title">${workInfo.company}</span>
-      <div class="icon link"></div>
-    </a>
+    <span class="title">${workInfo.company}</span>
     <span class="position">${workInfo.position}</span>
-    <span class="date">${workInfo.date}</span>
+    <span class="subtitle">${workInfo.date}</span>
     <span class="description">${workInfo.description}</span>
     ${generateTechListHTML(workInfo.technologies)}
   `;
@@ -178,9 +172,9 @@ function updateInfoBodyWithProject(projectName) {
   const projectInfo = projectDescriptions[projectName];
   const infoBody = document.querySelector(".info-body");
   infoBody.innerHTML = `
-    <a href=${projectInfo.link} target="_blank" class="title-link">
-      <span class="title">${projectInfo.name}</span>
-      <div class="icon link"></div>
+    <span class="title">${projectInfo.name}</span>
+    <a href=${projectInfo.link} target="_blank" class="subtitle">
+      ${projectInfo.link}
     </a>
     <span class="description">${projectInfo.description}</span>
     ${generateTechListHTML(projectInfo.technologies)}
@@ -193,7 +187,7 @@ function updateInfoBodyWithAbout() {
   const infoBody = document.querySelector(".info-body");
   infoBody.innerHTML = `
     <span class="title">${aboutMe.name}</span>
-    <span class="greeting">Hey there! Thanks for visiting.</span>
+    <span class="subtitle">Hey there! Thanks for visiting.</span>
     <span>${aboutMe.summary}</span>
     <span>${generateContactListHTML(aboutMe.contact)}</span>
   `;

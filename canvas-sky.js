@@ -1,17 +1,11 @@
 window.addEventListener("DOMContentLoaded", function () {
-  const canvas = document.querySelector("canvas");
+  const canvas = document.createElement("canvas");
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+  document.querySelector("body").appendChild(canvas);
 
   const ctx = canvas.getContext("2d");
 
-  function drawGround() {
-    const groundlevel = canvas.height - 150;
-    ctx.beginPath();
-    ctx.moveTo(0, groundlevel);
-    ctx.lineTo(canvas.width, groundlevel);
-    ctx.stroke();
-  }
   // Function to load an image
   function loadImage(src) {
     return new Promise((resolve) => {
@@ -44,13 +38,13 @@ window.addEventListener("DOMContentLoaded", function () {
 
   function generateCloud(img, generateAtRight) {
     const x = generateAtRight ? canvas.width : Math.random() * canvas.width;
-    const y = Math.random() * ((canvas.height * 3) / 5); // Keep clouds in the upper 3/5 of the canvas
+    const y = Math.random() * ((canvas.height * 3) / 4); // Keep clouds in the upper 3/5 of the canvas
     const speed = 0.05 + Math.random() * 0.25; // Random speed between 0.05 and 1.05
     return new Cloud(img, x, y, speed);
   }
 
   async function drawClouds() {
-    const cloudCount = canvas.width / 100;
+    const cloudCount = canvas.width / 150;
     const cloudImages = [];
     const clouds = [];
 
@@ -86,5 +80,4 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 
   drawClouds();
-  drawGround();
 });

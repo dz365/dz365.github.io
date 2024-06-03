@@ -135,31 +135,13 @@ body {
   color: #c57d43;
 }
 
-.date {
+.subtitle {
   color: #697375;
 }
 
 .description {
   font-size: 1em;
   color: #34495e;
-}
-
-.title-link {
-  display: flex;
-  text-decoration: none;
-  gap: 4px;
-}
-
-.link {
-  margin-bottom: 2px;
-  width: 32px;
-  height: 32px;
-  background-image: url("./icons/links.svg");
-  background-size: 20px;
-}
-
-.greeting {
-  color: #697375;
 }
 
 .contact-item {

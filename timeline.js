@@ -93,7 +93,7 @@ const projectDescriptions = {
   },
   Asteroids: {
     name: "Asteroids Remake",
-    overview: "A remake of the classical Altari game",
+    overview: "A remake of the classic Altari game",
     link: "https://github.com/dz365/Asteroid-Remake",
     description:
       "This was a project that I did along with a friend quite a while back, but I had so much \
@@ -170,6 +170,7 @@ function updateInfoBodyWithProject(projectName) {
   const projectInfo = projectDescriptions[projectName];
   document.querySelector(".info-body .content").innerHTML = `
     <span class="title">${projectInfo.name}</span>
+    <span class="overview">${projectInfo.overview}</span>
     <a href=${projectInfo.link} target="_blank" class="subtitle">
       ${projectInfo.link}
     </a>
@@ -181,7 +182,7 @@ function updateInfoBodyWithProject(projectName) {
 function updateInfoBodyWithAbout() {
   document.querySelector(".info-body .content").innerHTML = `
     <span class="title">About Me</span>
-    <span class="subtitle">Hey there! Thanks for visiting.</span>
+    <span class="greeting">Hey there! Thanks for visiting.</span>
     <span>${aboutMe.summary}</span>
     <span>${generateContactListHTML(aboutMe.contact)}</span>
     <p style="color:red;">

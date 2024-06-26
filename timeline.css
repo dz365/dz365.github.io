@@ -4,6 +4,7 @@ body {
   padding: 0;
   height: 100%;
   overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -72,24 +73,28 @@ body {
 
 .info-body {
   position: relative;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: auto;
   margin-top: 16px;
   box-sizing: border-box;
   width: 600px;
   max-width: 80%;
   max-height: 50%;
-  overflow-y: auto;
   box-shadow: 0 0 16px 10px rgba(0, 0, 0, 0.1);
   padding: 32px;
+  padding-bottom: 40px;
   border-radius: 8px;
   background-color: white;
   line-height: 1.6;
   color: #333;
+  transition: max-height 0.3s ease;
+  display: flex;
+}
+
+.info-body .content {
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  transition: max-height 0.3s ease;
 }
 
 .info-body.work {
@@ -192,15 +197,17 @@ body {
   margin: 0;
   background-size: 20px;
   position: absolute;
-  top: 4px;
-  right: 4px;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 32px;
   height: 32px;
-  background-image: url("./icons/arrows-diagonal-minimize.svg");
+  background-image: url("./icons/chevron-up.svg");
+  transition: transform 0.5s ease;
 }
 
-.info-body button.min {
-  background-image: url("./icons/arrows-diagonal.svg");
+.rotated {
+  transform: translateX(-50%) rotate(180deg) !important;
 }
 
 .info-body.collapsed {

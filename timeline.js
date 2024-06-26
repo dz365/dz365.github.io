@@ -75,6 +75,7 @@ const workDescriptions = {
 const projectDescriptions = {
   Ecosquad: {
     name: "Ecosquad",
+    overview: "A citizen scientist web app",
     link: "https://github.com/dz365/project-ecosquad",
     description:
       "Ecosquad is a web app developed by me and a friend of mine. The inspiration behind it was \
@@ -92,6 +93,7 @@ const projectDescriptions = {
   },
   Asteroids: {
     name: "Asteroids Remake",
+    overview: "A remake of the classical Altari game",
     link: "https://github.com/dz365/Asteroid-Remake",
     description:
       "This was a project that I did along with a friend quite a while back, but I had so much \
@@ -129,21 +131,6 @@ const aboutMe = {
   ],
 };
 
-function generateMaxMinButton() {
-  const buttonElem = document.createElement("button");
-  buttonElem.classList.add("icon", "expanded");
-  buttonElem.addEventListener("click", () => {
-    buttonElem.classList.toggle("min");
-    const infoBody = document.querySelector(".info-body");
-    infoBody.classList.toggle("collapsed");
-    infoBody.style = "";
-    if (infoBody.classList.contains("collapsed")) {
-      infoBody.style.maxHeight = infoBody.children[1].offsetTop + "px";
-    }
-  });
-  return buttonElem;
-}
-
 function generateTechListHTML(techList) {
   let listHTML = '<div class="list">';
   techList.forEach((tech) => {
@@ -170,7 +157,7 @@ function generateContactListHTML(contactList) {
 
 function updateInfoBodyWithWork(workName) {
   const workInfo = workDescriptions[workName];
-  const infoBody = document.querySelector(".info-body");
+  const infoBody = document.querySelector(".info-body .content");
   infoBody.innerHTML = `
     <span class="title">${workInfo.company}</span>
     <span class="position">${workInfo.position}</span>
@@ -178,12 +165,11 @@ function updateInfoBodyWithWork(workName) {
     <span class="description">${workInfo.description}</span>
     ${generateTechListHTML(workInfo.technologies)}
   `;
-  infoBody.classList.add("work");
 }
 
 function updateInfoBodyWithProject(projectName) {
   const projectInfo = projectDescriptions[projectName];
-  const infoBody = document.querySelector(".info-body");
+  const infoBody = document.querySelector(".info-body .content");
   infoBody.innerHTML = `
     <span class="title">${projectInfo.name}</span>
     <a href=${projectInfo.link} target="_blank" class="subtitle">
@@ -192,11 +178,10 @@ function updateInfoBodyWithProject(projectName) {
     <span class="description">${projectInfo.description}</span>
     ${generateTechListHTML(projectInfo.technologies)}
   `;
-  infoBody.classList.add("project");
 }
 
 function updateInfoBodyWithAbout() {
-  const infoBody = document.querySelector(".info-body");
+  const infoBody = document.querySelector(".info-body .content");
   infoBody.innerHTML = `
     <span class="title">About Me</span>
     <span class="subtitle">Hey there! Thanks for visiting.</span>
@@ -206,7 +191,6 @@ function updateInfoBodyWithAbout() {
       NOTE: This site still being updated! Check back weekly for the latest changes.
     </p>
   `;
-  infoBody.classList.add("about");
 }
 
 let currentEventTitle = null;
@@ -218,16 +202,18 @@ function updateInfoBody(eventTitle, eventType) {
 
   const infoBody = document.querySelector(".info-body");
   infoBody.classList.remove("work", "project", "about");
-  infoBody.scrollTop = 0;
+  infoBody.classList.add(eventType);
+  infoBody.querySelector(".content").scrollTop = 0;
+
   if (eventType === "work") updateInfoBodyWithWork(eventTitle);
   else if (eventType === "project") updateInfoBodyWithProject(eventTitle);
   else if (eventType === "about") updateInfoBodyWithAbout();
 
   // Need to recalculate collapsed height
   if (infoBody.classList.contains("collapsed")) {
-    infoBody.style.maxHeight = infoBody.children[1].offsetTop + "px";
+    infoBody.style.maxHeight =
+      infoBody.firstElementChild.children[1].offsetTop + "px";
   }
-  infoBody.appendChild(generateMaxMinButton());
 }
 
 window.addEventListener("DOMContentLoaded", function () {
@@ -248,6 +234,22 @@ window.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".connector").style.width = "100%";
   timeline.style.transform = `translateX(-${timeline.scrollWidth}px)`;
   updateInfoBody("About Me", "about");
+
+  const expandContentButton = document.querySelector(".info-body button");
+  expandContentButton.addEventListener("click", () => {
+    expandContentButton.classList.toggle("rotated");
+    const infoBody = document.querySelector(".info-body");
+    const infoBodyContent = infoBody.querySelector(".content");
+    infoBody.classList.toggle("collapsed");
+    infoBody.style = "";
+    infoBodyContent.style = "";
+    if (infoBody.classList.contains("collapsed")) {
+      infoBody.style.maxHeight =
+        infoBody.firstElementChild.children[1].offsetTop + "px";
+      infoBodyContent.scrollTop = 0;
+      infoBodyContent.style.overflow = "hidden";
+    }
+  });
 
   function getCenter(element) {
     const rect = element.getBoundingClientRect();

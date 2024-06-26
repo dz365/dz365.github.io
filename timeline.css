@@ -95,6 +95,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.info-body .content::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 .info-body.work {

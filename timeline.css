@@ -80,8 +80,6 @@ body {
   max-width: 80%;
   max-height: 50%;
   box-shadow: 0 0 16px 10px rgba(0, 0, 0, 0.1);
-  padding: 32px;
-  padding-bottom: 40px;
   border-radius: 8px;
   background-color: white;
   line-height: 1.6;
@@ -91,15 +89,12 @@ body {
 }
 
 .info-body .content {
+  padding: 32px;
+  padding-bottom: 40px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  scrollbar-width: none; /* Firefox */
-}
-
-.info-body .content::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
 }
 
 .info-body.work {
@@ -197,10 +192,9 @@ body {
 
 .info-body button {
   border: none;
-  background-color: transparent;
+  background-color: white;
   padding: 0;
   margin: 0;
-  background-size: 20px;
   position: absolute;
   bottom: 4px;
   left: 50%;
@@ -208,6 +202,7 @@ body {
   width: 32px;
   height: 32px;
   background-image: url("./icons/chevron-up.svg");
+  background-size: 24px;
   transition: transform 0.5s ease;
 }
 

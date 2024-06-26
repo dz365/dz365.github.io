@@ -157,8 +157,7 @@ function generateContactListHTML(contactList) {
 
 function updateInfoBodyWithWork(workName) {
   const workInfo = workDescriptions[workName];
-  const infoBody = document.querySelector(".info-body .content");
-  infoBody.innerHTML = `
+  document.querySelector(".info-body .content").innerHTML = `
     <span class="title">${workInfo.company}</span>
     <span class="position">${workInfo.position}</span>
     <span class="subtitle">${workInfo.date}</span>
@@ -169,8 +168,7 @@ function updateInfoBodyWithWork(workName) {
 
 function updateInfoBodyWithProject(projectName) {
   const projectInfo = projectDescriptions[projectName];
-  const infoBody = document.querySelector(".info-body .content");
-  infoBody.innerHTML = `
+  document.querySelector(".info-body .content").innerHTML = `
     <span class="title">${projectInfo.name}</span>
     <a href=${projectInfo.link} target="_blank" class="subtitle">
       ${projectInfo.link}
@@ -181,8 +179,7 @@ function updateInfoBodyWithProject(projectName) {
 }
 
 function updateInfoBodyWithAbout() {
-  const infoBody = document.querySelector(".info-body .content");
-  infoBody.innerHTML = `
+  document.querySelector(".info-body .content").innerHTML = `
     <span class="title">About Me</span>
     <span class="subtitle">Hey there! Thanks for visiting.</span>
     <span>${aboutMe.summary}</span>

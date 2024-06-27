@@ -29,7 +29,7 @@ window.addEventListener("DOMContentLoaded", function () {
     const grassImages = [];
 
     // Load grass sprite images
-    for (let i = 1; i <= 9; i++) {
+    for (let i = 1; i <= 3; i++) {
       const img = await loadImage(`./images/grass/grass-${i}.png`);
       grassImages.push(img);
     }
@@ -37,11 +37,12 @@ window.addEventListener("DOMContentLoaded", function () {
     // Draw grass sprites at random positions
     for (let i = 0; i < spriteCount; i++) {
       const img = grassImages[Math.floor(Math.random() * grassImages.length)];
-      const size = 32 + Math.floor(Math.random() * 16); // Random height between 32 and 48
+      const scale = 1.5 + Math.random();
       const x = Math.random() * canvas.width;
-      const y = canvas.height - Math.random() * GROUNDHEIGHT - size;
+      const y =
+        canvas.height - Math.random() * GROUNDHEIGHT - img.height / scale + 16;
 
-      ctx.drawImage(img, x, y, size, size);
+      ctx.drawImage(img, x, y, img.width / scale, img.height / scale);
     }
   }
 

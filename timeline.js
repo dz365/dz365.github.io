@@ -282,16 +282,16 @@ window.addEventListener("DOMContentLoaded", function () {
       updateTimelinePosition(e.deltaY);
   });
 
-  let touchStartY = 0;
+  let touchStartX = 0;
   document.addEventListener("touchstart", (e) => {
-    touchStartY = e.touches[0].clientY;
+    touchStartX = e.touches[0].clientX;
   });
 
   document.addEventListener("touchmove", (e) => {
     if (document.querySelector(".info-body").contains(e.target)) return;
-    touchCurrentY = e.touches[0].clientY;
-    const touchEndY = e.changedTouches[0].clientY;
-    const deltaY = touchEndY - touchStartY;
-    updateTimelinePosition(-deltaY / 8);
+    touchCurrentX = e.touches[0].clientX;
+    const touchEndX = e.changedTouches[0].clientX;
+    const deltaX = touchEndX - touchStartX;
+    updateTimelinePosition(-deltaX / 4);
   });
 });

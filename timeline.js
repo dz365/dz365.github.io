@@ -107,7 +107,7 @@ const projectDescriptions = {
 const aboutMe = {
   email: "dwqz365@gmail.com",
   summary:
-    "I'm Daniel Zhang, a 4th year Computer Science student at the \
+    "I'm Daniel Zhang, a Computer Science graduate from the \
      University of Toronto. My dream is to work on something that everyone can appreciate. Hasn't \
      happened yet, but I'm slowly getting there through all the experiences I've gained from various \
      courses I've taken throughout my degree and my amazing internship experiences.",

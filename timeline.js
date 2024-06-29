@@ -19,10 +19,6 @@ const events = [
     type: "work",
     title: "SDDH",
   },
-  {
-    type: "about",
-    title: "About Me",
-  },
 ];
 
 const workDescriptions = {
@@ -155,9 +151,9 @@ function generateContactListHTML(contactList) {
   return listHTML;
 }
 
-function updateInfoBodyWithWork(workName) {
+function generateWorkInfo(workName) {
   const workInfo = workDescriptions[workName];
-  document.querySelector(".info-body .content").innerHTML = `
+  return `
     <span class="title">${workInfo.company}</span>
     <span class="position">${workInfo.position}</span>
     <span class="subtitle">${workInfo.date}</span>
@@ -166,9 +162,9 @@ function updateInfoBodyWithWork(workName) {
   `;
 }
 
-function updateInfoBodyWithProject(projectName) {
+function generateProjectInfo(projectName) {
   const projectInfo = projectDescriptions[projectName];
-  document.querySelector(".info-body .content").innerHTML = `
+  return `
     <span class="title">${projectInfo.name}</span>
     <span class="overview">${projectInfo.overview}</span>
     <a href=${projectInfo.link} target="_blank" class="subtitle">
@@ -218,18 +214,20 @@ window.addEventListener("DOMContentLoaded", function () {
   const timeline = document.querySelector(".timeline");
 
   events.forEach((event) => {
+    const eventInfo = document.createElement("div");
+    eventInfo.classList.add("event-info")
+    if (event.type === "work")
+      eventInfo.innerHTML = generateWorkInfo(event.title);
+    else if (event.type === "project")
+      eventInfo.innerHTML = generateProjectInfo(event.title);
+    timeline.prepend(eventInfo);
+
     const eventElem = document.createElement("div");
     eventElem.classList.add(event.type, "icon", "event");
-
-    eventElem.addEventListener("positionChange", () => {
-      if (Math.abs(eventElem.getBoundingClientRect().top) < 100)
-        updateInfoBody(event.title, event.type);
-    });
-
     timeline.prepend(eventElem);
   });
 
-  updateInfoBody("About Me", "about");
+  //updateInfoBody("About Me", "about");
 
   const expandContentButton = document.querySelector(".info-body button");
   expandContentButton.addEventListener("click", () => {
@@ -245,12 +243,5 @@ window.addEventListener("DOMContentLoaded", function () {
       infoBodyContent.scrollTop = 0;
       infoBodyContent.style.overflow = "hidden";
     }
-  });
-
-  document.addEventListener("scroll", (e) => {
-    if (document.querySelector(".info-body").contains(e.target)) return;
-    const event = new CustomEvent("positionChange");
-    const events = document.querySelectorAll(".event");
-    events.forEach((eventElem) => eventElem.dispatchEvent(event));
   });
 });

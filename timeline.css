@@ -1,21 +1,22 @@
 body {
   margin: 0;
   padding: 32px;
-  position: relative;
-  display: flex;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow: auto;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 48px;
 }
 
 .timeline {
   position: relative;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  column-gap: 32px;
+  row-gap: 64px;
+}
+
+.event-info {
+  max-width: 512px;
   display: flex;
   flex-direction: column;
-  gap: 384px;
-  margin-bottom: 768px;
 }
 
 .event {

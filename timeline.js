@@ -226,7 +226,7 @@ window.addEventListener("DOMContentLoaded", function () {
         updateInfoBody(event.title, event.type);
     });
 
-    timeline.appendChild(eventElem);
+    timeline.prepend(eventElem);
   });
 
   updateInfoBody("About Me", "about");

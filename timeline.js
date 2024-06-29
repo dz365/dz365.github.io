@@ -222,15 +222,13 @@ window.addEventListener("DOMContentLoaded", function () {
     eventElem.classList.add(event.type, "icon", "event");
 
     eventElem.addEventListener("positionChange", () => {
-      if (Math.abs(getCenter(eventElem).x - window.innerWidth / 2) < 100)
+      if (Math.abs(eventElem.getBoundingClientRect().top) < 100)
         updateInfoBody(event.title, event.type);
     });
 
     timeline.appendChild(eventElem);
   });
 
-  document.querySelector(".connector").style.width = "100%";
-  timeline.style.transform = `translateX(-${timeline.scrollWidth}px)`;
   updateInfoBody("About Me", "about");
 
   const expandContentButton = document.querySelector(".info-body button");
@@ -249,49 +247,10 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  function getCenter(element) {
-    const rect = element.getBoundingClientRect();
-    const scrollTop = window.scrollY;
-    const scrollLeft = window.scrollX;
-
-    return {
-      x: rect.left + scrollLeft + rect.width / 2,
-      y: rect.top + scrollTop + rect.height / 2,
-    };
-  }
-
-  function dispatchPositionChangeEvent() {
+  document.addEventListener("scroll", (e) => {
+    if (document.querySelector(".info-body").contains(e.target)) return;
     const event = new CustomEvent("positionChange");
     const events = document.querySelectorAll(".event");
     events.forEach((eventElem) => eventElem.dispatchEvent(event));
-  }
-
-  let currentScrollPosition = timeline.scrollWidth;
-
-  function updateTimelinePosition(delta) {
-    currentScrollPosition += delta;
-    if (currentScrollPosition < 0) currentScrollPosition = 0;
-    if (currentScrollPosition > timeline.scrollWidth)
-      currentScrollPosition = timeline.scrollWidth;
-    timeline.style.transform = `translateX(-${currentScrollPosition}px)`;
-    dispatchPositionChangeEvent();
-  }
-
-  document.addEventListener("wheel", (e) => {
-    if (!document.querySelector(".info-body").contains(e.target))
-      updateTimelinePosition(e.deltaY);
-  });
-
-  let touchStartX = 0;
-  document.addEventListener("touchstart", (e) => {
-    touchStartX = e.touches[0].clientX;
-  });
-
-  document.addEventListener("touchmove", (e) => {
-    if (document.querySelector(".info-body").contains(e.target)) return;
-    touchCurrentX = e.touches[0].clientX;
-    const touchEndX = e.changedTouches[0].clientX;
-    const deltaX = touchEndX - touchStartX;
-    updateTimelinePosition(-deltaX / 4);
   });
 });

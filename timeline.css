@@ -1,22 +1,21 @@
-html,
 body {
   margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-body {
+  padding: 32px;
   position: relative;
+  display: flex;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: auto;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 24px;
 }
 
 .timeline {
+  position: relative;
   display: flex;
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  gap: 500px;
+  flex-direction: column;
+  gap: 512px;
+  margin-bottom: 650px;
 }
 
 .event {
@@ -29,16 +28,14 @@ body {
   border: 8px solid;
 }
 
-.event:first-of-type {
-  margin-left: 0;
-}
-
 .connector {
   position: absolute;
-  height: 6px;
-  background-color: rgb(55 65 81);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background-color: black;
   z-index: -1;
-  top: 50%;
 }
 
 .icon {
@@ -72,13 +69,12 @@ body {
 }
 
 .info-body {
-  position: relative;
-  margin: auto;
-  margin-top: 16px;
+  position: sticky;
+  top: 32px;
   box-sizing: border-box;
   width: 600px;
   max-width: 80%;
-  max-height: 50%;
+  max-height: 50vh;
   box-shadow: 0 0 16px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   background-color: white;

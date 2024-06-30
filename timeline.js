@@ -71,6 +71,7 @@ const workDescriptions = {
 const projectDescriptions = {
   Ecosquad: {
     name: "Ecosquad",
+    date: "February 2023 - April 2023",
     overview: "A citizen scientist web app",
     link: "https://github.com/dz365/project-ecosquad",
     description:
@@ -89,6 +90,7 @@ const projectDescriptions = {
   },
   Asteroids: {
     name: "Asteroids Remake",
+    date: "April 2019 - June 2019",
     overview: "A remake of the classic Altari game",
     link: "https://github.com/dz365/Asteroid-Remake",
     description:
@@ -155,9 +157,9 @@ function generateWorkInfo(workName) {
   const workInfo = workDescriptions[workName];
   return `
     <div class="main-info">
+      <span class="date">${workInfo.date}</span>
       <span class="title">${workInfo.company}</span>
       <span class="position">${workInfo.position}</span>
-      <span class="date">${workInfo.date}</span>
     </div>
     <div class="extra-info">
       <span class="description">${workInfo.description}</span>
@@ -170,22 +172,22 @@ function generateProjectInfo(projectName) {
   const projectInfo = projectDescriptions[projectName];
   return `
     <div class="main-info">
+      <span class="date">${projectInfo.date}</span>
       <span class="title">${projectInfo.name}</span>
       <span class="overview">${projectInfo.overview}</span>
+    </div>
+    <div class="extra-info">
       <a href=${projectInfo.link} target="_blank" class="subtitle">
         ${projectInfo.link}
       </a>
-    </div>
-    <div class="extra-info">
       <span class="description">${projectInfo.description}</span>
       ${generateTechListHTML(projectInfo.technologies)}
     </div>
   `;
 }
 
-function updateInfoBodyWithAbout() {
-  document.querySelector(".info-body .content").innerHTML = `
-    <span class="title">About Me</span>
+function generateAbout() {
+  return `
     <span class="greeting">Hey there! Thanks for visiting.</span>
     <span>${aboutMe.summary}</span>
     <span>${generateContactListHTML(aboutMe.contact)}</span>
@@ -240,6 +242,11 @@ window.addEventListener("DOMContentLoaded", function () {
   const lastEventInfoBottom = lastEventInfo.getBoundingClientRect().bottom;
 
   document.querySelector(".connector").style.height = `calc(100% - ${
-    lastEventInfoBottom - lastEventBottom + 32
+    lastEventInfoBottom - lastEventBottom + 33
   }px)`;
+
+  const about = this.document.createElement("div");
+  about.classList.add("event-info", "main-info", "about-info");
+  about.innerHTML = generateAbout();
+  this.document.body.prepend(about);
 });

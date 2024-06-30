@@ -1,15 +1,7 @@
 const events = [
   {
-    type: "project",
-    title: "Asteroids",
-  },
-  {
     type: "work",
-    title: "Skatescribe",
-  },
-  {
-    type: "work",
-    title: "Caseware",
+    title: "SDDH",
   },
   {
     type: "project",
@@ -17,7 +9,15 @@ const events = [
   },
   {
     type: "work",
-    title: "SDDH",
+    title: "Caseware",
+  },
+  {
+    type: "work",
+    title: "Skatescribe",
+  },
+  {
+    type: "project",
+    title: "Asteroids",
   },
 ];
 
@@ -195,31 +195,14 @@ function updateInfoBodyWithAbout() {
   `;
 }
 
-function setConnectorHeight() {
-  const timelineEvents = document.querySelectorAll(".event");
-  const firstEvent = timelineEvents[0];
-  const lastEvent = timelineEvents[timelineEvents.length - 1];
-  const timelineRect = document
-    .querySelector(".timeline")
-    .getBoundingClientRect();
-
-  // Calculate positions
-  const topPosition =
-    firstEvent.getBoundingClientRect().top - timelineRect.top + window.scrollY;
-  const bottomPosition =
-    lastEvent.getBoundingClientRect().bottom -
-    timelineRect.top +
-    window.scrollY;
-
-  const connector = document.querySelector(".connector");
-  connector.style.top = `${topPosition}px`;
-  connector.style.height = `${bottomPosition - topPosition}px`;
-}
-
 window.addEventListener("DOMContentLoaded", function () {
   const timeline = document.querySelector(".timeline");
 
   events.forEach((event) => {
+    const eventElem = document.createElement("div");
+    eventElem.classList.add(event.type, "icon", "event");
+    timeline.appendChild(eventElem);
+
     const eventInfo = document.createElement("div");
     eventInfo.classList.add("event-info", "collapsed", event.type);
     if (event.type === "work")
@@ -234,19 +217,20 @@ window.addEventListener("DOMContentLoaded", function () {
       } else {
         extraInfo.style.maxHeight = extraInfo.scrollHeight + "px";
       }
-      setConnectorHeight(); // Call this function if it adjusts the layout
     });
 
-    timeline.prepend(eventInfo);
-
-    const eventElem = document.createElement("div");
-    eventElem.classList.add(event.type, "icon", "event");
-    timeline.prepend(eventElem);
+    timeline.appendChild(eventInfo);
   });
 
-  const timelineEvents = document.querySelectorAll(".event");
+  // Set connector height
+  const children = timeline.children;
+  const lastEvent = children[children.length - 2];
+  const lastEventBottom = lastEvent.getBoundingClientRect().bottom;
 
-  if (timelineEvents.length > 0) {
-    setConnectorHeight();
-  }
+  const lastEventInfo = children[children.length - 1];
+  const lastEventInfoBottom = lastEventInfo.getBoundingClientRect().bottom;
+
+  document.querySelector(".connector").style.height = `calc(100% - ${
+    lastEventInfoBottom - lastEventBottom + 32
+  }px)`;
 });

@@ -154,24 +154,32 @@ function generateContactListHTML(contactList) {
 function generateWorkInfo(workName) {
   const workInfo = workDescriptions[workName];
   return `
-    <span class="title">${workInfo.company}</span>
-    <span class="position">${workInfo.position}</span>
-    <span class="subtitle">${workInfo.date}</span>
-    <span class="description">${workInfo.description}</span>
-    ${generateTechListHTML(workInfo.technologies)}
+    <div class="main-info">
+      <span class="title">${workInfo.company}</span>
+      <span class="position">${workInfo.position}</span>
+      <span class="date">${workInfo.date}</span>
+    </div>
+    <div class="extra-info">
+      <span class="description">${workInfo.description}</span>
+      ${generateTechListHTML(workInfo.technologies)}
+    </div>
   `;
 }
 
 function generateProjectInfo(projectName) {
   const projectInfo = projectDescriptions[projectName];
   return `
-    <span class="title">${projectInfo.name}</span>
-    <span class="overview">${projectInfo.overview}</span>
-    <a href=${projectInfo.link} target="_blank" class="subtitle">
-      ${projectInfo.link}
-    </a>
-    <span class="description">${projectInfo.description}</span>
-    ${generateTechListHTML(projectInfo.technologies)}
+    <div class="main-info">
+      <span class="title">${projectInfo.name}</span>
+      <span class="overview">${projectInfo.overview}</span>
+      <a href=${projectInfo.link} target="_blank" class="subtitle">
+        ${projectInfo.link}
+      </a>
+    </div>
+    <div class="extra-info">
+      <span class="description">${projectInfo.description}</span>
+      ${generateTechListHTML(projectInfo.technologies)}
+    </div>
   `;
 }
 
@@ -187,27 +195,25 @@ function updateInfoBodyWithAbout() {
   `;
 }
 
-let currentEventTitle = null;
+function setConnectorHeight() {
+  const timelineEvents = document.querySelectorAll(".event");
+  const firstEvent = timelineEvents[0];
+  const lastEvent = timelineEvents[timelineEvents.length - 1];
+  const timelineRect = document
+    .querySelector(".timeline")
+    .getBoundingClientRect();
 
-function updateInfoBody(eventTitle, eventType) {
-  // No need to update same info
-  if (currentEventTitle === eventTitle) return;
-  currentEventTitle = eventTitle;
+  // Calculate positions
+  const topPosition =
+    firstEvent.getBoundingClientRect().top - timelineRect.top + window.scrollY;
+  const bottomPosition =
+    lastEvent.getBoundingClientRect().bottom -
+    timelineRect.top +
+    window.scrollY;
 
-  const infoBody = document.querySelector(".info-body");
-  infoBody.classList.remove("work", "project", "about");
-  infoBody.classList.add(eventType);
-  infoBody.querySelector(".content").scrollTop = 0;
-
-  if (eventType === "work") updateInfoBodyWithWork(eventTitle);
-  else if (eventType === "project") updateInfoBodyWithProject(eventTitle);
-  else if (eventType === "about") updateInfoBodyWithAbout();
-
-  // Need to recalculate collapsed height
-  if (infoBody.classList.contains("collapsed")) {
-    infoBody.style.maxHeight =
-      infoBody.firstElementChild.children[1].offsetTop + "px";
-  }
+  const connector = document.querySelector(".connector");
+  connector.style.top = `${topPosition}px`;
+  connector.style.height = `${bottomPosition - topPosition}px`;
 }
 
 window.addEventListener("DOMContentLoaded", function () {
@@ -215,11 +221,22 @@ window.addEventListener("DOMContentLoaded", function () {
 
   events.forEach((event) => {
     const eventInfo = document.createElement("div");
-    eventInfo.classList.add("event-info")
+    eventInfo.classList.add("event-info", "collapsed", event.type);
     if (event.type === "work")
       eventInfo.innerHTML = generateWorkInfo(event.title);
     else if (event.type === "project")
       eventInfo.innerHTML = generateProjectInfo(event.title);
+
+    eventInfo.addEventListener("click", () => {
+      const extraInfo = eventInfo.querySelector(".extra-info");
+      if (extraInfo.style.maxHeight) {
+        extraInfo.style.maxHeight = null;
+      } else {
+        extraInfo.style.maxHeight = extraInfo.scrollHeight + "px";
+      }
+      setConnectorHeight(); // Call this function if it adjusts the layout
+    });
+
     timeline.prepend(eventInfo);
 
     const eventElem = document.createElement("div");
@@ -227,21 +244,9 @@ window.addEventListener("DOMContentLoaded", function () {
     timeline.prepend(eventElem);
   });
 
-  //updateInfoBody("About Me", "about");
+  const timelineEvents = document.querySelectorAll(".event");
 
-  const expandContentButton = document.querySelector(".info-body button");
-  expandContentButton.addEventListener("click", () => {
-    expandContentButton.classList.toggle("rotated");
-    const infoBody = document.querySelector(".info-body");
-    const infoBodyContent = infoBody.querySelector(".content");
-    infoBody.classList.toggle("collapsed");
-    infoBody.style = "";
-    infoBodyContent.style = "";
-    if (infoBody.classList.contains("collapsed")) {
-      infoBody.style.maxHeight =
-        infoBody.firstElementChild.children[1].offsetTop + "px";
-      infoBodyContent.scrollTop = 0;
-      infoBodyContent.style.overflow = "hidden";
-    }
-  });
+  if (timelineEvents.length > 0) {
+    setConnectorHeight();
+  }
 });

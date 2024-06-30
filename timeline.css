@@ -6,35 +6,58 @@ body {
 }
 
 .timeline {
+  max-width: 768px;
+  margin: auto;
+  margin-bottom: 128px;
   position: relative;
   display: grid;
-  grid-template-columns: 20px 1fr;
+  grid-template-columns: 20px auto;
   column-gap: 32px;
   row-gap: 64px;
 }
 
 .event-info {
-  max-width: 512px;
+  line-height: 1.6;
+  color: #333;
+  font-size: smaller;
+  box-shadow: 0 0 32px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 24px;
+  background-color: white;
+}
+
+.main-info,
+.extra-info {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+}
+
+.extra-info {
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+  margin-top: 16px;
+  max-height: 0;
 }
 
 .event {
   width: 16px;
   height: 16px;
-  position: relative;
   flex-shrink: 0;
   background-color: black;
+  z-index: 2;
+  margin-top: 32px;
 }
 
 .connector {
+  grid-column: 1;
   position: absolute;
-  left: 50%;
+  left: 8px;
   transform: translateX(-50%);
-  width: 1px;
+  width: 2px;
   height: 100%;
   background-color: rgb(60, 60, 60);
-  z-index: -1;
+  z-index: 1;
 }
 
 .icon {
@@ -55,38 +78,12 @@ body {
   border-color: #2e8957;
 }
 
-.info-body {
-  position: sticky;
-  top: 32px;
-  box-sizing: border-box;
-  width: 512px;
-  max-width: 80%;
-  max-height: 50vh;
-  box-shadow: 0 0 16px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  background-color: white;
-  line-height: 1.6;
-  color: #333;
-  transition: max-height 0.3s ease;
-  display: flex;
+.event-info.work {
+  border-top: 6px solid #c57d43;
 }
 
-.info-body .content {
-  padding: 32px;
-  padding-bottom: 40px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  font-size: smaller;
-}
-
-.info-body.work {
-  border-left: 6px solid #c57d43;
-}
-
-.info-body.project {
-  border-left: 6px solid #3498db;
+.event-info.project {
+  border-top: 6px solid #3498db;
 }
 
 .info-body.about {
@@ -138,6 +135,7 @@ body {
   color: #2e8957;
 }
 
+.date,
 .subtitle {
   color: #697375;
 }
@@ -184,34 +182,6 @@ body {
 
 .resume {
   background-image: url("./icons/resume.svg");
-}
-
-.info-body button {
-  border: none;
-  background-color: white;
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  bottom: 4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 32px;
-  height: 32px;
-  background-image: url("./icons/chevron-up.svg");
-  background-size: 24px;
-  transition: transform 0.5s ease;
-}
-
-.rotated {
-  transform: translateX(-50%) rotate(180deg) !important;
-}
-
-.info-body.collapsed {
-  overflow: hidden;
-}
-
-.info-body.collapsed .title {
-  margin-bottom: 16px;
 }
 
 canvas {

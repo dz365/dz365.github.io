@@ -222,6 +222,15 @@ window.addEventListener("DOMContentLoaded", function () {
     timeline.appendChild(eventInfo);
   });
 
+  const eventElem = document.createElement("div");
+  eventElem.classList.add("icon", "event");
+  eventElem.style.marginTop = 0;
+  timeline.appendChild(eventElem);
+  const eventInfo = document.createElement("div");
+  eventInfo.innerHTML =
+    "<span style='color:#697375;padding-left:16px;'>No previous history</span>";
+  timeline.appendChild(eventInfo);
+
   // Set connector height
   const children = timeline.children;
   const lastEvent = children[children.length - 2];

@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
-  const GROUNDHEIGHT = 100;
+  const GROUNDHEIGHT = 96;
 
   const canvas = document.createElement("canvas");
   canvas.width = window.innerWidth;

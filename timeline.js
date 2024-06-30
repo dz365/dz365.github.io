@@ -1,15 +1,7 @@
 const events = [
   {
-    type: "project",
-    title: "Asteroids",
-  },
-  {
     type: "work",
-    title: "Skatescribe",
-  },
-  {
-    type: "work",
-    title: "Caseware",
+    title: "SDDH",
   },
   {
     type: "project",
@@ -17,11 +9,15 @@ const events = [
   },
   {
     type: "work",
-    title: "SDDH",
+    title: "Caseware",
   },
   {
-    type: "about",
-    title: "About Me",
+    type: "work",
+    title: "Skatescribe",
+  },
+  {
+    type: "project",
+    title: "Asteroids",
   },
 ];
 
@@ -75,6 +71,7 @@ const workDescriptions = {
 const projectDescriptions = {
   Ecosquad: {
     name: "Ecosquad",
+    date: "February 2023 - April 2023",
     overview: "A citizen scientist web app",
     link: "https://github.com/dz365/project-ecosquad",
     description:
@@ -93,6 +90,7 @@ const projectDescriptions = {
   },
   Asteroids: {
     name: "Asteroids Remake",
+    date: "April 2019 - June 2019",
     overview: "A remake of the classic Altari game",
     link: "https://github.com/dz365/Asteroid-Remake",
     description:
@@ -155,33 +153,41 @@ function generateContactListHTML(contactList) {
   return listHTML;
 }
 
-function updateInfoBodyWithWork(workName) {
+function generateWorkInfo(workName) {
   const workInfo = workDescriptions[workName];
-  document.querySelector(".info-body .content").innerHTML = `
-    <span class="title">${workInfo.company}</span>
-    <span class="position">${workInfo.position}</span>
-    <span class="subtitle">${workInfo.date}</span>
-    <span class="description">${workInfo.description}</span>
-    ${generateTechListHTML(workInfo.technologies)}
+  return `
+    <div class="main-info">
+      <span class="date">${workInfo.date}</span>
+      <span class="title">${workInfo.company}</span>
+      <span class="position">${workInfo.position}</span>
+    </div>
+    <div class="extra-info">
+      <span class="description">${workInfo.description}</span>
+      ${generateTechListHTML(workInfo.technologies)}
+    </div>
   `;
 }
 
-function updateInfoBodyWithProject(projectName) {
+function generateProjectInfo(projectName) {
   const projectInfo = projectDescriptions[projectName];
-  document.querySelector(".info-body .content").innerHTML = `
-    <span class="title">${projectInfo.name}</span>
-    <span class="overview">${projectInfo.overview}</span>
-    <a href=${projectInfo.link} target="_blank" class="subtitle">
-      ${projectInfo.link}
-    </a>
-    <span class="description">${projectInfo.description}</span>
-    ${generateTechListHTML(projectInfo.technologies)}
+  return `
+    <div class="main-info">
+      <span class="date">${projectInfo.date}</span>
+      <span class="title">${projectInfo.name}</span>
+      <span class="overview">${projectInfo.overview}</span>
+    </div>
+    <div class="extra-info">
+      <a href=${projectInfo.link} target="_blank" class="subtitle">
+        ${projectInfo.link}
+      </a>
+      <span class="description">${projectInfo.description}</span>
+      ${generateTechListHTML(projectInfo.technologies)}
+    </div>
   `;
 }
 
-function updateInfoBodyWithAbout() {
-  document.querySelector(".info-body .content").innerHTML = `
-    <span class="title">About Me</span>
+function generateAbout() {
+  return `
     <span class="greeting">Hey there! Thanks for visiting.</span>
     <span>${aboutMe.summary}</span>
     <span>${generateContactListHTML(aboutMe.contact)}</span>
@@ -191,107 +197,56 @@ function updateInfoBodyWithAbout() {
   `;
 }
 
-let currentEventTitle = null;
-
-function updateInfoBody(eventTitle, eventType) {
-  // No need to update same info
-  if (currentEventTitle === eventTitle) return;
-  currentEventTitle = eventTitle;
-
-  const infoBody = document.querySelector(".info-body");
-  infoBody.classList.remove("work", "project", "about");
-  infoBody.classList.add(eventType);
-  infoBody.querySelector(".content").scrollTop = 0;
-
-  if (eventType === "work") updateInfoBodyWithWork(eventTitle);
-  else if (eventType === "project") updateInfoBodyWithProject(eventTitle);
-  else if (eventType === "about") updateInfoBodyWithAbout();
-
-  // Need to recalculate collapsed height
-  if (infoBody.classList.contains("collapsed")) {
-    infoBody.style.maxHeight =
-      infoBody.firstElementChild.children[1].offsetTop + "px";
-  }
-}
-
 window.addEventListener("DOMContentLoaded", function () {
   const timeline = document.querySelector(".timeline");
 
   events.forEach((event) => {
     const eventElem = document.createElement("div");
     eventElem.classList.add(event.type, "icon", "event");
+    timeline.appendChild(eventElem);
 
-    eventElem.addEventListener("positionChange", () => {
-      if (Math.abs(getCenter(eventElem).x - window.innerWidth / 2) < 100)
-        updateInfoBody(event.title, event.type);
+    const eventInfo = document.createElement("div");
+    eventInfo.classList.add("event-info", "collapsed", event.type);
+    if (event.type === "work")
+      eventInfo.innerHTML = generateWorkInfo(event.title);
+    else if (event.type === "project")
+      eventInfo.innerHTML = generateProjectInfo(event.title);
+
+    eventInfo.addEventListener("click", () => {
+      const extraInfo = eventInfo.querySelector(".extra-info");
+      if (extraInfo.style.maxHeight) {
+        extraInfo.style.maxHeight = null;
+      } else {
+        extraInfo.style.maxHeight = extraInfo.scrollHeight + "px";
+      }
     });
 
-    timeline.appendChild(eventElem);
+    timeline.appendChild(eventInfo);
   });
 
-  document.querySelector(".connector").style.width = "100%";
-  timeline.style.transform = `translateX(-${timeline.scrollWidth}px)`;
-  updateInfoBody("About Me", "about");
+  const eventElem = document.createElement("div");
+  eventElem.classList.add("icon", "event");
+  eventElem.style.marginTop = 0;
+  timeline.appendChild(eventElem);
+  const eventInfo = document.createElement("div");
+  eventInfo.innerHTML =
+    "<span style='color:#697375;padding-left:16px;'>No previous history</span>";
+  timeline.appendChild(eventInfo);
 
-  const expandContentButton = document.querySelector(".info-body button");
-  expandContentButton.addEventListener("click", () => {
-    expandContentButton.classList.toggle("rotated");
-    const infoBody = document.querySelector(".info-body");
-    const infoBodyContent = infoBody.querySelector(".content");
-    infoBody.classList.toggle("collapsed");
-    infoBody.style = "";
-    infoBodyContent.style = "";
-    if (infoBody.classList.contains("collapsed")) {
-      infoBody.style.maxHeight =
-        infoBody.firstElementChild.children[1].offsetTop + "px";
-      infoBodyContent.scrollTop = 0;
-      infoBodyContent.style.overflow = "hidden";
-    }
-  });
+  // Set connector height
+  const children = timeline.children;
+  const lastEvent = children[children.length - 2];
+  const lastEventBottom = lastEvent.getBoundingClientRect().bottom;
 
-  function getCenter(element) {
-    const rect = element.getBoundingClientRect();
-    const scrollTop = window.scrollY;
-    const scrollLeft = window.scrollX;
+  const lastEventInfo = children[children.length - 1];
+  const lastEventInfoBottom = lastEventInfo.getBoundingClientRect().bottom;
 
-    return {
-      x: rect.left + scrollLeft + rect.width / 2,
-      y: rect.top + scrollTop + rect.height / 2,
-    };
-  }
+  document.querySelector(".connector").style.height = `calc(100% - ${
+    lastEventInfoBottom - lastEventBottom + 33
+  }px)`;
 
-  function dispatchPositionChangeEvent() {
-    const event = new CustomEvent("positionChange");
-    const events = document.querySelectorAll(".event");
-    events.forEach((eventElem) => eventElem.dispatchEvent(event));
-  }
-
-  let currentScrollPosition = timeline.scrollWidth;
-
-  function updateTimelinePosition(delta) {
-    currentScrollPosition += delta;
-    if (currentScrollPosition < 0) currentScrollPosition = 0;
-    if (currentScrollPosition > timeline.scrollWidth)
-      currentScrollPosition = timeline.scrollWidth;
-    timeline.style.transform = `translateX(-${currentScrollPosition}px)`;
-    dispatchPositionChangeEvent();
-  }
-
-  document.addEventListener("wheel", (e) => {
-    if (!document.querySelector(".info-body").contains(e.target))
-      updateTimelinePosition(e.deltaY);
-  });
-
-  let touchStartX = 0;
-  document.addEventListener("touchstart", (e) => {
-    touchStartX = e.touches[0].clientX;
-  });
-
-  document.addEventListener("touchmove", (e) => {
-    if (document.querySelector(".info-body").contains(e.target)) return;
-    touchCurrentX = e.touches[0].clientX;
-    const touchEndX = e.changedTouches[0].clientX;
-    const deltaX = touchEndX - touchStartX;
-    updateTimelinePosition(-deltaX / 4);
-  });
+  const about = this.document.createElement("div");
+  about.classList.add("event-info", "main-info", "about-info");
+  about.innerHTML = generateAbout();
+  this.document.body.prepend(about);
 });

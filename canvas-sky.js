@@ -38,7 +38,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   function generateCloud(img, generateAtRight) {
     const x = generateAtRight ? canvas.width : Math.random() * canvas.width;
-    const y = Math.random() * ((canvas.height * 3) / 4); // Keep clouds in the upper 3/5 of the canvas
+    const y = Math.random() * (canvas.height); // Keep clouds in the upper 3/5 of the canvas
     const speed = 0.05 + Math.random() * 0.25; // Random speed between 0.05 and 1.05
     return new Cloud(img, x, y, speed);
   }

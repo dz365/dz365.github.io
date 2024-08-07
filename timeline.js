@@ -103,12 +103,10 @@ const projectDescriptions = {
 };
 
 const aboutMe = {
-  email: "dwqz365@gmail.com",
   summary:
     "I'm Daniel Zhang, a Computer Science graduate from the \
      University of Toronto. My dream is to work on something that everyone can appreciate. Hasn't \
-     happened yet, but I'm slowly getting there through all the experiences I've gained from various \
-     courses I've taken throughout my degree and my amazing internship experiences.",
+     happened yet, but with each day, I'm getting closer.",
   contact: [
     {
       platform: "Email",
@@ -177,7 +175,7 @@ function generateProjectInfo(projectName) {
       <span class="overview">${projectInfo.overview}</span>
     </div>
     <div class="extra-info">
-      <a href=${projectInfo.link} target="_blank" class="subtitle">
+      <a href=${projectInfo.link} target="_blank" class="project-link">
         ${projectInfo.link}
       </a>
       <span class="description">${projectInfo.description}</span>
@@ -188,7 +186,7 @@ function generateProjectInfo(projectName) {
 
 function generateAbout() {
   return `
-    <span class="greeting">Hey there! Thanks for visiting.</span>
+    <span class="greeting">Hey there!</span>
     <span>${aboutMe.summary}</span>
     <span>${generateContactListHTML(aboutMe.contact)}</span>
     <p style="color:red;">

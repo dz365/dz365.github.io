@@ -106,7 +106,7 @@ const aboutMe = {
   summary:
     "I'm Daniel Zhang, a Computer Science graduate from the \
      University of Toronto. My dream is to work on something that everyone can appreciate. Hasn't \
-     happened yet, but with each day, I'm getting closer.",
+     happened yet, but I'm getting closer each day.",
   contact: [
     {
       platform: "Email",

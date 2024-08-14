@@ -1,0 +1,92 @@
+Sunday July 7 22:25
+
+Not too much has happened this week. I am planning on doing Pintos and applying for embedded jobs. Also started thinking about writing a story.
+
+I just noticed that the hour goes by slow but the days go by fast. It doesn’t feel like it’s been a week since I last wrote an entry.
+
+I’ve also been wasting a lot of my time every day just idling around and waiting for the time to pass. I want to try spending at least a set amount of time doing something and seeing if that helps.
+
+Tuesday July 9 23:29
+
+Went out to eat breakfast at a Chinese restaurant this morning. Even though I didn’t eat all that much, I had a feeling of fullness. Quite strange.
+
+Also started working on Pintos today. Just read some documentation for the first project and brainstormed an approach for the first part. I did feel like quitting at first, but it got better and started being fun after a bit. Planning on writing the changes tomorrow.
+
+Thursday July 11 00:38
+
+Yesterday had lots of ups and downs. I got an email telling me that the job I have been waiting a long time for was a no go. Due to circumstances, the hiring team is not longer proceeding with my application and I have been placed in a pool of assessed candidates for future openings. This sucks a lot because I have not been making any progress in my job search. Few hundred applications and nothing but rejections and ghosts. Can’t even get past the resume screening stage. Not really sure what to do from here on out.
+
+On the bright side, I did end up doing a lot for the Pintos project. Managed to get almost half of the test cases passing. But I’m not sure what the point of doing this is. I don’t think I’ll ever get into embedded programming. I wonder if my time can be better used elsewhere.
+
+Thursday July 11 22:59
+
+I finished project 1 for Pintos. With minimal help from outside sources, I really did it! My solution is also a lot more elegant than my OS course counterpart, which I never really gave an effort due to circumstances. In fact, that’s the reason why Pintos has been on my mind for so long. This was my chance at redemption.
+
+My next steps are to incorporate this project into my resume, and see if I can make it more embedded focused. After thinking for some time, I realised that I really don’t want to deal with the virtual cloud. Let’s try applying for a hundred embedded related positions and see if the results are more promising.
+
+
+Friday July 12 23:31
+
+Played tennis in the rain today. Was a pretty new experience. Also learned something new. When scanning photos using a printer, selecting mode picture will result in dust being captured while mode text or text & image won’t.
+
+Sunday July 14 10:39
+
+Submitted my dad’s citizenship application yesterday. Also made my first applications to embedded jobs
+
+Tuesday July 16 12:11
+
+So I stopped applying to embedded jobs since I don’t think I’ll enjoy working with circuits and hardware. I redid my resume using and have been applying to general software development jobs. I’ve hit over 300 applications by now since April. It’s a little tiring but the act must continue.
+
+23:43
+
+I spent a good chunk of today finishing Gurren Lagann. My opinion on the show is that everything is over the top, but the inspiring moments are truly inspiring. The ending could have been better, but it was an enjoyable watch.
+
+Friday July 19 21:53
+
+Hm, not too many interesting things. New events for FGO and Arknight came out so I’ve been playing and reading a lot yesterday. Still applying for jobs, but pace has slowed.
+
+Sunday July 21 14:02
+
+I started watching Frieren yesterday and I really enjoy it. Easily one of my favourite animes.
+
+I got some feedback on my software developer profile yesterday from a group I people I sometimes play tennis with. Essentially, it boils down to tailoring my resume to each job description, making small commits to my Github profile each day. And making my resume a bit more visually appealing.
+
+Tuesday July 23 17:46
+
+So I applied to 3 jobs yesterday using a tailored resume. Let’s see how this goes. The goal is to have 3 applications a day.
+
+I finished watching Frieren today. Absolutely phenomenal and probably one of my favourite animes ever. There is something heartwarming about following along someone’s adventure, from the everyday tasks, to the little interactions, to dramatic events.
+
+Wednesday July 24 23:24
+
+I started Android programming today. Have no idea where I want to go with it or what I want to do with it. I guess I'm just testing the waters for different development paths right now.
+
+Also picked up Shangri-la Frontier. So far, it's a pretty entertaining watch. The VA for the main character is really good. The NPC bunny is also really cute.
+
+Thursday July 25 24:26
+
+So I spent most of the morning and afternoon working on mini android apps. I’m not quite sure how I feel about it, but it does feel like I’m wasting my time not improving what I’m already good at. I.e. branching out instead of mastering one. I also applied to a few jobs during the evening. 
+
+I’m considering revisiting some of my old projects like Ecosquad, and reworking them to make it more presentable. I’m also considering working on a Python version of the MP3Tag app along with some new features since it’ll be useful in the future.
+
+As an aside, I managed to pull NP2 Summer Skadi using ~210 SQ, at the start of the summon. Also E2 Ray and finally progressing through Arknight’s events once more. 
+
+Friday July 26 23:47
+
+Worked some more on Android developer tutorial today. Applied and rejected from more jobs.
+
+Monday July 29 12:54
+
+Started working on the MP3 editor project yesterday. So far, got basic upload and audio information complete. Also finished watching Shangri-la Frontier. The fights were really well done and the character dynamics were fun to see.
+
+I am thinking about setting a daily schedule for myself. Spend at least an hour each day coding, job application, and programming questions. Then spend the remaining time doing something else.
+
+Bought ASTS today.
+
+Tuesday July 30 23:59
+
+Started reading The Greatest Estate Developer yesterday until this morning at 4. Latest I've ever stayed up reading anything but well worth it. The comedy is just too funny.
+
+Worked more on my MP3 editor and applied to more jobs.
+
+Finally playing the main story of Arknights again after catching up with the previous events preceding it.

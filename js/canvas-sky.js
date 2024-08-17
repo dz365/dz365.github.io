@@ -38,13 +38,13 @@ window.addEventListener("DOMContentLoaded", function () {
 
   function generateCloud(img, generateAtRight) {
     const x = generateAtRight ? canvas.width : Math.random() * canvas.width;
-    const y = Math.random() * (canvas.height); // Keep clouds in the upper 3/5 of the canvas
-    const speed = 0.05 + Math.random() * 0.25; // Random speed between 0.05 and 1.05
+    const y = Math.random() * canvas.height;
+    const speed = 0.05 + Math.random() * 0.2;
     return new Cloud(img, x, y, speed);
   }
 
   async function drawClouds() {
-    const cloudCount = canvas.width / 150;
+    const cloudCount = Math.min(canvas.width / 150, 5);
     const cloudImages = [];
     const clouds = [];
 

@@ -18,7 +18,7 @@ const ABOUTME = {
     },
     {
       platform: "Resume",
-      link: "https://dz365.github.io/Daniel_Zhang_Resume.pdf",
+      link: "https://dz365.github.io/Daniel%20Zhang%20Resume.pdf",
     },
   ],
 };

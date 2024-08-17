@@ -1,20 +1,20 @@
 const EXPERIENCES = [
   {
     company: "Service Delivery Data Hub Project",
-    position: "Full Stack Developer (Work Learning Experience)",
-    date: "November 2023",
+    position: "full stack developer (work learning experience)",
+    date: "november 2023",
     location: "Toronto, ON",
   },
   {
-    company: "Caseware International",
-    position: "Software Developer Intern",
-    date: "January 2022 - August 2022",
+    company: "Caseware",
+    position: "software developer intern",
+    date: "january 2022 - august 2022",
     location: "Toronto, ON",
   },
   {
     company: "Skatescribe",
-    position: "Full Stack Developer Intern",
-    date: "May 2021 - August 2021",
+    position: "full stack developer intern",
+    date: "may 2021 - august 2021",
     location: "Markham, ON",
   },
 ];

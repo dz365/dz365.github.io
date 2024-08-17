@@ -1,18 +1,18 @@
 const PROJECTS = [
   {
-    name: "Pintos",
-    overview: "An introduction to OS design",
+    name: "pintos",
+    overview: "an introduction to OS design",
     link: "https://github.com/dz365/Pintos",
   },
   {
-    name: "Ecosquad",
-    overview: "A web app for citizen scientists",
+    name: "ecosquad",
+    overview: "a web app for citizen scientists",
     link: "https://github.com/dz365/project-ecosquad",
   },
   {
-    name: "Asteroids Remake",
+    name: "asteroids remake",
     date: "April 2019 - June 2019",
-    overview: "My first project written from scratch",
+    overview: "my first project written from scratch",
     link: "https://github.com/dz365/Asteroid-Remake",
   },
 ];

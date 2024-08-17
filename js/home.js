@@ -47,13 +47,12 @@ function changeMainContentToHome() {
   document.getElementById("home-button").classList.add("underline");
 
   document.getElementById("main-content").innerHTML = `
-    <div class="">
-      <p>Hello! ${ABOUTME.summary}</p>
-      <span>${generateContactListHTML(ABOUTME.contact)}</span>
-      <p style="color:red;">
-        NOTE: This site still being updated! Check back weekly for the latest changes.
-      </p>
-    </div>
+    <div id="profile-img"></div>
+    <p>Hello! ${ABOUTME.summary}</p>
+    <span>${generateContactListHTML(ABOUTME.contact)}</span>
+    <p style="color:#9d6435;">
+      NOTE: This site still being updated! Check back weekly for the latest changes.
+    </p>
   `;
 }
 

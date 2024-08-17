@@ -6,6 +6,10 @@ body {
   justify-content: center;
 }
 
+p {
+  line-height: 1.5rem;
+}
+
 #main-container {
   margin-top: 15vh;
   padding: 16px;
@@ -26,7 +30,7 @@ body {
 }
 
 .list {
-  margin-top: 16px;
+  margin: 32px 0 32px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -124,6 +128,16 @@ canvas {
 
 #navbar button:hover {
   color: #697375;
+}
+
+#profile-img {
+  width: 256px;
+  height: 256px;
+  border-radius: 8px;
+  background-image: url("./images/ranpo/ranpo-1.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .content-list {

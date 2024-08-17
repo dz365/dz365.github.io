@@ -50,7 +50,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
     // Load cloud images
     for (let i = 1; i <= cloudCount; i++) {
-      const img = await loadImage(`./images/clouds/cloud-${i}.png`);
+      const randomCloudId = Math.floor(Math.random() * (24 - 1 + 1)) + 1;
+      const img = await loadImage(`./images/clouds/cloud-${randomCloudId}.png`);
       cloudImages.push(img);
     }
 

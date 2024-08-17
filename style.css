@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  padding: 32px;
+  font-family: "Courier Prime", monospace;
+  display: flex;
+  justify-content: center;
+}
+
+#main-container {
+  margin-top: 15vh;
+  padding: 16px;
+  display: flex;
+  gap: 64px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+}
+
+.icon {
+  border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.list {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.greeting {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2e8957;
+}
+
+.contact-item {
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  font-size: small;
+  color: black;
+  transition: transform 0.2s ease-in-out;
+}
+
+.contact-item:hover {
+  text-decoration: underline;
+}
+
+.contact {
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  background-size: 32px;
+}
+
+.email {
+  background-image: url("./icons/mail.svg");
+}
+
+.linkedin {
+  background-image: url("./icons/linkedin.svg");
+}
+
+.github {
+  background-image: url("./icons/github.svg");
+}
+
+.resume {
+  background-image: url("./icons/resume.svg");
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: space-between;
+}
+
+#main-content {
+  padding: 0 16px 16px 16px;
+  width: 768px;
+  max-width: 100%;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 4px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+#navbar button {
+  padding: 8px;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+#navbar button:hover {
+  color: #697375;
+}
+
+.content-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.experience {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.company {
+  color: #c57d43;
+}
+
+.overview {
+  color: #3498db;
+}
+
+.subtitle {
+  color: #697375;
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  #main-container {
+    margin-top: 0;
+    flex-direction: column;
+  }
+
+  #main-content {
+    padding: 16px 16px 16px 0;
+  }
+}

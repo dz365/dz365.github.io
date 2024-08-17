@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daniel Zhang</title>
-    <link rel="stylesheet" href="timeline.css" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/svg+xml" href="./icons/user.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,10 +15,27 @@
   </head>
 
   <body>
-    <div class="timeline">
-      <div class="connector"></div>
+    <div id="main-container">
+      <nav id="navbar">
+        <button id="home-button" onclick="changeMainContentToHome()">
+          home
+        </button>
+        <button
+          id="experiences-button"
+          onclick="changeMainContentToExperiences()"
+        >
+          experiences
+        </button>
+        <button id="projects-button" onclick="changeMainContentToProjects()">
+          projects
+        </button>
+        <button id="journal-button">journal</button>
+      </nav>
+      <div id="main-content"></div>
     </div>
-    <script src="timeline.js"></script>
+    <script src="home.js"></script>
+    <script src="experiences.js"></script>
+    <script src="projects.js"></script>
     <script src="canvas-sky.js"></script>
   </body>
 </html>

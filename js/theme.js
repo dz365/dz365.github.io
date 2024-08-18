@@ -1,7 +1,7 @@
 function changeTheme() {
   const button = document.getElementById("change-theme-button");
   const isDarkTheme = document.body.classList.toggle("dark-theme");
-  button.textContent = `Toggle ${isDarkTheme ? "light" : "dark"} theme`;
+  button.textContent = `toggle ${isDarkTheme ? "light" : "dark"} theme`;
 }
 
 window.addEventListener("DOMContentLoaded", function () {

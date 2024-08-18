@@ -53,9 +53,9 @@ function generateJournalNavHTMLElem(journalFileEntry) {
     );
     journalNav.appendChild(nextEntry);
   } else {
-    const previousEntry = document.createElement("span");
-    previousEntry.textContent = "No later entry";
-    journalNav.appendChild(previousEntry);
+    const nextEntry = document.createElement("span");
+    nextEntry.textContent = "No later entry";
+    journalNav.appendChild(nextEntry);
   }
 
   return journalNav;

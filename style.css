@@ -158,6 +158,15 @@ canvas {
   color: #697375;
 }
 
+.journal-date {
+  font-weight: bold;
+  color: #438bc5;
+}
+
+.journal-time {
+  color: #697375;
+}
+
 @media (max-width: 768px) {
   body {
     flex-direction: column;

@@ -1,9 +1,23 @@
+:root {
+  /* Light Theme Colors */
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+/* Dark Theme Override */
+body.dark-theme {
+  --background-color: #121212;
+  --text-color: #D0D0D0;
+}
+
 body {
   margin: 0;
   padding: 32px;
   font-family: "Courier Prime", monospace;
   display: flex;
   justify-content: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 p {
@@ -16,6 +30,11 @@ button {
   font-family: inherit;
   font-size: inherit;
   cursor: pointer;
+  color: var(--text-color);
+}
+
+a {
+  color: var(--text-color);
 }
 
 #main-container {
@@ -23,12 +42,6 @@ button {
   padding: 16px;
   display: flex;
   gap: 64px;
-}
-
-.icon {
-  border-radius: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .list {
@@ -43,13 +56,6 @@ button {
 .title {
   font-size: 20px;
   font-weight: 600;
-  color: #2c3e50;
-}
-
-.greeting {
-  font-size: 20px;
-  font-weight: 600;
-  color: #2e8957;
 }
 
 .contact-item {
@@ -59,8 +65,6 @@ button {
   align-items: center;
   text-decoration: none;
   font-size: small;
-  color: black;
-  transition: transform 0.2s ease-in-out;
 }
 
 .contact-item:hover {
@@ -72,6 +76,9 @@ button {
   width: 36px;
   height: 36px;
   background-size: 32px;
+  border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .email {
@@ -90,13 +97,6 @@ button {
   background-image: url("./icons/resume.svg");
 }
 
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
 .flex-end {
   display: flex;
   justify-content: space-between;
@@ -109,6 +109,7 @@ canvas {
 }
 
 #navbar {
+  width: 12rem;
   display: flex;
   flex-direction: column;
   align-items: start;

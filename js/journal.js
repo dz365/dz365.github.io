@@ -1,4 +1,6 @@
-const DEFAULT_JOURNAL_URL = "https://dz365.github.io/journal";
+const DEFAULT_JOURNAL_URL = "https://dz365.github.io/journal/";
+
+const JOURNAL_ENTRIES = ["2024/August", "2024/July", "2024/June"];
 
 /* Return file contents as an array of lines or empty array upon error. */
 async function getTextFileContents(filePath) {
@@ -16,10 +18,57 @@ async function getTextFileContents(filePath) {
   }
 }
 
-function displayJournalFile(filePath) {
+function generateJournalNavHTMLElem(journalFileEntry) {
+  const journalNav = document.createElement("div");
+  journalNav.classList.add("journal-nav", "flex-end");
+
+  // Add previous entry
+  if (journalFileEntry < JOURNAL_ENTRIES.length - 1) {
+    const previousEntry = document.createElement("button");
+    previousEntry.classList.add("underline");
+    previousEntry.innerHTML = JOURNAL_ENTRIES[journalFileEntry + 1];
+    previousEntry.addEventListener("click", () => {
+      displayJournalFile(journalFileEntry + 1);
+    });
+    journalNav.appendChild(previousEntry);
+  } else {
+    const previousEntry = document.createElement("span");
+    previousEntry.textContent = "No previous entry";
+    journalNav.appendChild(previousEntry);
+  }
+
+  // Add current entry
+  const currentEntry = document.createElement("span");
+  currentEntry.classList.add("bold");
+  currentEntry.textContent = JOURNAL_ENTRIES[journalFileEntry];
+  journalNav.appendChild(currentEntry);
+
+  // Add next entry
+  if (journalFileEntry > 0) {
+    const nextEntry = document.createElement("button");
+    nextEntry.classList.add("underline");
+    nextEntry.innerHTML = JOURNAL_ENTRIES[journalFileEntry - 1];
+    nextEntry.addEventListener("click", () =>
+      displayJournalFile(journalFileEntry - 1)
+    );
+    journalNav.appendChild(nextEntry);
+  } else {
+    const previousEntry = document.createElement("span");
+    previousEntry.textContent = "No later entry";
+    journalNav.appendChild(previousEntry);
+  }
+
+  return journalNav;
+}
+
+function displayJournalFile(journalFileEntry) {
   const contentDiv = document.getElementById("main-content");
   contentDiv.innerHTML = "";
-  getTextFileContents(`${DEFAULT_JOURNAL_URL}${filePath}`).then((lines) => {
+  contentDiv.appendChild(generateJournalNavHTMLElem(journalFileEntry));
+
+  getTextFileContents(
+    `${DEFAULT_JOURNAL_URL}${JOURNAL_ENTRIES[journalFileEntry]}.txt`
+  ).then((lines) => {
     const time24HrRegex = /^(?:[01]\d|2[0-3]):[0-5]\d$/;
     const dateRegex = new RegExp(
       "^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday) " +
@@ -35,6 +84,9 @@ function displayJournalFile(filePath) {
       if (time24HrRegex.test(line.trim())) p.classList.add("journal-time");
       contentDiv.appendChild(p);
     });
+
+    // Remove top margin from first <p>
+    contentDiv.querySelector(".journal-date").style.marginTop = "0";
   });
 }
 
@@ -46,5 +98,5 @@ function changeMainContentToJournal() {
   });
   document.getElementById("journal-button").classList.add("underline");
 
-  displayJournalFile("/2024/August.txt");
+  displayJournalFile(0);
 }

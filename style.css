@@ -10,6 +10,14 @@ p {
   line-height: 1.5rem;
 }
 
+button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
 #main-container {
   margin-top: 15vh;
   padding: 16px;
@@ -113,11 +121,6 @@ canvas {
 
 #navbar button {
   padding: 8px;
-  border: none;
-  background-color: transparent;
-  font-family: inherit;
-  font-size: inherit;
-  cursor: pointer;
 }
 
 #navbar button:hover {
@@ -150,12 +153,12 @@ canvas {
   color: #c57d43;
 }
 
-.overview {
-  color: #3498db;
-}
-
 .subtitle {
   color: #697375;
+}
+
+.journal-nav {
+  margin-bottom: 36px;
 }
 
 .journal-date {
@@ -165,6 +168,10 @@ canvas {
 
 .journal-time {
   color: #697375;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
@@ -179,5 +186,10 @@ canvas {
 
   #main-content {
     padding: 16px 16px 16px 0;
+  }
+
+  .journal-nav {
+    justify-content: center;
+    text-align: center;
   }
 }

@@ -81,7 +81,7 @@ function displayJournalFile(journalFileEntry) {
       const p = document.createElement("p");
       p.textContent = line;
       if (dateRegex.test(line.trim())) p.classList.add("journal-date");
-      if (time24HrRegex.test(line.trim())) p.classList.add("journal-time");
+      if (time24HrRegex.test(line.trim())) p.classList.add("secondary-text");
       contentDiv.appendChild(p);
     });
 

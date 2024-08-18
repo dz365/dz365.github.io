@@ -32,7 +32,7 @@ function changeMainContentToExperiences() {
       ${EXPERIENCES.map(
         (experience) => `
         <div class="experience">
-          <span class="subtitle">${experience.date}</span>
+          <span class="secondary-text">${experience.date}</span>
           <span class="title">${experience.position}</span>
           <span class="company">${experience.company}</span>
           <span>${experience.location}</span>

@@ -31,7 +31,7 @@ function changeMainContentToProjects() {
         (project) => `
         <div class="experience">
           <a href="${project.link}" target="_blank" class="title">${project.name}</a>
-          <span class="subtitle">${project.overview}</span>
+          <span class="secondary-text">${project.overview}</span>
         </div>
       `
       ).join("")}

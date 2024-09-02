@@ -1,6 +1,6 @@
 const DEFAULT_JOURNAL_URL = "https://dz365.github.io/journal/";
 
-const JOURNAL_ENTRIES = ["2024/August", "2024/July", "2024/June"];
+const JOURNAL_ENTRIES = ["2024/September", "2024/August", "2024/July", "2024/June"];
 
 /* Return file contents as an array of lines or empty array upon error. */
 async function getTextFileContents(filePath) {

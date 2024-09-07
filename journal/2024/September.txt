@@ -33,3 +33,9 @@ Thursday September 5
 Worked on the take home assessment. Not much to say about it other than the fact that I really need to take my time reading the instructions and planning before writing. So much time would have been saved.
 
 Also went out to eat at a Korean restaurant with a couple of friends. Had a blast playing the jester.
+
+Friday September 6
+
+23:15
+
+Did a bit more work on the take home. Every major feature is complete, just some minor bugs and styling adjusments to make. 

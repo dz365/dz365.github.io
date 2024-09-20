@@ -125,3 +125,11 @@ Thursday September 19
 23:34
 
 Did my best reviewing React knowledge in preperation for tomorrow. I realized that there's a lot of things I still don't know. I guess whatever happens, happens.
+
+Friday September 20
+
+14:40
+
+Well, the interview definitely could have gone better. Every resource was available but I jumped into coding too quickly without spending enough time planning an approach. I also tackled bonus features, which ultimately led to me not completing key functionalities. In aiming for both targets, I hit none. 
+
+I learned a lot from this and I know that next time, things will go different.

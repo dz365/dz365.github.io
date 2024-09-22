@@ -1,6 +1,24 @@
+const PREVIOUS_ENTRY_SVG = `
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+    <path d="M15 6l-6 6l6 6" />
+  </svg>
+`;
+const NEXT_ENTRY_SVG = `
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+    <path d="M9 6l6 6l-6 6" />
+  </svg>
+`;
+
 const DEFAULT_JOURNAL_URL = "https://dz365.github.io/journal/";
 
-const JOURNAL_ENTRIES = ["2024/September", "2024/August", "2024/July", "2024/June"];
+const JOURNAL_ENTRIES = [
+  "2024/September",
+  "2024/August",
+  "2024/July",
+  "2024/June",
+];
 
 /* Return file contents as an array of lines or empty array upon error. */
 async function getTextFileContents(filePath) {
@@ -20,20 +38,18 @@ async function getTextFileContents(filePath) {
 
 function generateJournalNavHTMLElem(journalFileEntry) {
   const journalNav = document.createElement("div");
-  journalNav.classList.add("journal-nav", "flex-end");
+  journalNav.classList.add("journal-nav");
 
   // Add previous entry
   if (journalFileEntry < JOURNAL_ENTRIES.length - 1) {
     const previousEntry = document.createElement("button");
-    previousEntry.classList.add("underline");
-    previousEntry.innerHTML = JOURNAL_ENTRIES[journalFileEntry + 1];
+    previousEntry.innerHTML = PREVIOUS_ENTRY_SVG;
     previousEntry.addEventListener("click", () => {
       displayJournalFile(journalFileEntry + 1);
     });
     journalNav.appendChild(previousEntry);
   } else {
     const previousEntry = document.createElement("span");
-    previousEntry.textContent = "No previous entry";
     journalNav.appendChild(previousEntry);
   }
 
@@ -46,18 +62,15 @@ function generateJournalNavHTMLElem(journalFileEntry) {
   // Add next entry
   if (journalFileEntry > 0) {
     const nextEntry = document.createElement("button");
-    nextEntry.classList.add("underline");
-    nextEntry.innerHTML = JOURNAL_ENTRIES[journalFileEntry - 1];
+    nextEntry.innerHTML = NEXT_ENTRY_SVG;
     nextEntry.addEventListener("click", () =>
       displayJournalFile(journalFileEntry - 1)
     );
     journalNav.appendChild(nextEntry);
   } else {
     const nextEntry = document.createElement("span");
-    nextEntry.textContent = "No later entry";
     journalNav.appendChild(nextEntry);
   }
-
   return journalNav;
 }
 

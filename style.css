@@ -31,12 +31,16 @@ p {
 }
 
 button {
+  padding: 0;
+  margin: 0;
   border: none;
   background-color: transparent;
   font-family: inherit;
   font-size: inherit;
   cursor: pointer;
   color: var(--text-color);
+  display: flex;
+  justify-content: center;
 }
 
 button:hover {
@@ -49,6 +53,14 @@ a {
 
 a:hover {
   color: var(--text-secondary-color);
+}
+
+svg {
+  stroke: var(--svg-stroke-color);
+}
+
+svg:hover {
+  stroke: var(--svg-stroke-secondary-color);
 }
 
 .secondary-text {
@@ -89,19 +101,9 @@ a:hover {
   text-decoration: underline;
 }
 
-.contact-item:hover svg {
-  stroke: var(--svg-stroke-secondary-color);
-}
-
 .contact-icon {
   width: 36px;
   height: 36px;
-  stroke: var(--svg-stroke-color);
-}
-
-.flex-end {
-  display: flex;
-  justify-content: space-between;
 }
 
 #main-content {
@@ -120,6 +122,11 @@ a:hover {
 
 .underline {
   text-decoration: underline;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 #navbar button {
@@ -154,6 +161,10 @@ a:hover {
 
 .journal-nav {
   margin-bottom: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
 }
 
 .journal-date {

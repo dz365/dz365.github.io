@@ -14,6 +14,7 @@ const NEXT_ENTRY_SVG = `
 const DEFAULT_JOURNAL_URL = "https://dz365.github.io/journal/";
 
 const JOURNAL_ENTRIES = [
+  "2024/October",
   "2024/September",
   "2024/August",
   "2024/July",

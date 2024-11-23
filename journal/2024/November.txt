@@ -123,3 +123,9 @@ Thursday November 21
 23:30
 
 When stuck on a problem, take a break. Many breaks later, if you still can't solve it, then switch up your approach.
+
+Friday November 22
+
+23:41
+
+It's honestly really hard designing a good looking interface. Everytime you think something is perfect, a few hour later you see a ton of flaws with your design and want to restart everything all over again.

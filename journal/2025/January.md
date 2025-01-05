@@ -11,3 +11,7 @@ I've finally apologized to someone I care about for something stupid I did in th
 ### Friday January 3, 23:42
 
 When working on a task over a long period of time, it's important to not lose sight of why you started it in the first place and what you wanted from it.
+
+### Saturday January 4, 23:33
+
+Not a bad day. Pushed myself a bit to get some work done.

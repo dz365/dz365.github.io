@@ -15,3 +15,7 @@ When working on a task over a long period of time, it's important to not lose si
 ### Saturday January 4, 23:33
 
 Not a bad day. Pushed myself a bit to get some work done.
+
+### Sunday January 5, 23:22
+
+Completed a coding assessment and did a bit more work.

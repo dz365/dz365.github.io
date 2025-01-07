@@ -19,3 +19,7 @@ Not a bad day. Pushed myself a bit to get some work done.
 ### Sunday January 5, 23:22
 
 Completed a coding assessment and did a bit more work.
+
+### Monday January 6, 23:38
+
+Today I found out 40 minutes is enough time for a meaningful workout.

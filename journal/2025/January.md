@@ -27,3 +27,7 @@ Today I found out 40 minutes is enough time for a meaningful workout.
 ### Tuesday January 7, 23:44
 
 Sometimes I feel like there is not enough minutes in a day.
+
+### Wednesday January 8, 23:36
+
+Always try to keep things as simple as possible. Especially when working on projects. Don't go overboard because you never know if things are as simple as they seem.

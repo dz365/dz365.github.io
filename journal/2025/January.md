@@ -31,3 +31,7 @@ Sometimes I feel like there is not enough minutes in a day.
 ### Wednesday January 8, 23:36
 
 Always try to keep things as simple as possible. Especially when working on projects. Don't go overboard because you never know if things are as simple as they seem.
+
+### Thursday January 9, 23:21
+
+Why waste your time reinventing the wheel when there's no guarantee you'll do it better? There's absolutely no shame using the work built by countless others to get your job done.

@@ -35,3 +35,7 @@ Always try to keep things as simple as possible. Especially when working on proj
 ### Thursday January 9, 23:21
 
 Why waste your time reinventing the wheel when there's no guarantee you'll do it better? There's absolutely no shame using the work built by countless others to get your job done.
+
+### Friday January 10, 23:44
+
+Rest in piece stink bug that I killed.

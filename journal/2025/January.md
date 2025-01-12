@@ -38,4 +38,8 @@ Why waste your time reinventing the wheel when there's no guarantee you'll do it
 
 ### Friday January 10, 23:44
 
-Rest in piece stink bug that I killed.
+Rest in peace stink bug that I killed.
+
+### Saturday January 11, 23:26
+
+Woke up to a nice layer of snowfall. Winter has some really pretty scenery.

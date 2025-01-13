@@ -43,3 +43,7 @@ Rest in peace stink bug that I killed.
 ### Saturday January 11, 23:26
 
 Woke up to a nice layer of snowfall. Winter has some really pretty scenery.
+
+### Sunday January 12, 23:40
+
+Ah I did it again; spent the entire day reading.

@@ -47,3 +47,7 @@ Woke up to a nice layer of snowfall. Winter has some really pretty scenery.
 ### Sunday January 12, 23:40
 
 Ah I did it again; spent the entire day reading.
+
+### Monday January 14, 23:25
+
+THe project dashboard for my second job has dried up the last few days. Is this a sign of bad things to come?

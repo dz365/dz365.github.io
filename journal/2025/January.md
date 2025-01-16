@@ -55,3 +55,7 @@ THe project dashboard for my second job has dried up the last few days. Is this 
 ### Wednesday January 15, 23:52
 
 Latest chapter of FGO released today so I've been playing for for a good chunk of the day.
+
+### Thursday January 16, 16:19
+
+Finished LB7 and damn, it did not disappoint at all. This might've been my favourite lostbelt.

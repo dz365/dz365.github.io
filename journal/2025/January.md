@@ -48,6 +48,10 @@ Woke up to a nice layer of snowfall. Winter has some really pretty scenery.
 
 Ah I did it again; spent the entire day reading.
 
-### Monday January 14, 23:25
+### Tuesday January 14, 23:25
 
 THe project dashboard for my second job has dried up the last few days. Is this a sign of bad things to come?
+
+### Wednesday January 15, 23:52
+
+Latest chapter of FGO released today so I've been playing for for a good chunk of the day.

@@ -59,3 +59,7 @@ Latest chapter of FGO released today so I've been playing for for a good chunk o
 ### Thursday January 16, 16:19
 
 Finished LB7 and damn, it did not disappoint at all. This might've been my favourite lostbelt.
+
+### Friday January 17, 23:17
+
+Rather long day of work today. Planning on getting a lot of stuff done over the next couple of days.

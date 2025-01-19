@@ -63,3 +63,7 @@ Finished LB7 and damn, it did not disappoint at all. This might've been my favou
 ### Friday January 17, 23:17
 
 Rather long day of work today. Planning on getting a lot of stuff done over the next couple of days.
+
+### Saturday January 18, 23:46
+
+Another long day of work today, but I didn't really mind it.

@@ -67,3 +67,7 @@ Rather long day of work today. Planning on getting a lot of stuff done over the 
 ### Saturday January 18, 23:46
 
 Another long day of work today, but I didn't really mind it.
+
+### Sunday January 19, 23:30
+
+I have a new goal, to be able to do the planche one day. I'll spend a bit of time each day working on progression exercises towards it. Obviously this isn't something that will be done quickly, but lets see how far I can get in a year.

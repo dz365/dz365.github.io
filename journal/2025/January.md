@@ -71,3 +71,9 @@ Another long day of work today, but I didn't really mind it.
 ### Sunday January 19, 23:30
 
 I have a new goal, to be able to do the planche one day. I'll spend a bit of time each day working on progression exercises towards it. Obviously this isn't something that will be done quickly, but lets see how far I can get in a year.
+
+### Monday January 20, 23:29
+
+I've been thinking about applying to analyst jobs instead of programming since I haven't been able to get get any responses outside of people reaching out to me.
+
+I also realize how much I hate people who self pity and do little to change their situation. There's always something out there that you can do, you just gotta find it.

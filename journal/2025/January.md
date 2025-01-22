@@ -77,3 +77,7 @@ I have a new goal, to be able to do the planche one day. I'll spend a bit of tim
 I've been thinking about applying to analyst jobs instead of programming since I haven't been able to get get any responses outside of people reaching out to me.
 
 I also realize how much I hate people who self pity and do little to change their situation. There's always something out there that you can do, you just gotta find it.
+
+### Tuesday January 21, 23:42
+
+After finishing the latest season of Bleach today, I realize how much more I enjoy good, well placed plot over sakuga animation.

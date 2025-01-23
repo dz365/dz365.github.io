@@ -81,3 +81,7 @@ I also realize how much I hate people who self pity and do little to change thei
 ### Tuesday January 21, 23:42
 
 After finishing the latest season of Bleach today, I realize how much more I enjoy good, well placed plot over sakuga animation.
+
+### Wednesday January 22, 23:48
+
+I feel like things are slowly clicking into place.

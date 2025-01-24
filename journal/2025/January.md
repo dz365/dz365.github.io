@@ -85,3 +85,7 @@ After finishing the latest season of Bleach today, I realize how much more I enj
 ### Wednesday January 22, 23:48
 
 I feel like things are slowly clicking into place.
+
+### Thursday January 23, 23:42
+
+Dry eyes are such a pain.

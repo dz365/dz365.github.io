@@ -89,3 +89,9 @@ I feel like things are slowly clicking into place.
 ### Thursday January 23, 23:42
 
 Dry eyes are such a pain.
+
+### Saturday January 25, 23:26
+
+Attempted to read raw Chinese WN, but it's impossible at my current level. I have to use a translator for every other phrase in a sentence.
+
+Although I did come across something interesting. There's a new AI model in town called DeepSeek and it was trained with English and Chinese text. In other words its perfect for acting as a translating tool! I expect it to be good with coding too.

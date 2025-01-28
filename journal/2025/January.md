@@ -99,3 +99,8 @@ Although I did come across something interesting. There's a new AI model in town
 ### Sunday January 26, 23:42
 
 A bit more of work and reading.
+
+
+### Monday January 27, 23:35
+
+When I need to do 3 things, I always manage to do 2 but not the third. Ah how vexing. Though I haven't encountered a situation where I needed to push myself to the fullest yet.

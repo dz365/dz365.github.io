@@ -107,3 +107,7 @@ When I need to do 3 things, I always manage to do 2 but not the third. Ah how ve
 ## Tuesday January 28, 23:35
 
 Managed to do all 3 things today, but quality was reduced for each.
+
+### Thursday January 30, 23:42
+
+Surprise prologue for next chapter of FGO dropped!

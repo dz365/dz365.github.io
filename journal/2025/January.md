@@ -111,3 +111,7 @@ Managed to do all 3 things today, but quality was reduced for each.
 ### Thursday January 30, 23:42
 
 Surprise prologue for next chapter of FGO dropped!
+
+### Friday January 31, 23:46
+
+I had a though while I was at the gym today? What if I got started writing a story while I'm resting between sets? Since I don't really have anything else to do hehe.

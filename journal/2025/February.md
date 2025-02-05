@@ -5,3 +5,7 @@
 ### Sunday 2, 23:29
 
 Couldn't find it in me to work my paid job this weekend. But I think I'll be good to go starting tomorrow.
+
+### Tuesday 4, 22:58
+
+I watched the hour long prelude for the new Fate series (Fate/strange Fake) and I'm really hyped.

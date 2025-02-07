@@ -9,3 +9,7 @@ Couldn't find it in me to work my paid job this weekend. But I think I'll be goo
 ### Tuesday 4, 22:58
 
 I watched the hour long prelude for the new Fate series (Fate/strange Fake) and I'm really hyped.
+
+### THursday 5, 23:26
+
+Nothing notable to record over the last few days.

@@ -10,6 +10,10 @@ Couldn't find it in me to work my paid job this weekend. But I think I'll be goo
 
 I watched the hour long prelude for the new Fate series (Fate/strange Fake) and I'm really hyped.
 
-### THursday 5, 23:26
+### Thursday 6, 23:26
 
 Nothing notable to record over the last few days.
+
+### Saturday 8, 23:38
+
+There's definitely been a lot more snowfall this winter compared to last.

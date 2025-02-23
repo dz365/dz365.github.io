@@ -33,3 +33,7 @@ The huge amounts of snowfall has finally ended after this afternoon. I think the
 I do wonder though if this year's summer will be be the opposite, with extreme sunlight and heat. Would be in for an interesting ride. Although by that time I be living in a condo.
 
 I also got started writing the first few sentences of my novel inbetween sets when I went to the gym on Friday. Honestly I found myself enjoying the process, but I'm scared of writing a terrible story. So yeah, lots of planning and such needs to be done.
+
+### Saturday 22, 23:27
+
+Took a look at laptops today. I'm definitely leaning towards the Macbook Air, although there were a lot of window laptops that caught my eye.
